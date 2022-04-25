@@ -245,7 +245,9 @@
 </li>
 </ol>
    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">s=&#x27;sadfasdf,asdfa&#x27;</span><br><span class="line"></span><br><span class="line">s.split(&#x27;,&#x27;)</span><br></pre></td></tr></table></figure>
-
+<ol start="11">
+<li>python 设定最大值最小值<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sys.maxsize python3中设置最大值</span><br><span class="line">-sys.maxsize-1 python3中设置最小值</span><br></pre></td></tr></table></figure></li>
+</ol>
 <h2 id="排序问题"><a href="#排序问题" class="headerlink" title="排序问题"></a>排序问题</h2><p>算法动画：<a href="https://github.com/MisterBooo/Article">https://github.com/MisterBooo/Article</a><br>涉及算法：冒泡、插入、选择排序、快速排序、堆排序、荷兰国旗问题、小范围排序练习题、计数排序、基数排序、比较器<br>快速排序(快速选择算法)：<a href="https://mp.weixin.qq.com/s/8ZTMhvHJK_He48PpSt_AmQ">https://mp.weixin.qq.com/s/8ZTMhvHJK_He48PpSt_AmQ</a><br><a href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/">#215 数组中的第K个最大元素</a>——1&#x2F;小根堆的方法——2&#x2F;快速选择的方法<br><a href="https://leetcode-cn.com/problems/sort-colors/">#75 颜色分类</a>——快排法——计数排序法——双指针法<br><a href="https://leetcode-cn.com/problems/0H97ZC/">#剑指 Offer II 075 数组相对排序</a>——哈希表，计数</p>
 <h2 id="数组问题"><a href="#数组问题" class="headerlink" title="数组问题"></a>数组问题</h2><p>算法技巧：<a href="https://labuladong.gitee.io/algo/2/19/24/">https://labuladong.gitee.io/algo/2/19/24/</a><br><a href="https://leetcode-cn.com/problems/rotate-image/">#48 旋转图像</a><br><a href="https://leetcode-cn.com/problems/spiral-matrix/">#54 螺旋矩阵</a><br><a href="https://leetcode-cn.com/problems/spiral-matrix-ii/">#59 螺旋矩阵 II</a></p>
 <h2 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h2><h2 id="链表问题"><a href="#链表问题" class="headerlink" title="链表问题"></a>链表问题</h2><p>算法技巧：<a href="https://labuladong.gitee.io/algo/2/18/">https://labuladong.gitee.io/algo/2/18/</a><br><a href="https://leetcode-cn.com/problems/rotate-list/">#61 旋转链表</a></p>
@@ -278,6 +280,9 @@
 <p><a href="https://leetcode-cn.com/problems/convert-bst-to-greater-tree">538. 把二叉搜索树转换为累加树</a>——中序递减<br><a href="https://leetcode-cn.com/problems/binary-search-tree-to-greater-sum-tree">1038. 把二叉搜索树转换为累加树</a>——同上</p>
 <h3 id="二叉搜索树（构造）"><a href="#二叉搜索树（构造）" class="headerlink" title="二叉搜索树（构造）"></a>二叉搜索树（构造）</h3><p><a href="https://leetcode-cn.com/problems/unique-binary-search-trees">96. 不同的二叉搜索树</a>——动态规划——递归分解问题<br><a href="https://leetcode-cn.com/problems/unique-binary-search-trees-ii">（未做）95. 不同的二叉搜索树 II</a></p>
 <h3 id="二叉树（Git原理）"><a href="#二叉树（Git原理）" class="headerlink" title="二叉树（Git原理）"></a>二叉树（Git原理）</h3><p><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/">236. 二叉树的最近公共祖先</a><br><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree-ii/">1644. 二叉树的最近公共祖先 II</a><br><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree-iii/">1650. 二叉树的最近公共祖先 III</a><br><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree-iv/">1676. 二叉树的最近公共祖先 IV</a><br><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/">235. 二叉搜索树的最近公共祖先</a></p>
+<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><p>509 斐波那契数列<br>322 零钱兑换<br>377 组合总和</p>
+<p>爬楼梯<br>最长递增子序列<br>下降路径最小和</p>
+<p>746 <a href="https://leetcode-cn.com/problems/min-cost-climbing-stairs/description/">使用最小花费爬楼梯</a><br>1137 第n个泰波那契数<br><a href="https://leetcode-cn.com/problems/target-sum/">494. 目标和</a></p>
 ]]></content>
       <tags>
         <tag>leetcode</tag>
