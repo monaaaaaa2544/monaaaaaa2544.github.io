@@ -246,7 +246,18 @@
 </ol>
    <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">s=&#x27;sadfasdf,asdfa&#x27;</span><br><span class="line"></span><br><span class="line">s.split(&#x27;,&#x27;)</span><br></pre></td></tr></table></figure>
 <ol start="11">
-<li>python 设定最大值最小值<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sys.maxsize python3中设置最大值</span><br><span class="line">-sys.maxsize-1 python3中设置最小值</span><br></pre></td></tr></table></figure></li>
+<li><p>python 设定最大值最小值</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sys.maxsize python3中设置最大值</span><br><span class="line">-sys.maxsize-1 python3中设置最小值</span><br></pre></td></tr></table></figure></li>
+<li><p>输入字符转换为ASCII码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ord</span>(ch)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>输入ASCII码转换为字符</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chr(ch)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>str.find(s, beg, end)<br><a href="https://www.runoob.com/python/att-string-find.html">https://www.runoob.com/python/att-string-find.html</a></p>
+</li>
+<li><p>定义二维数组</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dp = [[0] * (n + 1) for _ in range(m + 1)] #尽量用这个</span><br><span class="line">dp2=[[0]*(n+1)]*(m+1) #这个有时会导致出错</span><br><span class="line">print(dp==dp2) # True</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h2 id="排序问题"><a href="#排序问题" class="headerlink" title="排序问题"></a>排序问题</h2><p>算法动画：<a href="https://github.com/MisterBooo/Article">https://github.com/MisterBooo/Article</a><br>涉及算法：冒泡、插入、选择排序、快速排序、堆排序、荷兰国旗问题、小范围排序练习题、计数排序、基数排序、比较器<br>快速排序(快速选择算法)：<a href="https://mp.weixin.qq.com/s/8ZTMhvHJK_He48PpSt_AmQ">https://mp.weixin.qq.com/s/8ZTMhvHJK_He48PpSt_AmQ</a><br><a href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/">#215 数组中的第K个最大元素</a>——1&#x2F;小根堆的方法——2&#x2F;快速选择的方法<br><a href="https://leetcode-cn.com/problems/sort-colors/">#75 颜色分类</a>——快排法——计数排序法——双指针法<br><a href="https://leetcode-cn.com/problems/0H97ZC/">#剑指 Offer II 075 数组相对排序</a>——哈希表，计数</p>
 <h2 id="数组问题"><a href="#数组问题" class="headerlink" title="数组问题"></a>数组问题</h2><p>算法技巧：<a href="https://labuladong.gitee.io/algo/2/19/24/">https://labuladong.gitee.io/algo/2/19/24/</a><br><a href="https://leetcode-cn.com/problems/rotate-image/">#48 旋转图像</a><br><a href="https://leetcode-cn.com/problems/spiral-matrix/">#54 螺旋矩阵</a><br><a href="https://leetcode-cn.com/problems/spiral-matrix-ii/">#59 螺旋矩阵 II</a></p>
@@ -280,9 +291,12 @@
 <p><a href="https://leetcode-cn.com/problems/convert-bst-to-greater-tree">538. 把二叉搜索树转换为累加树</a>——中序递减<br><a href="https://leetcode-cn.com/problems/binary-search-tree-to-greater-sum-tree">1038. 把二叉搜索树转换为累加树</a>——同上</p>
 <h3 id="二叉搜索树（构造）"><a href="#二叉搜索树（构造）" class="headerlink" title="二叉搜索树（构造）"></a>二叉搜索树（构造）</h3><p><a href="https://leetcode-cn.com/problems/unique-binary-search-trees">96. 不同的二叉搜索树</a>——动态规划——递归分解问题<br><a href="https://leetcode-cn.com/problems/unique-binary-search-trees-ii">（未做）95. 不同的二叉搜索树 II</a></p>
 <h3 id="二叉树（Git原理）"><a href="#二叉树（Git原理）" class="headerlink" title="二叉树（Git原理）"></a>二叉树（Git原理）</h3><p><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/">236. 二叉树的最近公共祖先</a><br><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree-ii/">1644. 二叉树的最近公共祖先 II</a><br><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree-iii/">1650. 二叉树的最近公共祖先 III</a><br><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree-iv/">1676. 二叉树的最近公共祖先 IV</a><br><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/">235. 二叉搜索树的最近公共祖先</a></p>
-<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><p>509 斐波那契数列<br>322 零钱兑换<br>377 组合总和</p>
-<p>爬楼梯<br>最长递增子序列<br>下降路径最小和</p>
-<p>746 <a href="https://leetcode-cn.com/problems/min-cost-climbing-stairs/description/">使用最小花费爬楼梯</a><br>1137 第n个泰波那契数<br><a href="https://leetcode-cn.com/problems/target-sum/">494. 目标和</a></p>
+<h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><p>509 斐波那契数列<br>322 零钱兑换<br>377 组合总和<br>爬楼梯</p>
+<p>746 <a href="https://leetcode-cn.com/problems/min-cost-climbing-stairs/description/">使用最小花费爬楼梯</a><br>1137 第n个泰波那契数<br><a href="https://leetcode-cn.com/problems/target-sum/">494. 目标和</a><br><a href="https://www.nowcoder.com/practice/459bd355da1549fa8a49e350bf3df484?tpId=295&fromPut=pc_wzcpa_labuladong_sf">最大子数组和</a></p>
+<h6 id="股票问题"><a href="#股票问题" class="headerlink" title="股票问题"></a>股票问题</h6><p>算法技巧：<a href="https://labuladong.github.io/algo/3/26/96/">https://labuladong.github.io/algo/3/26/96/</a><br>121<br>122<br>309<br>714</p>
+<p><a href="https://leetcode-cn.com/problems/minimum-falling-path-sum/">931. 下降路径最小和</a><br><a href="https://leetcode-cn.com/problems/li-wu-de-zui-da-jie-zhi-lcof/">剑指 Offer 47. 礼物的最大价值</a></p>
+<h6 id="字符串匹配、KMP"><a href="#字符串匹配、KMP" class="headerlink" title="字符串匹配、KMP"></a>字符串匹配、KMP</h6><p><a href="https://labuladong.github.io/algo/3/26/97/">https://labuladong.github.io/algo/3/26/97/</a><br><a href="https://leetcode-cn.com/problems/implement-strstr/">28. 实现 strStr()</a><br><a href="https://leetcode-cn.com/problems/repeated-substring-pattern/">459. 重复的子字符串</a></p>
+<h6 id="子序列问题"><a href="#子序列问题" class="headerlink" title="子序列问题"></a>子序列问题</h6><p><a href="https://labuladong.github.io/algo/3/24/79/">https://labuladong.github.io/algo/3/24/79/</a><br><a href="https://labuladong.github.io/algo/3/24/80/">https://labuladong.github.io/algo/3/24/80/</a><br>最长递增子序列<br><a href="https://leetcode-cn.com/problems/longest-common-subsequence/">1143. 最长公共子序列</a><br><a href="https://leetcode-cn.com/problems/delete-operation-for-two-strings/">583. 两个字符串的删除操作</a><br><a href="https://leetcode-cn.com/problems/minimum-ascii-delete-sum-for-two-strings/">712. 两个字符串的最小ASCII删除和</a><br><a href="https://leetcode-cn.com/problems/longest-palindromic-subsequence/">516. 最长回文子序列</a></p>
 ]]></content>
       <tags>
         <tag>leetcode</tag>
@@ -480,5 +494,21 @@
 
 <h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><p><a href='https://muyiy.cn/blog/'>木易杨前端进阶</a><br><a href='https://staging-cn.vuejs.org/guide/typescript/composition-api.html'>更清楚的Vue3文档</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>前端CSS</title>
+    <url>/2022/04/30/%E5%89%8D%E7%AB%AFCSS/</url>
+    <content><![CDATA[<p>CSS相关知识</p>
+<span id="more"></span>
+
+
+<h2 id="CSS定位"><a href="#CSS定位" class="headerlink" title="CSS定位"></a>CSS定位</h2><p>position: absolute|relative|fixed|sticky<br>z-index:0|1 该属性可以解决重叠元素问题</p>
+<p><a href='https://www.ruanyifeng.com/blog/2019/11/css-position.html'>CSS 定位详解</a><br><a href='https://developer.mozilla.org/zh-CN/docs/Learn/CSS/CSS_layout/Positioning'>CSS 定位 MDN</a><br><a href='https://jsbin.com/jafeqarepo/edit?html,css,output'>demo</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>前端JS</title>
+    <url>/2022/04/30/%E5%89%8D%E7%AB%AFJS/</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
