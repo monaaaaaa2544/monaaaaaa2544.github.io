@@ -258,6 +258,17 @@
 </li>
 <li><p>定义二维数组</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dp = [[0] * (n + 1) for _ in range(m + 1)] #尽量用这个</span><br><span class="line">dp2=[[0]*(n+1)]*(m+1) #这个有时会导致出错</span><br><span class="line">print(dp==dp2) # True</span><br></pre></td></tr></table></figure></li>
+<li><p>遍历哈希表</p>
+</li>
+</ol>
+   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for k in h.keys():</span><br><span class="line">            print(k)</span><br></pre></td></tr></table></figure>
+
+<ol start="17">
+<li><p>遍历枚举类型数组</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for i,num in enumerate(nums):</span><br><span class="line">    print(i,num)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>abs()</p>
+</li>
 </ol>
 <h2 id="排序问题"><a href="#排序问题" class="headerlink" title="排序问题"></a>排序问题</h2><p>算法动画：<a href="https://github.com/MisterBooo/Article">https://github.com/MisterBooo/Article</a><br>涉及算法：冒泡、插入、选择排序、快速排序、堆排序、荷兰国旗问题、小范围排序练习题、计数排序、基数排序、比较器<br>快速排序(快速选择算法)：<a href="https://mp.weixin.qq.com/s/8ZTMhvHJK_He48PpSt_AmQ">https://mp.weixin.qq.com/s/8ZTMhvHJK_He48PpSt_AmQ</a><br><a href="https://leetcode-cn.com/problems/kth-largest-element-in-an-array/">#215 数组中的第K个最大元素</a>——1&#x2F;小根堆的方法——2&#x2F;快速选择的方法<br><a href="https://leetcode-cn.com/problems/sort-colors/">#75 颜色分类</a>——快排法——计数排序法——双指针法<br><a href="https://leetcode-cn.com/problems/0H97ZC/">#剑指 Offer II 075 数组相对排序</a>——哈希表，计数</p>
 <h2 id="数组问题"><a href="#数组问题" class="headerlink" title="数组问题"></a>数组问题</h2><p>算法技巧：<a href="https://labuladong.gitee.io/algo/2/19/24/">https://labuladong.gitee.io/algo/2/19/24/</a><br><a href="https://leetcode-cn.com/problems/rotate-image/">#48 旋转图像</a><br><a href="https://leetcode-cn.com/problems/spiral-matrix/">#54 螺旋矩阵</a><br><a href="https://leetcode-cn.com/problems/spiral-matrix-ii/">#59 螺旋矩阵 II</a></p>
@@ -292,12 +303,16 @@
 <h3 id="二叉搜索树（构造）"><a href="#二叉搜索树（构造）" class="headerlink" title="二叉搜索树（构造）"></a>二叉搜索树（构造）</h3><p><a href="https://leetcode-cn.com/problems/unique-binary-search-trees">96. 不同的二叉搜索树</a>——动态规划——递归分解问题<br><a href="https://leetcode-cn.com/problems/unique-binary-search-trees-ii">（未做）95. 不同的二叉搜索树 II</a></p>
 <h3 id="二叉树（Git原理）"><a href="#二叉树（Git原理）" class="headerlink" title="二叉树（Git原理）"></a>二叉树（Git原理）</h3><p><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree/">236. 二叉树的最近公共祖先</a><br><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree-ii/">1644. 二叉树的最近公共祖先 II</a><br><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree-iii/">1650. 二叉树的最近公共祖先 III</a><br><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-tree-iv/">1676. 二叉树的最近公共祖先 IV</a><br><a href="https://leetcode-cn.com/problems/lowest-common-ancestor-of-a-binary-search-tree/">235. 二叉搜索树的最近公共祖先</a></p>
 <h2 id="动态规划"><a href="#动态规划" class="headerlink" title="动态规划"></a>动态规划</h2><p>509 斐波那契数列<br>322 零钱兑换<br>377 组合总和<br>爬楼梯</p>
-<p>746 <a href="https://leetcode-cn.com/problems/min-cost-climbing-stairs/description/">使用最小花费爬楼梯</a><br>1137 第n个泰波那契数<br><a href="https://leetcode-cn.com/problems/target-sum/">494. 目标和</a><br><a href="https://www.nowcoder.com/practice/459bd355da1549fa8a49e350bf3df484?tpId=295&fromPut=pc_wzcpa_labuladong_sf">最大子数组和</a><br><a href="https://leetcode-cn.com/problems/chou-shu-lcof">剑指 Offer 49. 丑数</a></p>
+<p>746 <a href="https://leetcode-cn.com/problems/min-cost-climbing-stairs/description/">使用最小花费爬楼梯</a><br>1137 第n个泰波那契数<br><a href="https://leetcode-cn.com/problems/target-sum/">494. 目标和</a><br><a href="https://www.nowcoder.com/practice/459bd355da1549fa8a49e350bf3df484?tpId=295&fromPut=pc_wzcpa_labuladong_sf">最大子数组和</a><br><a href="https://leetcode-cn.com/problems/chou-shu-lcof">剑指 Offer 49. 丑数</a><br><a href="https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/">剑指 Offer 10- I. 斐波那契数列</a><br><a href="https://leetcode-cn.com/problems/lian-xu-zi-shu-zu-de-zui-da-he-lcof/">剑指 Offer 42. 连续子数组的最大和</a><br><a href="https://leetcode-cn.com/problems/qing-wa-tiao-tai-jie-wen-ti-lcof/">剑指 Offer 10- II. 青蛙跳台阶问题</a><br><a href="https://leetcode-cn.com/problems/jian-sheng-zi-lcof/">剑指 Offer 14- I. 剪绳子</a></p>
 <h6 id="股票问题"><a href="#股票问题" class="headerlink" title="股票问题"></a>股票问题</h6><p>算法技巧：<a href="https://labuladong.github.io/algo/3/26/96/">https://labuladong.github.io/algo/3/26/96/</a><br>121<br>122<br>309<br>714<br><a href="https://leetcode-cn.com/problems/gu-piao-de-zui-da-li-run-lcof/">剑指 Offer 63. 股票的最大利润</a></p>
 <h6 id="路径最小"><a href="#路径最小" class="headerlink" title="路径最小"></a>路径最小</h6><p><a href="https://labuladong.github.io/algo/3/26/86/">https://labuladong.github.io/algo/3/26/86/</a><br><a href="https://leetcode-cn.com/problems/minimum-path-sum/">64. 最小路径和</a><br><a href="https://leetcode-cn.com/problems/minimum-falling-path-sum/">931. 下降路径最小和</a><br><a href="https://leetcode-cn.com/problems/li-wu-de-zui-da-jie-zhi-lcof/">剑指 Offer 47. 礼物的最大价值</a></p>
 <h6 id="字符串匹配、KMP"><a href="#字符串匹配、KMP" class="headerlink" title="字符串匹配、KMP"></a>字符串匹配、KMP</h6><p><a href="https://labuladong.github.io/algo/3/26/97/">https://labuladong.github.io/algo/3/26/97/</a><br><a href="https://leetcode-cn.com/problems/implement-strstr/">28. 实现 strStr()</a><br><a href="https://leetcode-cn.com/problems/repeated-substring-pattern/">459. 重复的子字符串</a></p>
 <h6 id="子序列问题"><a href="#子序列问题" class="headerlink" title="子序列问题"></a>子序列问题</h6><p><a href="https://labuladong.github.io/algo/3/24/79/">https://labuladong.github.io/algo/3/24/79/</a><br><a href="https://labuladong.github.io/algo/3/24/80/">https://labuladong.github.io/algo/3/24/80/</a><br>最长递增子序列<br><a href="https://leetcode-cn.com/problems/longest-common-subsequence/">1143. 最长公共子序列</a><br><a href="https://leetcode-cn.com/problems/delete-operation-for-two-strings/">583. 两个字符串的删除操作</a><br><a href="https://leetcode-cn.com/problems/minimum-ascii-delete-sum-for-two-strings/">712. 两个字符串的最小ASCII删除和</a><br><a href="https://leetcode-cn.com/problems/longest-palindromic-subsequence/">516. 最长回文子序列</a></p>
 <h6 id="背包问题"><a href="#背包问题" class="headerlink" title="背包问题"></a>背包问题</h6><p><a href="https://labuladong.github.io/algo/3/25/82/">https://labuladong.github.io/algo/3/25/82/</a><br><a href="https://labuladong.github.io/algo/3/25/84/">https://labuladong.github.io/algo/3/25/84/</a><br><a href="https://labuladong.github.io/algo/3/25/83/">https://labuladong.github.io/algo/3/25/83/</a><br><a href="https://leetcode-cn.com/problems/coin-change-2/">518. 零钱兑换 II</a><br><a href="https://leetcode-cn.com/problems/partition-equal-subset-sum/">416. 分割等和子集</a></p>
+<h6 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h6><p><a href="https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/">剑指 Offer 03. 数组中重复的数字</a>——原地数组当哈希（优化空间复杂度）<br><a href="https://leetcode-cn.com/problems/find-all-duplicates-in-an-array/">442. 数组中重复的数据</a>——原地数组当哈希（优化空间复杂度）<br><a href="https://leetcode-cn.com/problems/shu-zu-zhong-chu-xian-ci-shu-chao-guo-yi-ban-de-shu-zi-lcof/">剑指 Offer 39. 数组中出现次数超过一半</a>——摩尔投票<br><a href="https://leetcode-cn.com/problems/majority-element-ii/">求众数 II</a>——摩尔投票</p>
+<h6 id="leetcode周赛"><a href="#leetcode周赛" class="headerlink" title="leetcode周赛"></a>leetcode周赛</h6><ol start="6056">
+<li>字符串中最大的 3 位相同数字</li>
+</ol>
 ]]></content>
       <tags>
         <tag>leetcode</tag>
@@ -484,6 +499,17 @@
 <h2 id="SD-Layer-Stain-Deconvolutional-Layer-for-CNNs-in-Medical-Microscopic-Imaging"><a href="#SD-Layer-Stain-Deconvolutional-Layer-for-CNNs-in-Medical-Microscopic-Imaging" class="headerlink" title="SD-Layer: Stain Deconvolutional Layer for CNNs in Medical Microscopic Imaging"></a>SD-Layer: Stain Deconvolutional Layer for CNNs in Medical Microscopic Imaging</h2><p>分类恶性未成熟白细胞 (WBC) 和正常未成熟白细胞<br>创新在于提出SD-Layer层</p>
 <h2 id="auto-attack"><a href="#auto-attack" class="headerlink" title="auto attack"></a>auto attack</h2><h2 id="对抗攻击研究方向"><a href="#对抗攻击研究方向" class="headerlink" title="对抗攻击研究方向"></a>对抗攻击研究方向</h2><p><a href='https://www.zhihu.com/question/359151065/answers/updated'>AI研究方向：对抗攻击研究前景怎么样？</a><br><a href='https://mp.weixin.qq.com/s?__biz=Mzg4NDYwOTUwNA==&mid=2247484255&idx=1&sn=7115dc04ea48fb1c35ee2a0a97f5d38f&chksm=cfb4dbd0f8c352c63fad390b95c7a6c0a7d3c874929dfc3e82bbff53c3551767545f36d16e50&token=1530652917&lang=zh_CN#rd'>【CV算法兵器】“晓风残月” -&gt;对抗攻击“兵器”大放送（综述篇）</a><br><a href='https://blog.csdn.net/c9Yv2cf9I06K2A9E/article/details/108067350'>经典对抗攻击Deepfool原理详解与代码解读</a></p>
 <h2 id="对抗领域大佬"><a href="#对抗领域大佬" class="headerlink" title="对抗领域大佬"></a>对抗领域大佬</h2><p><a href='https://www.zhihu.com/people/cihangxie'>Cihang Xie知乎</a><br><a href='https://cihangxie.github.io/'>Cihang Xie主页</a><br><a href="https://yisenwang.github.io/">王奕森</a><br><a href='http://loganengstrom.com/'> Logan Engstrom</a><br><a href='https://madry.mit.edu/'>Aleksander Mądry</a><br><a href='https://scholar.google.com/citations?user=26eh1jAAAAAJ&hl=zh-CN&oi=sra'>Dimitris Tsipras</a><br><a href='http://xingjunma.com/'>Xingjun Ma</a></p>
+<h6 id="小组会"><a href="#小组会" class="headerlink" title="小组会"></a>小组会</h6><p>论文小问题修改了</p>
+<p><strong>各种生成对抗样本算法对比PPT做好了，其中STN和One pixel攻击算法是否可以使用并替换现有算法，解释STN和One pixel原理</strong>——调研最新、最好的方法</p>
+<p><strong>STN生成对抗样本算法原理，实验结果如何</strong></p>
+<p><strong>exp:</strong></p>
+<ol>
+<li>为什么rotate没有效果，是不是我设置nums&#x3D;60固定的缘故，展示nums和range值范围——用BO搜索最优点</li>
+<li>虽然rotate对Acc下降没有效果，但invariance下降了就说明预测标签会变化，模型不鲁棒了，所以还是可以使用rotate对抗样本呢？——用Recall等更多的指标来分析结果</li>
+<li><strong>展示nums随着range更改的单一rotate、transition实验结果</strong></li>
+<li><strong>混合最差的样本设置是否是（trans&#x3D;12 scale&#x3D;0.5 rotate&#x3D;90），通过这个来缩小搜索范围，加快搜素速度</strong></li>
+<li>展示scale实验结果，讨论缩放的场景是否有可能   ——没有对抗的方法生成scale的样本，不可行</li>
+</ol>
 ]]></content>
       <tags>
         <tag>keyan</tag>
