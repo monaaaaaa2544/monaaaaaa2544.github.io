@@ -593,12 +593,28 @@
 <h6 id="宏任务"><a href="#宏任务" class="headerlink" title="宏任务"></a>宏任务</h6><p>setTimeout setInterval requestAnimationFrame</p>
 <h6 id="微任务"><a href="#微任务" class="headerlink" title="微任务"></a>微任务</h6><p>Promises queueMicrotask MutationObserver</p>
 <h6 id="Node的六个阶段"><a href="#Node的六个阶段" class="headerlink" title="Node的六个阶段"></a>Node的六个阶段</h6><p>【1 timers】            setTimeout setInterval 【nextTick】<br>【2 I&#x2F;O callbacks】<br>【3 idle,prepare】<br>【4 poll】              轮询 文件【nextTick】<br>【5 check】             setImmediate【nextTick】<br>【6 close callbacks】<br>nextTick、Promise.then()在每一个阶段的末尾立即执行</p>
+<h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><h6 id="Ajax介绍"><a href="#Ajax介绍" class="headerlink" title="Ajax介绍"></a>Ajax介绍</h6><p>可参考：<a href='https://www.zhihu.com/question/20874229'>你怎么用最通俗的话解释AJAX是什么东西</a></p>
+<p>直白地说，就是没用AJAX的网页，你点一个按钮就要刷新一下页面，尽管新页面上只有一行字和当前页面不一样，但你还是要无聊地等待页面刷新。用了AJAX之后，你点击，然后页面上的一行字就变化了，页面本身不用刷。AJAX只是一种技术，不是某种具体的东西。不同的浏览器有自己实现AJAX的组件。</p>
+<p>AJAX&#x3D;异步传输+JS+XML（现在其实是用JSON数据格式代替XML）</p>
+<p>使用Ajax技术不必刷新整个页面，只需对页面的局部进行更新，可以节省网络带宽，提高页面的加载速度，从而缩短用户等待时间，改善用户体验</p>
+<h6 id="Ajax实现"><a href="#Ajax实现" class="headerlink" title="Ajax实现"></a>Ajax实现</h6><p>可参考：<br><a href='https://www.liaoxuefeng.com/wiki/1022910821149312/1023022332902400'>廖雪峰的AjAX</a><br><a href='https://developer.mozilla.org/en-US/docs/Web/Guide/AJAX/Getting_Started'>MDN AJAX</a></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">success</span>(<span class="params">text</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> textarea = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;test-response-text&#x27;</span>);</span><br><span class="line">    textarea.<span class="property">value</span> = text;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">fail</span>(<span class="params">code</span>) &#123;</span><br><span class="line">    <span class="keyword">var</span> textarea = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;test-response-text&#x27;</span>);</span><br><span class="line">    textarea.<span class="property">value</span> = <span class="string">&#x27;Error code: &#x27;</span> + code;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> request = <span class="keyword">new</span> <span class="title class_">XMLHttpRequest</span>(); <span class="comment">// 新建XMLHttpRequest对象</span></span><br><span class="line"></span><br><span class="line">request.<span class="property">onreadystatechange</span> = <span class="keyword">function</span> (<span class="params"></span>) &#123; <span class="comment">// 状态发生变化时，函数被回调</span></span><br><span class="line">    <span class="keyword">if</span> (request.<span class="property">readyState</span> === <span class="number">4</span>) &#123; <span class="comment">// 成功完成</span></span><br><span class="line">        <span class="comment">// 判断响应结果:</span></span><br><span class="line">        <span class="keyword">if</span> (request.<span class="property">status</span> === <span class="number">200</span>) &#123;</span><br><span class="line">            <span class="comment">// 成功，通过responseText拿到响应的文本:</span></span><br><span class="line">            <span class="keyword">return</span> <span class="title function_">success</span>(request.<span class="property">responseText</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="comment">// 失败，根据响应码判断失败原因:</span></span><br><span class="line">            <span class="keyword">return</span> <span class="title function_">fail</span>(request.<span class="property">status</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// HTTP请求还在继续...</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h6 id="实现跨域的几种方法"><a href="#实现跨域的几种方法" class="headerlink" title="实现跨域的几种方法"></a>实现跨域的几种方法</h6><p>可以参考：<a href='https://www.liaoxuefeng.com/wiki/1022910821149312/1023022332902400'>廖雪峰的AjAX</a></p>
+<ol>
+<li>用flash插件发送HTTP请求</li>
+<li>再同源域名下开一个代理服务器来转发，代理服务器把结果返回</li>
+<li>JSONP。这种方法利用了浏览器允许跨域引用JavaScript资源</li>
+<li>CORS。目标域设置Access-Control-Allow-Origin</li>
+</ol>
 ]]></content>
   </entry>
   <entry>
     <title>深度学习中pytorch操作</title>
     <url>/2022/05/13/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E4%B8%ADpytorch%E6%93%8D%E4%BD%9C/</url>
-    <content><![CDATA[<span id="more"></span>
+    <content><![CDATA[<p>pytorch 数据处理</p>
+<span id="more"></span>
 
 <h3 id="创建空的tensor"><a href="#创建空的tensor" class="headerlink" title="创建空的tensor"></a>创建空的tensor</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">logits_cpu = torch.tensor([])</span><br></pre></td></tr></table></figure>
 
