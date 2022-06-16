@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="面经汇总：https:&#x2F;&#x2F;www.nowcoder.com&#x2F;discuss&#x2F;experience?tagId&#x3D;644 腾讯前端实习一,二面作者：dara羽星链接：https:&#x2F;&#x2F;www.nowcoder.com&#x2F;discuss&#x2F;954603?type&#x3D;post&amp;order&#x3D;hot&amp;pos&#x3D;&amp;page&#x3D;1&amp;ncTraceId&#x3D;&amp;channel&#x3D;-1&amp;">
+<meta name="description" content="面经汇总：https:&#x2F;&#x2F;www.nowcoder.com&#x2F;discuss&#x2F;experience?tagId&#x3D;644 每日刷的面经宝典要有针对性的刷题，根据项目来衍生出刷的题，最好用梅花生长的项目  100个请求哪一个最快发到客户端，考的是Promise 并发  简单介绍自己的项目（重新用Vue3重构了下）  vue3简单介绍一下（Vue3引入的核心功能，对比Vue2）  Vuex，比较下mut">
 <meta property="og:type" content="article">
 <meta property="og:title" content="mianjin">
 <meta property="og:url" content="http://example.com/2022/05/24/mianjin/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="面经汇总：https:&#x2F;&#x2F;www.nowcoder.com&#x2F;discuss&#x2F;experience?tagId&#x3D;644 腾讯前端实习一,二面作者：dara羽星链接：https:&#x2F;&#x2F;www.nowcoder.com&#x2F;discuss&#x2F;954603?type&#x3D;post&amp;order&#x3D;hot&amp;pos&#x3D;&amp;page&#x3D;1&amp;ncTraceId&#x3D;&amp;channel&#x3D;-1&amp;">
+<meta property="og:description" content="面经汇总：https:&#x2F;&#x2F;www.nowcoder.com&#x2F;discuss&#x2F;experience?tagId&#x3D;644 每日刷的面经宝典要有针对性的刷题，根据项目来衍生出刷的题，最好用梅花生长的项目  100个请求哪一个最快发到客户端，考的是Promise 并发  简单介绍自己的项目（重新用Vue3重构了下）  vue3简单介绍一下（Vue3引入的核心功能，对比Vue2）  Vuex，比较下mut">
 <meta property="og:locale">
 <meta property="og:image" content="https://image-static.segmentfault.com/160/418/1604181361-5a1397cca5644">
 <meta property="article:published_time" content="2022-05-24T13:51:23.000Z">
-<meta property="article:modified_time" content="2022-06-16T14:01:15.993Z">
+<meta property="article:modified_time" content="2022-06-16T14:09:34.594Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://image-static.segmentfault.com/160/418/1604181361-5a1397cca5644">
@@ -370,7 +370,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2.7k
+                  3.5k
                 </span>
               
 
@@ -386,7 +386,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  11
+                  15
                 </span>
               
             </div>
@@ -409,6 +409,106 @@
       
         <span id="more"></span>
 <p>面经汇总：<a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/experience?tagId=644">https://www.nowcoder.com/discuss/experience?tagId=644</a></p>
+<h2 id="每日刷的面经宝典"><a href="#每日刷的面经宝典" class="headerlink" title="每日刷的面经宝典"></a>每日刷的面经宝典</h2><p>要有针对性的刷题，根据项目来衍生出刷的题，最好用梅花生长的项目</p>
+<ol>
+<li><p>100个请求哪一个最快发到客户端，考的是Promise 并发</p>
+</li>
+<li><p>简单介绍自己的项目（重新用Vue3重构了下）</p>
+</li>
+<li><p>vue3简单介绍一下（Vue3引入的核心功能，对比Vue2）</p>
+</li>
+<li><p>Vuex，比较下mutation和actions</p>
+</li>
+<li><p>前端怎么实现路由中间件，可以进行一些状态检测，例如，登录检测</p>
+</li>
+<li><p>js常用的异步编程有那些，callback&#x3D;》promise&#x3D;》generator&#x3D;》async&#x3D;》await</p>
+</li>
+<li><p>发布订阅模式，设计模式</p>
+</li>
+<li><p>setTimeout执行机制</p>
+</li>
+<li><p>Promise.all</p>
+</li>
+<li><p>使用Promise实现：限制异步操作的并发个数，并尽可能快的完成全部</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">count=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">def <span class="title function_">recur</span>(u):</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="title function_">len</span>(u)==<span class="number">0</span>: <span class="keyword">return</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="title function_">range</span>(<span class="number">3</span>-count):</span><br><span class="line"></span><br><span class="line">​    cur=u.<span class="title function_">shift</span>()</span><br><span class="line"></span><br><span class="line">​    count++</span><br><span class="line"></span><br><span class="line">​	<span class="title function_">loadImg</span>(cur).<span class="title function_">finally</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">​    count--</span><br><span class="line"></span><br><span class="line">​    <span class="title function_">recur</span>(u)</span><br><span class="line"></span><br><span class="line">​    &#125;)</span><br><span class="line"></span><br><span class="line"><span class="title function_">recur</span>(urls)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+</li>
+<li><p>第1题：实现 Promise.race 函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="property">race</span>=<span class="keyword">function</span>(<span class="params">arr</span>)&#123;</span><br><span class="line"></span><br><span class="line">​	<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span>(<span class="params">resolve, rejuct</span>)&#123;</span><br><span class="line"></span><br><span class="line">​			<span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;arr.<span class="property">length</span>;i++)&#123;</span><br><span class="line"></span><br><span class="line">​				<span class="title class_">Promise</span>.<span class="title function_">resolve</span>(arr[i]).<span class="title function_">then</span>(resolve, reject)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第2题：promise.catch后面的.then还会执行吗？</p>
+</li>
+</ol>
+<p>会继续执行，.catch后也会返回一个promise对象, .then()会继续执行</p>
+<ol start="14">
+<li><p>第4题：使用Promise封装一个异步加载图片的方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">loadImg</span>(<span class="params">url</span>)&#123;</span><br><span class="line"></span><br><span class="line">​		<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>)=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">​				<span class="keyword">const</span> img=<span class="keyword">new</span> <span class="title class_">Image</span>()</span><br><span class="line"></span><br><span class="line">​				img.<span class="property">onload</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">​						<span class="title function_">resolve</span>(img)</span><br><span class="line"></span><br><span class="line">​				&#125;</span><br><span class="line"></span><br><span class="line">​			&#125;)</span><br><span class="line"></span><br><span class="line">​		&#125;-</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+<li><p>Fetch取消请求，并行请求</p>
+</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://zh.javascript.info/fetch-abort">https://zh.javascript.info/fetch-abort</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43634982/article/details/120414004">https://blog.csdn.net/qq_43634982/article/details/120414004</a></p>
+<ol start="15">
+<li><p>什么是Promise</p>
+</li>
+<li><p>二分查找</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">nums</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">target</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> search = <span class="keyword">function</span>(<span class="params">nums, target</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> l=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">let</span> r=nums.<span class="property">length</span>-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">let</span> mid=<span class="title class_">Math</span>.<span class="title function_">floor</span>((l+r)/<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(nums.<span class="property">length</span>===<span class="number">0</span>)&#123; <span class="keyword">return</span> -<span class="number">1</span>&#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(l&lt;=r)&#123;</span><br><span class="line">            </span><br><span class="line">        mid = <span class="title class_">Math</span>.<span class="title function_">floor</span>((l+r)/<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(target===nums[mid])&#123;  <span class="keyword">return</span> mid&#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(target&lt;nums[mid])&#123;	r=mid-<span class="number">1</span>&#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (target&gt;nums[mid])&#123;	l=mid+<span class="number">1</span>&#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<ol start="17">
+<li><p>第6题：使用Promise实现红绿灯交替重复亮</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">p1=<span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>)=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">​	<span class="built_in">setTimeout</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">​			<span class="title function_">red</span>()</span><br><span class="line"></span><br><span class="line">​			<span class="title function_">resolve</span>()</span><br><span class="line"></span><br><span class="line">​	&#125;, <span class="number">3000</span>)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">step</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">​		p1.<span class="title function_">then</span>(p2).<span class="title function_">then</span>(p3).<span class="title function_">then</span>(<span class="function">()=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">​			<span class="title function_">step</span>()</span><br><span class="line"></span><br><span class="line">​	&#125;)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="title function_">step</span>()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第46题：【Promise第一题】下面代码的输出是什么？</p>
+</li>
+<li><p>第45题：【Promise第三题】下面代码的输出是什么？</p>
+</li>
+<li><p>第44题：【Promise第四题】下面代码的输出是什么？</p>
+</li>
+<li><p>第43题：【Promise第五题】下面代码的输出是什么？</p>
+</li>
+<li><p>第42题：【Promise第二题】下面代码的输出是什么？</p>
+</li>
+<li><p>第3题：说说你对事件循环的理解</p>
+</li>
+<li><p>第2题：什么是响应式设计？响应式设计的基本原理是什么？如何进行实现？<br><a target="_blank" rel="noopener" href="https://fe.ecool.fun/topic/dc8c6233-f645-444c-8e31-f18bc3f5244f?orderBy=updateTime&amp;order=desc&amp;titleKey=%E5%93%8D%E5%BA%94%E5%BC%8F">https://fe.ecool.fun/topic/dc8c6233-f645-444c-8e31-f18bc3f5244f?orderBy=updateTime&amp;order=desc&amp;titleKey=%E5%93%8D%E5%BA%94%E5%BC%8F</a></p>
+</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media">https://developer.mozilla.org/zh-CN/docs/Web/CSS/@media</a></p>
+<p><a target="_blank" rel="noopener" href="https://chinese.freecodecamp.org/news/css-media-queries-breakpoints-media-types-standard-resolutions-and-more/">https://chinese.freecodecamp.org/news/css-media-queries-breakpoints-media-types-standard-resolutions-and-more/</a></p>
+<ul>
+<li><p>媒体查询</p>
+</li>
+<li><p>百分比</p>
+</li>
+<li><p>vw vh</p>
+</li>
+<li><p>rem</p>
+</li>
+<li><p>flex</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//媒体查询</span><br><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span>(<span class="attribute">max-width</span>: <span class="number">600px</span>)&#123;</span><br><span class="line">	<span class="selector-tag">body</span>&#123;</span><br><span class="line">		<span class="attribute">font-size</span>:<span class="number">18px</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<ol start="25">
+<li><p>第2题：怎么让CSS flex布局最后一行列表左对齐？</p>
+</li>
+<li><p>第3题：canvas在标签上设置宽高，与在style中设置宽高有什么区别？</p>
+</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/yellowmushroom/article/details/89388377">https://blog.csdn.net/yellowmushroom/article/details/89388377</a></p>
+<p>标签的width和height是设置画布宽度和高度，不会被拉伸</p>
 <h2 id="腾讯前端实习一-二面"><a href="#腾讯前端实习一-二面" class="headerlink" title="腾讯前端实习一,二面"></a>腾讯前端实习一,二面</h2><p>作者：dara羽星<br>链接：<a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/954603?type=post&amp;order=hot&amp;pos=&amp;page=1&amp;ncTraceId=&amp;channel=-1&amp;source_id=search_post_nctrack&amp;gio_id=6C9B02BCD77AC7951DD89A4914063199-1653400236717">https://www.nowcoder.com/discuss/954603?type=post&amp;order=hot&amp;pos=&amp;page=1&amp;ncTraceId=&amp;channel=-1&amp;source_id=search_post_nctrack&amp;gio_id=6C9B02BCD77AC7951DD89A4914063199-1653400236717</a><br>来源：牛客网</p>
 <p>因为没录音只能想一点写一点。可能有很多遗漏<br>5.17一面 时长1h5min<br>    1. 隐藏元素的方法以及分别有什么区别<br>        <a target="_blank" rel="noopener" href="https://juejin.cn/post/6943856363248287752">https://juejin.cn/post/6943856363248287752</a><br>        <a target="_blank" rel="noopener" href="https://jsbin.com/wesidaluyi/edit?html,output">https://jsbin.com/wesidaluyi/edit?html,output</a><br>        display: none<br>        visibility: hidden<br>        opacity: 0<br>        position: relative<br>        position: absolute</p>
 <pre><code>2. BFC介绍
@@ -549,15 +649,15 @@ https://juejin.cn/post/6844903593955328007
 </li>
 </ol>
 <ul>
-<li>盒子模型：设置box-sizing:border-box <a target="_blank" rel="noopener" href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_box-sizing_old">https://www.w3schools.com/css/tryit.asp?filename=trycss3_box-sizing_old</a></li>
+<li>盒子模型<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">设置<span class="attribute">box-sizing</span>:border-box https://www.w3schools.com/css/tryit.asp?filename=trycss3_box-sizing_old</span><br></pre></td></tr></table></figure></li>
 <li>nth-child(2)</li>
 <li>box-shadow</li>
 <li>flex grid布局</li>
 <li>背景属性</li>
-<li>transition过渡 ——transition: width(属性) 2s(时间) <a target="_blank" rel="noopener" href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_transition1">https://www.w3schools.com/css/tryit.asp?filename=trycss3_transition1</a></li>
-<li>transform转换——transform: rotate(90deg) <a target="_blank" rel="noopener" href="https://www.runoob.com/try/try.php?filename=trycss3_transform">https://www.runoob.com/try/try.php?filename=trycss3_transform</a></li>
-<li>animation动画——animation: name 5s infinite; @keyframes name{ from{left: 0px} to{left: 200px}} <a target="_blank" rel="noopener" href="https://www.runoob.com/try/try.php?filename=trycss3_animation">https://www.runoob.com/try/try.php?filename=trycss3_animation</a></li>
-<li>媒体查询——@media screen and(max-width: 300px){ body{ background: green}} <a target="_blank" rel="noopener" href="https://www.runoob.com/try/try.php?filename=trycss3_media_example1">https://www.runoob.com/try/try.php?filename=trycss3_media_example1</a></li>
+<li>transition过渡 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">transition</span>: <span class="built_in">width</span>(属性) <span class="number">2s</span>(时间)</span><br><span class="line">https://www.w3schools.com/css/tryit.asp?filename=trycss3_transition1</span><br></pre></td></tr></table></figure></li>
+<li>transform转换<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">90deg</span>)</span><br><span class="line"> https://www.runoob.com/try/try.php?filename=trycss3_transform</span><br></pre></td></tr></table></figure></li>
+<li>animation动画<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">animation</span>: name <span class="number">5s</span> infinite; <span class="keyword">@keyframes</span> name&#123; <span class="selector-tag">from</span>&#123;<span class="attribute">left</span>: <span class="number">0px</span>&#125; <span class="selector-tag">to</span>&#123;<span class="attribute">left</span>: <span class="number">200px</span>&#125;&#125;</span><br><span class="line"> https://www.runoob.com/try/try.php?filename=trycss3_animation</span><br></pre></td></tr></table></figure></li>
+<li>媒体查询<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span>(<span class="attribute">max-width</span>: <span class="number">300px</span>)&#123; <span class="selector-tag">body</span>&#123; <span class="attribute">background</span>: green&#125;&#125; </span><br><span class="line">https://www.runoob.com/try/try.php?filename=trycss3_media_example1</span><br></pre></td></tr></table></figure></li>
 </ul>
 <ol start="4">
 <li><p>数据结构有哪些？<br><a target="_blank" rel="noopener" href="https://fe.ecool.fun/topic/e00b6fcb-fb55-435f-ac74-687734871111?orderBy=updateTime&amp;order=desc&amp;titleKey=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">https://fe.ecool.fun/topic/e00b6fcb-fb55-435f-ac74-687734871111?orderBy=updateTime&amp;order=desc&amp;titleKey=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84</a><br>栈、队列、链表、数组：连续的存储单元、树、图、堆、散列表<br>Set和Map数据结构：Set集合没有重复元素、Map字典类似于哈希表——<a target="_blank" rel="noopener" href="https://fe.ecool.fun/topic/4232c372-316f-4a53-99b9-6d9299b7e91f?orderBy=updateTime&amp;order=desc&amp;titleKey=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">https://fe.ecool.fun/topic/4232c372-316f-4a53-99b9-6d9299b7e91f?orderBy=updateTime&amp;order=desc&amp;titleKey=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84</a></p>
@@ -579,7 +679,6 @@ https://juejin.cn/post/6844903593955328007
 </ol>
 <p>三者都可以改变this指向</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">apply</span>(obj, [<span class="number">1</span>,<span class="number">2</span>])<span class="comment">//传入参数是一个数组</span></span><br><span class="line"><span class="title function_">call</span>(obj, <span class="number">1</span>, <span class="number">2</span>)<span class="comment">//传入参数是参数列表</span></span><br><span class="line"><span class="keyword">let</span> bindFn=<span class="title function_">bind</span>(obj)<span class="comment">//返回一个函数，需要再次调用</span></span><br><span class="line"><span class="title function_">bindFn</span>(<span class="number">1</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-
 
       
     </div>
@@ -742,7 +841,7 @@ https://juejin.cn/post/6844903593955328007
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%85%BE%E8%AE%AF%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E4%B8%80-%E4%BA%8C%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">腾讯前端实习一,二面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%85%BE%E8%AE%AF%E4%BA%91%E6%99%BA%E4%B8%80%E9%9D%A22022-5-11"><span class="nav-number">2.</span> <span class="nav-text">腾讯云智一面2022.5.11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%97%E6%A3%AE%E4%BA%91%E4%BA%8C%E9%9D%A2"><span class="nav-number">3.</span> <span class="nav-text">北森云二面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E9%9D%A2%E7%BB%8F%E9%A2%98%E5%BA%93"><span class="nav-number">4.</span> <span class="nav-text">前端面经题库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E6%97%A5%E6%B5%B7%E5%85%AC%E5%8F%B8"><span class="nav-number">5.</span> <span class="nav-text">面试日海公司</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%8F%E6%97%A5%E5%88%B7%E7%9A%84%E9%9D%A2%E7%BB%8F%E5%AE%9D%E5%85%B8"><span class="nav-number">1.</span> <span class="nav-text">每日刷的面经宝典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%85%BE%E8%AE%AF%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E4%B8%80-%E4%BA%8C%E9%9D%A2"><span class="nav-number">2.</span> <span class="nav-text">腾讯前端实习一,二面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%85%BE%E8%AE%AF%E4%BA%91%E6%99%BA%E4%B8%80%E9%9D%A22022-5-11"><span class="nav-number">3.</span> <span class="nav-text">腾讯云智一面2022.5.11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%97%E6%A3%AE%E4%BA%91%E4%BA%8C%E9%9D%A2"><span class="nav-number">4.</span> <span class="nav-text">北森云二面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E9%9D%A2%E7%BB%8F%E9%A2%98%E5%BA%93"><span class="nav-number">5.</span> <span class="nav-text">前端面经题库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E6%97%A5%E6%B5%B7%E5%85%AC%E5%8F%B8"><span class="nav-number">6.</span> <span class="nav-text">面试日海公司</span></a></li></ol></div>
             
 
           </div>
@@ -779,7 +878,7 @@ https://juejin.cn/post/6844903593955328007
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.7k</span>
+    <span title="Site words total count">15.5k</span>
   
 </div>
 
