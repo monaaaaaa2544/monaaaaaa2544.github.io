@@ -828,6 +828,52 @@ https://juejin.cn/post/6844903593955328007
 </ol>
 <p>基本数据类型再栈中存储，引用数据类型在堆中存储（在栈中存的是地址，得到地址后从堆中获得实体）</p>
 <p>Symbol和BigInt是ES6新出的类型，BigInt涵盖的整数范围更大，Symbol创建的数据具有唯一性，可以用来做Object对象中的key</p>
+<h2 id="面试日海公司"><a href="#面试日海公司" class="headerlink" title="面试日海公司"></a>面试日海公司</h2><ol>
+<li>代码作用域<br>​<a href="https://fe.ecool.fun/topic/fa224d36-147a-4251-8033-dc1462e9527e?orderBy=updateTime&amp;order=desc&amp;titleKey=%E4%BD%9C%E7%94%A8%E5%9F%9F">https://fe.ecool.fun/topic/fa224d36-147a-4251-8033-dc1462e9527e?orderBy=updateTime&amp;order=desc&amp;titleKey=%E4%BD%9C%E7%94%A8%E5%9F%9F</a></li>
+</ol>
+<ul>
+<li>全局作用域</li>
+<li>函数作用域</li>
+<li>块级作用域<br>作用域链：当前作用域-》词法作用域-》全局作用域</li>
+</ul>
+<ol start="2">
+<li><p>TS 和JS区别<br><a href="https://fe.ecool.fun/topic/041f15e1-e0a7-450b-846c-a3078bc791c1?orderBy=updateTime&amp;order=desc&amp;tagId=19">https://fe.ecool.fun/topic/041f15e1-e0a7-450b-846c-a3078bc791c1?orderBy=updateTime&amp;order=desc&amp;tagId=19</a><br>TS是JS的超集，可以被编译成JS；静态类型检查，在没运行的时候进行；代码可读性更好；</p>
+</li>
+<li><p>css3的新特征<br><a href="https://fe.ecool.fun/topic/9083d1ed-fedc-4aec-ba50-df836e983e55?orderBy=updateTime&amp;order=desc&amp;titleKey=css3">https://fe.ecool.fun/topic/9083d1ed-fedc-4aec-ba50-df836e983e55?orderBy=updateTime&amp;order=desc&amp;titleKey=css3</a></p>
+</li>
+</ol>
+<ul>
+<li>盒子模型：设置box-sizing:border-box <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_box-sizing_old">https://www.w3schools.com/css/tryit.asp?filename=trycss3_box-sizing_old</a></li>
+<li>nth-child(2)</li>
+<li>box-shadow</li>
+<li>flex grid布局</li>
+<li>背景属性</li>
+<li>transition过渡 ——transition: width(属性) 2s(时间) <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_transition1">https://www.w3schools.com/css/tryit.asp?filename=trycss3_transition1</a></li>
+<li>transform转换——transform: rotate(90deg) <a href="https://www.runoob.com/try/try.php?filename=trycss3_transform">https://www.runoob.com/try/try.php?filename=trycss3_transform</a></li>
+<li>animation动画——animation: name 5s infinite; @keyframes name{ from{left: 0px} to{left: 200px}} <a href="https://www.runoob.com/try/try.php?filename=trycss3_animation">https://www.runoob.com/try/try.php?filename=trycss3_animation</a></li>
+<li>媒体查询——@media screen and(max-width: 300px){ body{ background: green}} <a href="https://www.runoob.com/try/try.php?filename=trycss3_media_example1">https://www.runoob.com/try/try.php?filename=trycss3_media_example1</a></li>
+</ul>
+<ol start="4">
+<li><p>数据结构有哪些？<br><a href="https://fe.ecool.fun/topic/e00b6fcb-fb55-435f-ac74-687734871111?orderBy=updateTime&amp;order=desc&amp;titleKey=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">https://fe.ecool.fun/topic/e00b6fcb-fb55-435f-ac74-687734871111?orderBy=updateTime&amp;order=desc&amp;titleKey=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84</a><br>栈、队列、链表、数组：连续的存储单元、树、图、堆、散列表<br>Set和Map数据结构：Set集合没有重复元素、Map字典类似于哈希表——<a href="https://fe.ecool.fun/topic/4232c372-316f-4a53-99b9-6d9299b7e91f?orderBy=updateTime&amp;order=desc&amp;titleKey=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">https://fe.ecool.fun/topic/4232c372-316f-4a53-99b9-6d9299b7e91f?orderBy=updateTime&amp;order=desc&amp;titleKey=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84</a></p>
+</li>
+<li><p>OSI七层协议？传输层到网络层增加了什么？<br>应用层（HTTP）、表示层、会话层、传输层（TCP、UDP）、网络层（IP）、数据链路层、物理层　<a href="https://zhuanlan.zhihu.com/p/32059190">https://zhuanlan.zhihu.com/p/32059190</a></p>
+</li>
+<li><p>二叉树跟数组和链表结构有什么不同？从删除和添加考虑　<br><a href="https://www.cnblogs.com/MrListening/p/5782752.html">https://www.cnblogs.com/MrListening/p/5782752.html</a></p>
+</li>
+<li><p>怎么看待加班<br>首先如果加班是因为我个人效率低的话，我会提高工作效率，如果是因为公司项目紧急为了公司的效益我也会选择加班；赶进度时，可以为了工作加班；</p>
+</li>
+<li><p>平时会自己去学新技术吗<br>因为前端技术更新迭代比较快，我会经常关注一些大牛的动态了解新技术，比如Anthony fu，他是vite　unocss、 <a href="https://vueuse.org/">Vueuse</a>　的核心团队成员，我关注了他的B站</p>
+</li>
+<li><p>为什么选择前端<br><a href="https://bytetalk.fm/posts/episode-6/">https://bytetalk.fm/posts/episode-6/</a><br>成就感：前端的Feedback Loop 很短；网页天然跨端，可以很快分享给朋友；</p>
+</li>
+<li><p>this的指向<br><a href="https://fe.ecool.fun/topic/33363940-179b-4ae3-9cd3-7bf0a5619df9?orderBy=updateTime&amp;order=desc&amp;titleKey=this">https://fe.ecool.fun/topic/33363940-179b-4ae3-9cd3-7bf0a5619df9?orderBy=updateTime&amp;order=desc&amp;titleKey=this</a></p>
+</li>
+<li><p>all&#x2F;apply&#x2F;bind<br><a href="https://fe.ecool.fun/topic/8d391a9c-0573-4edd-bd5d-84b9af70bad5?orderBy=updateTime&amp;order=desc&amp;titleKey=bind">https://fe.ecool.fun/topic/8d391a9c-0573-4edd-bd5d-84b9af70bad5?orderBy=updateTime&amp;order=desc&amp;titleKey=bind</a></p>
+</li>
+</ol>
+<p>三者都可以改变this指向</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">apply</span>(obj, [<span class="number">1</span>,<span class="number">2</span>])<span class="comment">//传入参数是一个数组</span></span><br><span class="line"><span class="title function_">call</span>(obj, <span class="number">1</span>, <span class="number">2</span>)<span class="comment">//传入参数是参数列表</span></span><br><span class="line"><span class="keyword">let</span> bindFn=<span class="title function_">bind</span>(obj)<span class="comment">//返回一个函数，需要再次调用</span></span><br><span class="line"><span class="title function_">bindFn</span>(<span class="number">1</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
 ]]></content>
   </entry>
 </search>
