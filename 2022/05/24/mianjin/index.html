@@ -86,10 +86,12 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="面经汇总：https:&#x2F;&#x2F;www.nowcoder.com&#x2F;discuss&#x2F;experience?tagId&#x3D;644 腾讯前端实习一,二面作者：dara羽星链接：https:&#x2F;&#x2F;www.nowcoder.com&#x2F;discuss&#x2F;954603?type&#x3D;post&amp;order&#x3D;hot&amp;pos&#x3D;&amp;page&#x3D;1&amp;ncTraceId&#x3D;&amp;channel&#x3D;-1&amp;">
 <meta property="og:locale">
+<meta property="og:image" content="https://image-static.segmentfault.com/160/418/1604181361-5a1397cca5644">
 <meta property="article:published_time" content="2022-05-24T13:51:23.000Z">
-<meta property="article:modified_time" content="2022-05-25T14:51:27.526Z">
+<meta property="article:modified_time" content="2022-06-02T06:33:56.583Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://image-static.segmentfault.com/160/418/1604181361-5a1397cca5644">
 
 
 
@@ -368,7 +370,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1k
+                  2k
                 </span>
               
 
@@ -384,7 +386,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  4
+                  8
                 </span>
               
             </div>
@@ -478,7 +480,7 @@ https://juejin.cn/post/6844903593955328007
 </code></pre>
 <h2 id="腾讯云智一面2022-5-11"><a href="#腾讯云智一面2022-5-11" class="headerlink" title="腾讯云智一面2022.5.11"></a>腾讯云智一面2022.5.11</h2><p>链接：<a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/958655?source_id=discuss_experience_nctrack&amp;channel=-1">https://www.nowcoder.com/discuss/958655?source_id=discuss_experience_nctrack&amp;channel=-1</a></p>
 <ol>
-<li><p>Vue特点<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7069202241478983711">https://juejin.cn/post/7069202241478983711</a><br>数据双向绑定、组件化开发、响应式、单页Web应用</p>
+<li><p>Vue特点<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7069202241478983711">https://juejin.cn/post/7069202241478983711</a><br>数据双向绑定、组件化开发、响应式、单页Web应用、虚拟DOM</p>
 </li>
 <li><p>http攻击<br>跨站脚本攻击(XSS) 跨站请求伪造攻击(CSRF) Cookie攻击 重定向攻击</p>
 </li>
@@ -494,9 +496,44 @@ https://juejin.cn/post/6844903593955328007
 </li>
 <li><p>怎么设置cookie的有效时间(Max-Age)和过期时间(Expires) ，代码是啥<br>setMaxAge(0)</p>
 </li>
-<li><p>cookie localstorage seesionstorage区别<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/jiang7701037/article/details/89118086">https://blog.csdn.net/jiang7701037/article/details/89118086</a><br><a target="_blank" rel="noopener" href="https://jerryzou.com/posts/cookie-and-web-storage/">https://jerryzou.com/posts/cookie-and-web-storage/</a><br>三者都是再客户端存储数据，三者都会有XSS注入风险<br>cookie: 4kb 密码<br>localstorage: 5MB 永久保存<br>seesionstorage: 几MB 刷新页面还存在，窗口关闭就没了</p>
+<li><p>cookie localstorage seesionstorage区别<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/jiang7701037/article/details/89118086">https://blog.csdn.net/jiang7701037/article/details/89118086</a><br><a target="_blank" rel="noopener" href="https://jerryzou.com/posts/cookie-and-web-storage/">https://jerryzou.com/posts/cookie-and-web-storage/</a><br>三者都是再浏览器本地存储数据，三者都会有XSS注入风险<br>cookie: 4kb；服务端写入时就设置了过期时间；登录信息或者token<br>localstorage: 5M；前端写入，永久保存，除非手动清除；存储不易变动的数据，减轻服务器的压力<br>seesionstorage: 5M；前端写入，刷新页面还存在，窗口关闭就没了；检测用户是否是刷新进入页面，如音乐播放器恢复播放进度条的功能</p>
 </li>
 </ol>
+<h2 id="北森云二面"><a href="#北森云二面" class="headerlink" title="北森云二面"></a>北森云二面</h2><p>链接：<a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/958653?source_id=discuss_experience_nctrack&amp;channel=-1">https://www.nowcoder.com/discuss/958653?source_id=discuss_experience_nctrack&amp;channel=-1</a></p>
+<p>一面忘记记录了<br>二面 2022.5.11</p>
+<ol>
+<li>轮播图实现  定时器或者动画做<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/WindrunnerMax/p/12638005.html">https://www.cnblogs.com/WindrunnerMax/p/12638005.html</a><br><a target="_blank" rel="noopener" href="https://codepen.io/monaaaaaa2544/pen/XWZEmLV">https://codepen.io/monaaaaaa2544/pen/XWZEmLV</a></li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#carousel</span> &gt; <span class="selector-tag">ul</span>&#123;</span><br><span class="line">     <span class="attribute">animation</span>: switch <span class="number">10s</span> ease <span class="number">1s</span> infinite alternate; <span class="comment">/* 设定动画播放 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#carousel</span> &gt; <span class="selector-tag">ul</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">     <span class="attribute">animation-play-state</span>: paused; <span class="comment">/* 暂停动画 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> switch&#123; <span class="comment">/* 制定动画规则 */</span></span><br><span class="line">    <span class="number">0%</span>,<span class="number">13%</span>&#123;</span><br><span class="line">        <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">27%</span>,<span class="number">41%</span>&#123;</span><br><span class="line">        <span class="attribute">left</span>: -<span class="number">600px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">55%</span>,<span class="number">69%</span>&#123;</span><br><span class="line">        <span class="attribute">left</span>: -<span class="number">1200px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">83%</span>,<span class="number">100%</span> &#123;</span><br><span class="line">        <span class="attribute">left</span>: -<span class="number">1800px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;   </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p>自制一个正方形的外盒子里面九宫格排列自适应的 可以用flex或者其他<br> <a target="_blank" rel="noopener" href="https://juejin.cn/post/7016495512002134024">https://juejin.cn/post/7016495512002134024</a><br> <a target="_blank" rel="noopener" href="https://codepen.io/monaaaaaa2544/pen/YzeawXb">https://codepen.io/monaaaaaa2544/pen/YzeawXb</a></p>
+</li>
+<li><p>项目用什么打包webpak打包原理 配置写过吗里面包含什么东西   如果import a from b  import b from a怎么处理的</p>
+</li>
+<li><p>输入网址发生了啥 dns全称原理 arp哪层协议 原理作用<br> <a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000012092552">https://segmentfault.com/a/1190000012092552</a><br> 输入地址-浏览器通过DNS查询域名所对应的IP地址-建立TCP连接-发送HTTP请求-服务器处理请求并返回响应结果-渲染页面<br> dns全称：域名系统 Domain Name System。输入域名之后，首先在本地的Hosts查找是否有相应的域名：IP对应关系，如果没有就去找DNS服务器，DNS服务器最终会告知IP地址是多少</p>
+ <img src='https://image-static.segmentfault.com/160/418/1604181361-5a1397cca5644' />
+
+<p> ARP协议：属于IP层协议，是根据IP地址获取物理地址（MAC）的协议，它可以解决同一个局域网内主机或路由器的IP地址和MAC地址的映射问题</p>
+</li>
+<li><p>前后端分离原理 为啥要分离<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/147659178">https://zhuanlan.zhihu.com/p/147659178</a><br>核心思想是前端HTML页面通过AJAX调用后端的RESTFUL API接口并使用JSON数据进行交互</p>
+</li>
+</ol>
+<p>前端负责视图View和控制层Controller<br>后端负责Model层，进行业务、数据处理<br>前端的Controller层使用Node实现，Node在服务端和客户端的中间，进行数据的二次加工或者渲染好页面，把渲染好的HTML和处理好的数据直接发给客户端，这样便提升了客户端性能</p>
+<ol start="6">
+<li>vue的好处<br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/552eb8edfbbb">https://www.jianshu.com/p/552eb8edfbbb</a></li>
+</ol>
+<p>7 跨域问题原理 cors nginx反向代理 及其原理<br>8. localstorage sessionstorage cookie区别<br>9 cookie和localstorage容量区别<br>10怎么设置localstorage 过期时间 自动删除它<br>11了解react吗<br>12 数据结构有哪些<br>13 flex布局父元素 子元素有哪些 什么含义 flex:1什么意思</p>
+<ol start="14">
+<li>为啥要用虚拟dom  diff算法对比的啥 diff原理<br>渲染真实的DOM很消耗性能。虚拟DOM好于真实DOM，因为真实dom在渲染过程中会造成dom的重排和重绘，虚拟DOM只会渲染局部，性能更好</li>
+</ol>
+<p>15了解grid布局吗</p>
+<h2 id="前端面经题库"><a href="#前端面经题库" class="headerlink" title="前端面经题库"></a>前端面经题库</h2><p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/exam/interview/detail?questionClassifyId=0&amp;questionId=2412338&amp;questionJobId=156&amp;type=1">https://www.nowcoder.com/exam/interview/detail?questionClassifyId=0&amp;questionId=2412338&amp;questionJobId=156&amp;type=1</a></p>
+<ol>
+<li>JS数据类型有哪些<br><a target="_blank" rel="noopener" href="https://www.nowcoder.com/exam/interview/detail?questionClassifyId=0&amp;questionId=2412338&amp;questionJobId=156&amp;type=1">https://www.nowcoder.com/exam/interview/detail?questionClassifyId=0&amp;questionId=2412338&amp;questionJobId=156&amp;type=1</a><br>8种<br>基本数据类型：Number String Boolean BigInt Symbol Null Undefined<br>引用数据类型：Object</li>
+</ol>
+<p>基本数据类型再栈中存储，引用数据类型在堆中存储（在栈中存的是地址，得到地址后从堆中获得实体）</p>
+<p>Symbol和BigInt是ES6新出的类型，BigInt涵盖的整数范围更大，Symbol创建的数据具有唯一性，可以用来做Object对象中的key</p>
 
       
     </div>
@@ -659,7 +696,7 @@ https://juejin.cn/post/6844903593955328007
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%85%BE%E8%AE%AF%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E4%B8%80-%E4%BA%8C%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">腾讯前端实习一,二面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%85%BE%E8%AE%AF%E4%BA%91%E6%99%BA%E4%B8%80%E9%9D%A22022-5-11"><span class="nav-number">2.</span> <span class="nav-text">腾讯云智一面2022.5.11</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%85%BE%E8%AE%AF%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E4%B8%80-%E4%BA%8C%E9%9D%A2"><span class="nav-number">1.</span> <span class="nav-text">腾讯前端实习一,二面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%85%BE%E8%AE%AF%E4%BA%91%E6%99%BA%E4%B8%80%E9%9D%A22022-5-11"><span class="nav-number">2.</span> <span class="nav-text">腾讯云智一面2022.5.11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%97%E6%A3%AE%E4%BA%91%E4%BA%8C%E9%9D%A2"><span class="nav-number">3.</span> <span class="nav-text">北森云二面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E9%9D%A2%E7%BB%8F%E9%A2%98%E5%BA%93"><span class="nav-number">4.</span> <span class="nav-text">前端面经题库</span></a></li></ol></div>
             
 
           </div>
@@ -696,7 +733,7 @@ https://juejin.cn/post/6844903593955328007
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">12.1k</span>
+    <span title="Site words total count">13k</span>
   
 </div>
 
