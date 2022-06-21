@@ -88,8 +88,10 @@
 <meta property="og:locale">
 <meta property="og:image" content="http://example.com/images/image-20220414214110412.png">
 <meta property="og:image" content="http://example.com/images/image-20220414214613164.png">
+<meta property="og:image" content="c:/Users/lxy/AppData/Roaming/Typora/typora-user-images/image-20220519094840136.png">
+<meta property="og:image" content="c:/Users/lxy/AppData/Roaming/Typora/typora-user-images/image-20220531095215569.png">
 <meta property="article:published_time" content="2022-03-20T09:13:14.000Z">
-<meta property="article:modified_time" content="2022-05-13T15:25:01.958Z">
+<meta property="article:modified_time" content="2022-06-21T07:39:46.544Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="keyan">
 <meta name="twitter:card" content="summary">
@@ -372,7 +374,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  2k
+                  2.9k
                 </span>
               
 
@@ -388,7 +390,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  8
+                  12
                 </span>
               
             </div>
@@ -523,6 +525,64 @@
 </ol>
 <h6 id="5月13日-大组会"><a href="#5月13日-大组会" class="headerlink" title="5月13日 大组会"></a>5月13日 大组会</h6><p>下一步工作</p>
 <p>1&#x2F;只可视化分类正确样本被攻击后的准确率趋势<br>2&#x2F;用C_NMC的模型进行实验</p>
+<h6 id="小组会-1"><a href="#小组会-1" class="headerlink" title="小组会"></a>小组会</h6><p>论文小问题修改了</p>
+<p><strong>各种生成对抗样本算法介绍的PPT做好了，其中STN和One pixel攻击算法是否可以使用并替换现有算法，解释STN和One pixel原理</strong></p>
+<p><strong>STN生成对抗样本算法原理，实验结果如何</strong></p>
+<p>有篇很相似的文章，用girdRT和PGD做了混合对抗训练(<a target="_blank" rel="noopener" href="https://docs.qq.com/slide/DWUVYWG5Cb0t2Ukpm)%EF%BC%9AICLR">https://docs.qq.com/slide/DWUVYWG5Cb0t2Ukpm)：ICLR</a> under review）A ROTATION AND A TRANSLATION SUFFICE: FOOLING CNNS WITH SIMPLE TRANSFORMATIONS</p>
+<p>实验:</p>
+<ol>
+<li>为什么rotate没有效果，是不是我设置nums&#x3D;60固定的缘故</li>
+<li>虽然rotate对Acc下降没有，但invariance下降了就说明预测标签会变化，模型不鲁棒了，所以还是可以使用rotate对抗样本呢？</li>
+<li><strong>展示nums随着range更改的单一rotate、transition实验结果</strong></li>
+<li><strong>混合最差的样本设置是否是（trans&#x3D;12 scale&#x3D;0.5 rotate&#x3D;90），通过这个来缩小搜索范围，加快搜素速度</strong></li>
+<li>展示scale实验结果，讨论缩放的场景是否有可能</li>
+</ol>
+<h6 id="大组会"><a href="#大组会" class="headerlink" title="大组会"></a>大组会</h6><ol>
+<li><p>找C_NMC模型</p>
+</li>
+<li><p>可视化正确分类样本被攻击前后准确率趋势</p>
+</li>
+</ol>
+<h6 id="小组会-2"><a href="#小组会-2" class="headerlink" title="小组会"></a>小组会</h6><ol>
+<li>C_NMC数据的人发的地方都是ISBI，是否C_NMC数据不好，或者去找细胞检测相关的模型？什么关键字——cell detection。输出：整理了传统和深度学习的方法应用在细胞检测场景下</li>
+</ol>
+<p><img src="C:\Users\lxy\AppData\Roaming\Typora\typora-user-images\image-20220519094840136.png" alt="image-20220519094840136"></p>
+<h6 id="跟师兄讨论："><a href="#跟师兄讨论：" class="headerlink" title="跟师兄讨论："></a>跟师兄讨论：</h6><p>旋转没用的原因？因为血细胞的空间性影响不大</p>
+<p>C_NMC只有核？跟医生确认下光用细胞核判断疾病是通过什么特征</p>
+<p>ALL_IDB2数据只有260张？数据少可尝试用数据增强，但是必须嘚做交叉验证，还是建议找医院要点数据</p>
+<p>有重叠问题？找医生确认是否有重叠问题；不能用目标检测的生成对抗样本方法，一是跟场景不贴合，二是得改成目标检测，这样工作量太大，还是做分类，可以切一些细胞出来做分类；</p>
+<p>旋转后的样本，黑色背景需要做填充处理吗？不需要</p>
+<p>其他？现在最重要的是考虑怎么说错误样本分类正确这个问题；吧STM论文和代码发给师兄，验证下实验过程；换一个方法STN</p>
+<h6 id="问医生的问题"><a href="#问医生的问题" class="headerlink" title="问医生的问题"></a>问医生的问题</h6><ol>
+<li>C_NMC只有核？跟医生确认下光用细胞核判断疾病是通过什么特征</li>
+<li>ALL_IDB2数据只有260张？数据少可尝试用数据增强，但是必须嘚做交叉验证，还是<strong>建议找医院要点数据</strong></li>
+<li>有重叠问题？找医生确认是否有重叠问题。两个细胞之间重叠还是有脏东西？</li>
+<li>遮挡出现的概率</li>
+</ol>
+<p><img src="C:\Users\lxy\AppData\Roaming\Typora\typora-user-images\image-20220531095215569.png" alt="image-20220531095215569"><br>正常成熟淋巴细胞：胞体小，细胞核圆形，规则，核染色质厚，很均匀，胞浆量少<br>原始淋巴细胞：胞体比正常的淋巴大，核型不规则，染色质比正常的偏细，有核仁</p>
+<h3 id="对抗训练原理"><a href="#对抗训练原理" class="headerlink" title="对抗训练原理"></a>对抗训练原理</h3><p><a target="_blank" rel="noopener" href="https://kexue.fm/archives/7234/comment-page-3">https://kexue.fm/archives/7234/comment-page-3</a></p>
+<h3 id="CNN不具备旋转不变性"><a href="#CNN不具备旋转不变性" class="headerlink" title="CNN不具备旋转不变性"></a>CNN不具备旋转不变性</h3><p><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/30817011">https://www.zhihu.com/question/30817011</a></p>
+<h3 id="常见报错"><a href="#常见报错" class="headerlink" title="常见报错"></a>常见报错</h3><ol>
+<li>发生异常: RuntimeError<br>Invalid DISPLAY variable</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">plt.switch_backend(&#x27;agg&#x27;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="白血病简介"><a href="#白血病简介" class="headerlink" title="白血病简介"></a>白血病简介</h3><p><a target="_blank" rel="noopener" href="https://www.cclg.org.uk/Leukaemia-">https://www.cclg.org.uk/Leukaemia-</a><br>ALL：<a target="_blank" rel="noopener" href="https://www.cclg.org.uk/Acute-lymphoblastic-leukaemia-ALL">https://www.cclg.org.uk/Acute-lymphoblastic-leukaemia-ALL</a><br>AML：<a target="_blank" rel="noopener" href="https://www.cclg.org.uk/Acute-myeloid-leukaemia-AML">https://www.cclg.org.uk/Acute-myeloid-leukaemia-AML</a></p>
+<p>论文：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.nature.com/articles/ng.3909">https://www.nature.com/articles/ng.3909</a></li>
+<li><a target="_blank" rel="noopener" href="https://scholar.google.com/scholar?cites=11618853838070340770&amp;as_sdt=2005&amp;sciodt=0,5&amp;hl=zh-CN">https://scholar.google.com/scholar?cites=11618853838070340770&amp;as_sdt=2005&amp;sciodt=0,5&amp;hl=zh-CN</a></li>
+</ul>
+<p>世界卫生组织报告：<a target="_blank" rel="noopener" href="https://ourworldindata.org/cancer#cancer-survival-rates">https://ourworldindata.org/cancer#cancer-survival-rates</a></p>
+<h6 id="病理切片噪声"><a href="#病理切片噪声" class="headerlink" title="病理切片噪声"></a>病理切片噪声</h6><p><a target="_blank" rel="noopener" href="https://www.sigs.tsinghua.edu.cn/2021/1013/c1209a30051/page.htm">https://www.sigs.tsinghua.edu.cn/2021/1013/c1209a30051/page.htm</a></p>
+<ul>
+<li>Learning to Generate Realistic Noisy Images via Pixel-level Noise-aware Adversarial Training<br>&#x3D; 解决相机、手机白噪声问题</li>
+<li>TransMIL: Transformer based Correlated Multiple Instance Learning for Whole Slide Image Classification</li>
+</ul>
 
       
     </div>
@@ -649,7 +709,7 @@
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -695,7 +755,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hierarchical-Visual-Concept-Interpretation-for-Medical-Image-Classification"><span class="nav-number">1.</span> <span class="nav-text">Hierarchical Visual Concept Interpretation for Medical Image Classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Smooth-Adversarial-Training"><span class="nav-number">2.</span> <span class="nav-text">Smooth Adversarial Training</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generate-Natural-Adversarial-Examples"><span class="nav-number">3.</span> <span class="nav-text">Generate Natural Adversarial Examples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AdvFlow-Inconspicuous-Black-box-Adversarial-Attacks-using-Normalizing-Flows-NIPS-2020"><span class="nav-number">4.</span> <span class="nav-text">AdvFlow: Inconspicuous Black-box Adversarial Attacks using Normalizing Flows, NIPS 2020</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adversarial-Distributional-Training-for-Robust-Deep-Learning-NIPS-2020"><span class="nav-number">5.</span> <span class="nav-text">Adversarial Distributional Training for Robust Deep Learning, NIPS 2020</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Attribute-Guided-Adversarial-Training-for-Robustness-to-Natural-Perturbations-AAAI-2021"><span class="nav-number">6.</span> <span class="nav-text">Attribute-Guided Adversarial Training for Robustness to Natural Perturbations. AAAI 2021</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mart%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B"><span class="nav-number">7.</span> <span class="nav-text">Mart算法流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mart%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86%E8%A7%A3%E9%87%8A"><span class="nav-number">8.</span> <span class="nav-text">Mart算法原理解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TRADES%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0"><span class="nav-number">9.</span> <span class="nav-text">TRADES算法实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TRADES%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86"><span class="nav-number">10.</span> <span class="nav-text">TRADES算法原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SD-layer-stain-deconvolutional-layer-for-CNNs-in-medical-microscopic-imaging"><span class="nav-number">11.</span> <span class="nav-text">SD-layer: stain deconvolutional layer for CNNs in medical microscopic imaging</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GCTI-SN-Geometry-inspired-chemical-and-tissue-invariant-stain-normalization-of-microscopic-medical-images"><span class="nav-number">12.</span> <span class="nav-text">GCTI-SN: Geometry-inspired chemical and tissue invariant stain normalization of microscopic medical images</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Heterogeneity-Loss-to-Handle-Intersubject-and-Intrasubject-Variability-in-Cancer"><span class="nav-number">13.</span> <span class="nav-text">Heterogeneity Loss to Handle Intersubject and Intrasubject Variability in Cancer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%8A%97%E8%AE%AD%E7%BB%83%E4%B8%AD%E7%9A%84%E8%BF%87%E6%8B%9F%E5%90%88%E7%8E%B0%E8%B1%A1%E5%92%8C%E5%AF%B9%E6%8A%97%E8%AE%AD%E7%BB%83%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93"><span class="nav-number">14.</span> <span class="nav-text">对抗训练中的过拟合现象和对抗训练技巧总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%8A%97%E8%AE%AD%E7%BB%83%E4%B8%8E%E7%A8%B3%E5%81%A5%E6%80%A7"><span class="nav-number">15.</span> <span class="nav-text">对抗训练与稳健性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E6%8A%97%E8%AE%AD%E7%BB%83%E7%9A%84%E5%87%A0%E4%B8%AA%E5%8F%98%E4%BD%93"><span class="nav-number">15.1.</span> <span class="nav-text">对抗训练的几个变体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%BB%E5%87%BB%E6%95%88%E8%83%BD%E6%8C%87%E6%A0%87"><span class="nav-number">15.2.</span> <span class="nav-text">攻击效能指标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T-sne-%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="nav-number">16.</span> <span class="nav-text">T-sne 的代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#INTRIGUING-PROPERTIES-OF-ADVERSARIAL-TRAINING-AT-SCALE"><span class="nav-number">17.</span> <span class="nav-text">INTRIGUING PROPERTIES OF ADVERSARIAL TRAINING AT SCALE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%84%E4%BC%9A%E7%BB%93%E8%AE%BA"><span class="nav-number">18.</span> <span class="nav-text">小组会结论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-NMC%E6%95%B0%E6%8D%AE%E7%94%A8%E4%BB%80%E4%B9%88%E5%81%9A%E7%9A%84%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-number">19.</span> <span class="nav-text">C_NMC数据用什么做的数据预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-NMC-final-test-submit"><span class="nav-number">20.</span> <span class="nav-text">C_NMC final test submit</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8EC-NMC%E6%95%B0%E6%8D%AE%E5%88%86%E5%89%B2%E6%88%90%E7%BB%86%E8%83%9E%E6%A0%B8%E7%9A%84%E5%8E%9F%E5%9B%A0%EF%BC%8C%E4%BD%9C%E8%80%85%E5%9B%9E%E7%AD%94"><span class="nav-number">20.1.</span> <span class="nav-text">关于C_NMC数据分割成细胞核的原因，作者回答</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GCTI-SN-Geometry-inspired-chemical-and-tissue-invariant-stain-normalization-of-microscopic-medical-images-1"><span class="nav-number">21.</span> <span class="nav-text">GCTI-SN: Geometry-inspired chemical and tissue invariant stain normalization of microscopic medical images</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SD-Layer-Stain-Deconvolutional-Layer-for-CNNs-in-Medical-Microscopic-Imaging"><span class="nav-number">22.</span> <span class="nav-text">SD-Layer: Stain Deconvolutional Layer for CNNs in Medical Microscopic Imaging</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#auto-attack"><span class="nav-number">23.</span> <span class="nav-text">auto attack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%8A%97%E6%94%BB%E5%87%BB%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91"><span class="nav-number">24.</span> <span class="nav-text">对抗攻击研究方向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%8A%97%E9%A2%86%E5%9F%9F%E5%A4%A7%E4%BD%AC"><span class="nav-number">25.</span> <span class="nav-text">对抗领域大佬</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%B0%8F%E7%BB%84%E4%BC%9A"><span class="nav-number">25.0.0.0.1.</span> <span class="nav-text">小组会</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5%E6%9C%8813%E6%97%A5-%E5%A4%A7%E7%BB%84%E4%BC%9A"><span class="nav-number">25.0.0.0.2.</span> <span class="nav-text">5月13日 大组会</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hierarchical-Visual-Concept-Interpretation-for-Medical-Image-Classification"><span class="nav-number">1.</span> <span class="nav-text">Hierarchical Visual Concept Interpretation for Medical Image Classification</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Smooth-Adversarial-Training"><span class="nav-number">2.</span> <span class="nav-text">Smooth Adversarial Training</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generate-Natural-Adversarial-Examples"><span class="nav-number">3.</span> <span class="nav-text">Generate Natural Adversarial Examples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AdvFlow-Inconspicuous-Black-box-Adversarial-Attacks-using-Normalizing-Flows-NIPS-2020"><span class="nav-number">4.</span> <span class="nav-text">AdvFlow: Inconspicuous Black-box Adversarial Attacks using Normalizing Flows, NIPS 2020</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adversarial-Distributional-Training-for-Robust-Deep-Learning-NIPS-2020"><span class="nav-number">5.</span> <span class="nav-text">Adversarial Distributional Training for Robust Deep Learning, NIPS 2020</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Attribute-Guided-Adversarial-Training-for-Robustness-to-Natural-Perturbations-AAAI-2021"><span class="nav-number">6.</span> <span class="nav-text">Attribute-Guided Adversarial Training for Robustness to Natural Perturbations. AAAI 2021</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mart%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B"><span class="nav-number">7.</span> <span class="nav-text">Mart算法流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Mart%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86%E8%A7%A3%E9%87%8A"><span class="nav-number">8.</span> <span class="nav-text">Mart算法原理解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TRADES%E7%AE%97%E6%B3%95%E5%AE%9E%E7%8E%B0"><span class="nav-number">9.</span> <span class="nav-text">TRADES算法实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TRADES%E7%AE%97%E6%B3%95%E5%8E%9F%E7%90%86"><span class="nav-number">10.</span> <span class="nav-text">TRADES算法原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SD-layer-stain-deconvolutional-layer-for-CNNs-in-medical-microscopic-imaging"><span class="nav-number">11.</span> <span class="nav-text">SD-layer: stain deconvolutional layer for CNNs in medical microscopic imaging</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GCTI-SN-Geometry-inspired-chemical-and-tissue-invariant-stain-normalization-of-microscopic-medical-images"><span class="nav-number">12.</span> <span class="nav-text">GCTI-SN: Geometry-inspired chemical and tissue invariant stain normalization of microscopic medical images</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Heterogeneity-Loss-to-Handle-Intersubject-and-Intrasubject-Variability-in-Cancer"><span class="nav-number">13.</span> <span class="nav-text">Heterogeneity Loss to Handle Intersubject and Intrasubject Variability in Cancer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%8A%97%E8%AE%AD%E7%BB%83%E4%B8%AD%E7%9A%84%E8%BF%87%E6%8B%9F%E5%90%88%E7%8E%B0%E8%B1%A1%E5%92%8C%E5%AF%B9%E6%8A%97%E8%AE%AD%E7%BB%83%E6%8A%80%E5%B7%A7%E6%80%BB%E7%BB%93"><span class="nav-number">14.</span> <span class="nav-text">对抗训练中的过拟合现象和对抗训练技巧总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%8A%97%E8%AE%AD%E7%BB%83%E4%B8%8E%E7%A8%B3%E5%81%A5%E6%80%A7"><span class="nav-number">15.</span> <span class="nav-text">对抗训练与稳健性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E6%8A%97%E8%AE%AD%E7%BB%83%E7%9A%84%E5%87%A0%E4%B8%AA%E5%8F%98%E4%BD%93"><span class="nav-number">15.1.</span> <span class="nav-text">对抗训练的几个变体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%94%BB%E5%87%BB%E6%95%88%E8%83%BD%E6%8C%87%E6%A0%87"><span class="nav-number">15.2.</span> <span class="nav-text">攻击效能指标</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#T-sne-%E7%9A%84%E4%BB%A3%E7%A0%81"><span class="nav-number">16.</span> <span class="nav-text">T-sne 的代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#INTRIGUING-PROPERTIES-OF-ADVERSARIAL-TRAINING-AT-SCALE"><span class="nav-number">17.</span> <span class="nav-text">INTRIGUING PROPERTIES OF ADVERSARIAL TRAINING AT SCALE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%8F%E7%BB%84%E4%BC%9A%E7%BB%93%E8%AE%BA"><span class="nav-number">18.</span> <span class="nav-text">小组会结论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-NMC%E6%95%B0%E6%8D%AE%E7%94%A8%E4%BB%80%E4%B9%88%E5%81%9A%E7%9A%84%E6%95%B0%E6%8D%AE%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-number">19.</span> <span class="nav-text">C_NMC数据用什么做的数据预处理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#C-NMC-final-test-submit"><span class="nav-number">20.</span> <span class="nav-text">C_NMC final test submit</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8EC-NMC%E6%95%B0%E6%8D%AE%E5%88%86%E5%89%B2%E6%88%90%E7%BB%86%E8%83%9E%E6%A0%B8%E7%9A%84%E5%8E%9F%E5%9B%A0%EF%BC%8C%E4%BD%9C%E8%80%85%E5%9B%9E%E7%AD%94"><span class="nav-number">20.1.</span> <span class="nav-text">关于C_NMC数据分割成细胞核的原因，作者回答</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#GCTI-SN-Geometry-inspired-chemical-and-tissue-invariant-stain-normalization-of-microscopic-medical-images-1"><span class="nav-number">21.</span> <span class="nav-text">GCTI-SN: Geometry-inspired chemical and tissue invariant stain normalization of microscopic medical images</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SD-Layer-Stain-Deconvolutional-Layer-for-CNNs-in-Medical-Microscopic-Imaging"><span class="nav-number">22.</span> <span class="nav-text">SD-Layer: Stain Deconvolutional Layer for CNNs in Medical Microscopic Imaging</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#auto-attack"><span class="nav-number">23.</span> <span class="nav-text">auto attack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%8A%97%E6%94%BB%E5%87%BB%E7%A0%94%E7%A9%B6%E6%96%B9%E5%90%91"><span class="nav-number">24.</span> <span class="nav-text">对抗攻击研究方向</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E6%8A%97%E9%A2%86%E5%9F%9F%E5%A4%A7%E4%BD%AC"><span class="nav-number">25.</span> <span class="nav-text">对抗领域大佬</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%B0%8F%E7%BB%84%E4%BC%9A"><span class="nav-number">25.0.0.0.1.</span> <span class="nav-text">小组会</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5%E6%9C%8813%E6%97%A5-%E5%A4%A7%E7%BB%84%E4%BC%9A"><span class="nav-number">25.0.0.0.2.</span> <span class="nav-text">5月13日 大组会</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%B0%8F%E7%BB%84%E4%BC%9A-1"><span class="nav-number">25.0.0.0.3.</span> <span class="nav-text">小组会</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%A4%A7%E7%BB%84%E4%BC%9A"><span class="nav-number">25.0.0.0.4.</span> <span class="nav-text">大组会</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E5%B0%8F%E7%BB%84%E4%BC%9A-2"><span class="nav-number">25.0.0.0.5.</span> <span class="nav-text">小组会</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E8%B7%9F%E5%B8%88%E5%85%84%E8%AE%A8%E8%AE%BA%EF%BC%9A"><span class="nav-number">25.0.0.0.6.</span> <span class="nav-text">跟师兄讨论：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#%E9%97%AE%E5%8C%BB%E7%94%9F%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">25.0.0.0.7.</span> <span class="nav-text">问医生的问题</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E6%8A%97%E8%AE%AD%E7%BB%83%E5%8E%9F%E7%90%86"><span class="nav-number">25.1.</span> <span class="nav-text">对抗训练原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CNN%E4%B8%8D%E5%85%B7%E5%A4%87%E6%97%8B%E8%BD%AC%E4%B8%8D%E5%8F%98%E6%80%A7"><span class="nav-number">25.2.</span> <span class="nav-text">CNN不具备旋转不变性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E6%8A%A5%E9%94%99"><span class="nav-number">25.3.</span> <span class="nav-text">常见报错</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%99%BD%E8%A1%80%E7%97%85%E7%AE%80%E4%BB%8B"><span class="nav-number">25.4.</span> <span class="nav-text">白血病简介</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#%E7%97%85%E7%90%86%E5%88%87%E7%89%87%E5%99%AA%E5%A3%B0"><span class="nav-number">25.4.0.0.1.</span> <span class="nav-text">病理切片噪声</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -732,7 +792,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">15.5k</span>
+    <span title="Site words total count">18k</span>
   
 </div>
 

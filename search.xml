@@ -31,15 +31,23 @@
 <h3 id="解压文件到一个文件夹下"><a href="#解压文件到一个文件夹下" class="headerlink" title="解压文件到一个文件夹下"></a>解压文件到一个文件夹下</h3><p>tar -xvf 文件名   </p>
 <h3 id="移动文件"><a href="#移动文件" class="headerlink" title="移动文件"></a>移动文件</h3><p>mv 起始路径 目标路径</p>
 <h3 id="修改文件名"><a href="#修改文件名" class="headerlink" title="修改文件名"></a>修改文件名</h3><p>mv 文件名 文件名</p>
-<h3 id="把本地的jpeg文件拷贝到服务器上的ISIC目录下"><a href="#把本地的jpeg文件拷贝到服务器上的ISIC目录下" class="headerlink" title="把本地的jpeg文件拷贝到服务器上的ISIC目录下"></a>把本地的jpeg文件拷贝到服务器上的ISIC目录下</h3><p>scp -r D:&#x2F;各种文档&#x2F;研究生&#x2F;代码&#x2F;data&#x2F;jpeg&#x2F; <a href="mailto:&#x78;&#x69;&#110;&#x79;&#117;&#x61;&#x6e;&#x40;&#x31;&#55;&#x32;&#x2e;&#51;&#49;&#46;&#50;&#x32;&#54;&#x2e;&#x31;&#53;&#x36;">&#x78;&#x69;&#110;&#x79;&#117;&#x61;&#x6e;&#x40;&#x31;&#55;&#x32;&#x2e;&#51;&#49;&#46;&#50;&#x32;&#54;&#x2e;&#x31;&#53;&#x36;</a>:&#x2F;home&#x2F;data&#x2F;xinyuan&#x2F;adv_train_wbc&#x2F;data&#x2F;ISIC&#x2F; </p>
-<h3 id="把192-168-0-10机器上的source-txt文件拷贝到本地的-x2F-home-x2F-work目录下"><a href="#把192-168-0-10机器上的source-txt文件拷贝到本地的-x2F-home-x2F-work目录下" class="headerlink" title="把192.168.0.10机器上的source.txt文件拷贝到本地的&#x2F;home&#x2F;work目录下"></a>把192.168.0.10机器上的source.txt文件拷贝到本地的&#x2F;home&#x2F;work目录下</h3><p>scp <a href="mailto:&#x77;&#x6f;&#x72;&#x6b;&#x40;&#49;&#57;&#50;&#46;&#x31;&#x36;&#56;&#46;&#48;&#46;&#49;&#x30;">&#x77;&#x6f;&#x72;&#x6b;&#x40;&#49;&#57;&#50;&#46;&#x31;&#x36;&#56;&#46;&#48;&#46;&#49;&#x30;</a>:&#x2F;home&#x2F;work&#x2F;source.txt &#x2F;home&#x2F;work&#x2F;   </p>
-<h3 id="把192-168-0-10机器上的source-txt文件拷贝到192-168-0-11机器的-x2F-home-x2F-work目录下"><a href="#把192-168-0-10机器上的source-txt文件拷贝到192-168-0-11机器的-x2F-home-x2F-work目录下" class="headerlink" title="把192.168.0.10机器上的source.txt文件拷贝到192.168.0.11机器的&#x2F;home&#x2F;work目录下"></a>把192.168.0.10机器上的source.txt文件拷贝到192.168.0.11机器的&#x2F;home&#x2F;work目录下</h3><p>scp <a href="mailto:&#x77;&#111;&#x72;&#x6b;&#x40;&#x31;&#x39;&#x32;&#46;&#x31;&#x36;&#x38;&#x2e;&#x30;&#46;&#x31;&#48;">&#x77;&#111;&#x72;&#x6b;&#x40;&#x31;&#x39;&#x32;&#46;&#x31;&#x36;&#x38;&#x2e;&#x30;&#46;&#x31;&#48;</a>:&#x2F;home&#x2F;work&#x2F;source.txt <a href="mailto:&#x77;&#x6f;&#114;&#107;&#64;&#x31;&#57;&#x32;&#x2e;&#x31;&#54;&#56;&#x2e;&#48;&#46;&#49;&#49;">&#x77;&#x6f;&#114;&#107;&#64;&#x31;&#57;&#x32;&#x2e;&#x31;&#54;&#56;&#x2e;&#48;&#46;&#49;&#49;</a>:&#x2F;home&#x2F;work&#x2F;   </p>
-<h3 id="拷贝文件夹，加-r参数-拷贝整个目录"><a href="#拷贝文件夹，加-r参数-拷贝整个目录" class="headerlink" title="拷贝文件夹，加-r参数(拷贝整个目录)"></a>拷贝文件夹，加-r参数(拷贝整个目录)</h3><p>scp -r &#x2F;home&#x2F;work&#x2F;sourcedir <a href="mailto:&#x77;&#111;&#114;&#x6b;&#x40;&#49;&#57;&#50;&#x2e;&#x31;&#x36;&#56;&#46;&#x30;&#x2e;&#x31;&#x30;">&#x77;&#111;&#114;&#x6b;&#x40;&#49;&#57;&#50;&#x2e;&#x31;&#x36;&#56;&#46;&#x30;&#x2e;&#x31;&#x30;</a>:&#x2F;home&#x2F;work&#x2F;   </p>
+<h3 id="把本地的jpeg文件拷贝到服务器上的ISIC目录下"><a href="#把本地的jpeg文件拷贝到服务器上的ISIC目录下" class="headerlink" title="把本地的jpeg文件拷贝到服务器上的ISIC目录下"></a>把本地的jpeg文件拷贝到服务器上的ISIC目录下</h3><p>scp -r D:&#x2F;各种文档&#x2F;研究生&#x2F;代码&#x2F;data&#x2F;jpeg&#x2F; <a href="mailto:&#120;&#x69;&#110;&#121;&#117;&#x61;&#110;&#64;&#x31;&#55;&#50;&#x2e;&#x33;&#49;&#46;&#x32;&#x32;&#x36;&#46;&#49;&#53;&#54;">&#120;&#x69;&#110;&#121;&#117;&#x61;&#110;&#64;&#x31;&#55;&#50;&#x2e;&#x33;&#49;&#46;&#x32;&#x32;&#x36;&#46;&#49;&#53;&#54;</a>:&#x2F;home&#x2F;data&#x2F;xinyuan&#x2F;adv_train_wbc&#x2F;data&#x2F;ISIC&#x2F; </p>
+<h3 id="把192-168-0-10机器上的source-txt文件拷贝到本地的-x2F-home-x2F-work目录下"><a href="#把192-168-0-10机器上的source-txt文件拷贝到本地的-x2F-home-x2F-work目录下" class="headerlink" title="把192.168.0.10机器上的source.txt文件拷贝到本地的&#x2F;home&#x2F;work目录下"></a>把192.168.0.10机器上的source.txt文件拷贝到本地的&#x2F;home&#x2F;work目录下</h3><p>scp <a href="mailto:&#119;&#111;&#114;&#x6b;&#64;&#x31;&#x39;&#50;&#46;&#x31;&#x36;&#56;&#46;&#x30;&#x2e;&#x31;&#x30;">&#119;&#111;&#114;&#x6b;&#64;&#x31;&#x39;&#50;&#46;&#x31;&#x36;&#56;&#46;&#x30;&#x2e;&#x31;&#x30;</a>:&#x2F;home&#x2F;work&#x2F;source.txt &#x2F;home&#x2F;work&#x2F;   </p>
+<h3 id="把192-168-0-10机器上的source-txt文件拷贝到192-168-0-11机器的-x2F-home-x2F-work目录下"><a href="#把192-168-0-10机器上的source-txt文件拷贝到192-168-0-11机器的-x2F-home-x2F-work目录下" class="headerlink" title="把192.168.0.10机器上的source.txt文件拷贝到192.168.0.11机器的&#x2F;home&#x2F;work目录下"></a>把192.168.0.10机器上的source.txt文件拷贝到192.168.0.11机器的&#x2F;home&#x2F;work目录下</h3><p>scp <a href="mailto:&#119;&#x6f;&#x72;&#107;&#64;&#49;&#57;&#50;&#x2e;&#x31;&#x36;&#x38;&#46;&#x30;&#x2e;&#49;&#x30;">&#119;&#x6f;&#x72;&#107;&#64;&#49;&#57;&#50;&#x2e;&#x31;&#x36;&#x38;&#46;&#x30;&#x2e;&#49;&#x30;</a>:&#x2F;home&#x2F;work&#x2F;source.txt <a href="mailto:&#x77;&#111;&#114;&#107;&#x40;&#x31;&#x39;&#50;&#46;&#49;&#x36;&#x38;&#46;&#x30;&#46;&#x31;&#x31;">&#x77;&#111;&#114;&#107;&#x40;&#x31;&#x39;&#50;&#46;&#49;&#x36;&#x38;&#46;&#x30;&#46;&#x31;&#x31;</a>:&#x2F;home&#x2F;work&#x2F;   </p>
+<h3 id="拷贝文件夹，加-r参数-拷贝整个目录"><a href="#拷贝文件夹，加-r参数-拷贝整个目录" class="headerlink" title="拷贝文件夹，加-r参数(拷贝整个目录)"></a>拷贝文件夹，加-r参数(拷贝整个目录)</h3><p>scp -r &#x2F;home&#x2F;work&#x2F;sourcedir <a href="mailto:&#x77;&#x6f;&#x72;&#x6b;&#x40;&#x31;&#x39;&#50;&#x2e;&#x31;&#54;&#56;&#x2e;&#48;&#46;&#x31;&#x30;">&#x77;&#x6f;&#x72;&#x6b;&#x40;&#x31;&#x39;&#50;&#x2e;&#x31;&#54;&#56;&#x2e;&#48;&#46;&#x31;&#x30;</a>:&#x2F;home&#x2F;work&#x2F;   </p>
 <h3 id="png-jpg图像转换为矢量图-eps-c保证转换后保证图像彩色"><a href="#png-jpg图像转换为矢量图-eps-c保证转换后保证图像彩色" class="headerlink" title=".png .jpg图像转换为矢量图 .eps -c保证转换后保证图像彩色"></a>.png .jpg图像转换为矢量图 .eps <code>-c</code>保证转换后保证图像彩色</h3><p>bmeps -c .\diff_adv_clean_pgd4.png diff.eps  </p>
 <h3 id="后台运行命令"><a href="#后台运行命令" class="headerlink" title="后台运行命令"></a>后台运行命令</h3><p>nohup COMMAND &amp;<br>nohup sh test.sh &amp;</p>
 <h3 id="后台运行命令-不记录任何日志"><a href="#后台运行命令-不记录任何日志" class="headerlink" title="后台运行命令(不记录任何日志)"></a>后台运行命令(不记录任何日志)</h3><p>nohup python gp&#x2F;trained.py -w 35 &gt;&#x2F;dev&#x2F;null  2&gt;&amp;1 &amp;</p>
 <h3 id="查看后台运行的进程列表"><a href="#查看后台运行的进程列表" class="headerlink" title="查看后台运行的进程列表"></a>查看后台运行的进程列表</h3><p>jobs</p>
 <h3 id="将后台运行的命令放到前台继续运行"><a href="#将后台运行的命令放到前台继续运行" class="headerlink" title="将后台运行的命令放到前台继续运行"></a>将后台运行的命令放到前台继续运行</h3><p>fg %jobname </p>
+<h3 id="htop"><a href="#htop" class="headerlink" title="htop"></a>htop</h3><p>htop  Linux系统中的一个互动的进程查看器<br>与top相比，htop有以下优点：</p>
+<ul>
+<li>可以横向或纵向滚动浏览进程列表，以便看到所有的进程和完整的命令行。</li>
+<li>在启动上，比top 更快。</li>
+<li>杀进程时不需要输入进程号。</li>
+<li>htop 支持鼠标操作。</li>
+<li>两者相比起来，top比较繁琐。</li>
+</ul>
 ]]></content>
       <tags>
         <tag>Linux</tag>
@@ -417,21 +425,6 @@
 <h2 id="回溯解决各种排列组合问题"><a href="#回溯解决各种排列组合问题" class="headerlink" title="回溯解决各种排列组合问题"></a>回溯解决各种排列组合问题</h2><p><a href="https://labuladong.github.io/algo/4/29/103/">https://labuladong.github.io/algo/4/29/103/</a><br><a href="https://labuladong.github.io/algo/4/29/105/">https://labuladong.github.io/algo/4/29/105/</a></p>
 <p><a href="https://leetcode.cn/problems/permutations/">46. 全排列</a><br><a href="https://leetcode.cn/problems/subsets/">78. 子集</a><br><a href="https://leetcode.cn/problems/subsets-ii/">90. 子集 II</a><br><a href="https://leetcode.cn/problems/combinations/">77. 组合</a><br><a href="https://leetcode.cn/problems/combination-sum-ii/">40. 组合总和 II</a><br><a href="https://leetcode.cn/problems/permutations/">46. 全排列</a><br><a href="https://leetcode.cn/problems/combination-sum/">39. 组合总和</a><br><a href="https://leetcode.cn/problems/permutations-ii/">47. 全排列 II</a><br><a href="https://leetcode.cn/problems/combination-sum-iii/">216. 组合总和 III</a></p>
 <h1 id="6-1-BFS问题"><a href="#6-1-BFS问题" class="headerlink" title="6.1 BFS问题"></a>6.1 BFS问题</h1><p>DFS就是递归调用，BFS就是用一个双端队列实现<br><a href="https://leetcode.cn/problems/xu-lie-hua-er-cha-shu-lcof/">剑指 Offer 37. 序列化二叉树</a>——BFS<br><a href="https://leetcode.cn/problems/binary-tree-level-order-traversal/">102. 二叉树的层序遍历</a><br><a href="https://leetcode.cn/problems/number-of-islands/">200. 岛屿数量</a><br><a href="https://leetcode.cn/problems/surrounded-regions/">130. 被围绕的区域</a>——DFS<br><a href="https://leetcode.cn/problems/binary-tree-zigzag-level-order-traversal/">103. 二叉树的锯齿形层序遍历</a>——BFS，while for两层控制<br><a href="https://leetcode.cn/problems/longest-continuous-increasing-subsequence/">674. 最长连续递增序列</a></p>
-<h1 id="AcWing"><a href="#AcWing" class="headerlink" title="AcWing"></a>AcWing</h1><h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p><a href="https://leetcode.cn/problems/zui-xiao-de-kge-shu-lcof/">剑指 Offer 40. 最小的k个数</a>——快排（左右哨兵、递归左右子树组）<br><a href="https://leetcode.cn/problems/sort-colors/">75. 颜色分类</a>——双指针——快速排序</p>
-<p>快速排序：<a href="https://www.acwing.com/video/227/">https://www.acwing.com/video/227/</a></p>
-<p>快速排序过程：1. 确定分界点 2. 调整区间 3. 递归处理左右两端</p>
-<p>调整区间：<br>法1：双指针相向而行，交换<br>法2：用两个数组保存大于目标值和小于目标值的数</p>
-  <figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 快速排序</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">quick_sort</span>(<span class="params">arr: <span class="built_in">number</span>[], l:<span class="built_in">number</span>, r:<span class="built_in">number</span></span>):<span class="built_in">number</span>[]&#123;</span><br><span class="line">      <span class="keyword">let</span> <span class="attr">pivot</span>:<span class="built_in">number</span>=arr[l]<span class="comment">//基准值为第一个数</span></span><br><span class="line">      <span class="keyword">let</span> i=l</span><br><span class="line">      <span class="keyword">let</span> j=r</span><br><span class="line">      <span class="keyword">if</span>(r&lt;l) <span class="keyword">return</span></span><br><span class="line">      </span><br><span class="line">      <span class="keyword">while</span>(i&lt;j)&#123;</span><br><span class="line">          <span class="keyword">while</span>(i&lt;j &amp;&amp; arr[j]&gt;=pivot)   j-- <span class="comment">//注意这里j的循环要放i前面</span></span><br><span class="line">          <span class="keyword">while</span>(i&lt;j &amp;&amp; arr[i]&lt;=pivot)   i++</span><br><span class="line">          <span class="title function_">swap</span>(arr, i, j)<span class="comment">//交换</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      </span><br><span class="line">      </span><br><span class="line">      <span class="title function_">swap</span>(arr, i, l)<span class="comment">// 基准值归位</span></span><br><span class="line">      <span class="title function_">quick_sort</span>(arr, l, i-<span class="number">1</span>)</span><br><span class="line">      <span class="title function_">quick_sort</span>(arr, i+<span class="number">1</span>, r)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> arr<span class="comment">//返回基准值位置</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">swap</span>(<span class="params">arr, i, j</span>)&#123;</span><br><span class="line">      <span class="keyword">let</span> tmp=arr[i]</span><br><span class="line">      arr[i]=arr[j]</span><br><span class="line">      arr[j]=tmp</span><br><span class="line">  &#125;</span><br><span class="line">	</span><br><span class="line">  <span class="keyword">let</span> ans=<span class="title function_">quick_sort</span>(nums, <span class="number">0</span>, nums.<span class="property">length</span>-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
-
-
-<h2 id="快速选择"><a href="#快速选择" class="headerlink" title="快速选择"></a>快速选择</h2><h2 id="归并"><a href="#归并" class="headerlink" title="归并"></a>归并</h2><p><a href="https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof/">剑指 Offer 51. 数组中的逆序对</a>——归并，合并阶段统计逆序数</p>
 ]]></content>
       <tags>
         <tag>leetcode</tag>
@@ -631,6 +624,64 @@
 </ol>
 <h6 id="5月13日-大组会"><a href="#5月13日-大组会" class="headerlink" title="5月13日 大组会"></a>5月13日 大组会</h6><p>下一步工作</p>
 <p>1&#x2F;只可视化分类正确样本被攻击后的准确率趋势<br>2&#x2F;用C_NMC的模型进行实验</p>
+<h6 id="小组会-1"><a href="#小组会-1" class="headerlink" title="小组会"></a>小组会</h6><p>论文小问题修改了</p>
+<p><strong>各种生成对抗样本算法介绍的PPT做好了，其中STN和One pixel攻击算法是否可以使用并替换现有算法，解释STN和One pixel原理</strong></p>
+<p><strong>STN生成对抗样本算法原理，实验结果如何</strong></p>
+<p>有篇很相似的文章，用girdRT和PGD做了混合对抗训练(<a href="https://docs.qq.com/slide/DWUVYWG5Cb0t2Ukpm)%EF%BC%9AICLR">https://docs.qq.com/slide/DWUVYWG5Cb0t2Ukpm)：ICLR</a> under review）A ROTATION AND A TRANSLATION SUFFICE: FOOLING CNNS WITH SIMPLE TRANSFORMATIONS</p>
+<p>实验:</p>
+<ol>
+<li>为什么rotate没有效果，是不是我设置nums&#x3D;60固定的缘故</li>
+<li>虽然rotate对Acc下降没有，但invariance下降了就说明预测标签会变化，模型不鲁棒了，所以还是可以使用rotate对抗样本呢？</li>
+<li><strong>展示nums随着range更改的单一rotate、transition实验结果</strong></li>
+<li><strong>混合最差的样本设置是否是（trans&#x3D;12 scale&#x3D;0.5 rotate&#x3D;90），通过这个来缩小搜索范围，加快搜素速度</strong></li>
+<li>展示scale实验结果，讨论缩放的场景是否有可能</li>
+</ol>
+<h6 id="大组会"><a href="#大组会" class="headerlink" title="大组会"></a>大组会</h6><ol>
+<li><p>找C_NMC模型</p>
+</li>
+<li><p>可视化正确分类样本被攻击前后准确率趋势</p>
+</li>
+</ol>
+<h6 id="小组会-2"><a href="#小组会-2" class="headerlink" title="小组会"></a>小组会</h6><ol>
+<li>C_NMC数据的人发的地方都是ISBI，是否C_NMC数据不好，或者去找细胞检测相关的模型？什么关键字——cell detection。输出：整理了传统和深度学习的方法应用在细胞检测场景下</li>
+</ol>
+<p><img src="C:\Users\lxy\AppData\Roaming\Typora\typora-user-images\image-20220519094840136.png" alt="image-20220519094840136"></p>
+<h6 id="跟师兄讨论："><a href="#跟师兄讨论：" class="headerlink" title="跟师兄讨论："></a>跟师兄讨论：</h6><p>旋转没用的原因？因为血细胞的空间性影响不大</p>
+<p>C_NMC只有核？跟医生确认下光用细胞核判断疾病是通过什么特征</p>
+<p>ALL_IDB2数据只有260张？数据少可尝试用数据增强，但是必须嘚做交叉验证，还是建议找医院要点数据</p>
+<p>有重叠问题？找医生确认是否有重叠问题；不能用目标检测的生成对抗样本方法，一是跟场景不贴合，二是得改成目标检测，这样工作量太大，还是做分类，可以切一些细胞出来做分类；</p>
+<p>旋转后的样本，黑色背景需要做填充处理吗？不需要</p>
+<p>其他？现在最重要的是考虑怎么说错误样本分类正确这个问题；吧STM论文和代码发给师兄，验证下实验过程；换一个方法STN</p>
+<h6 id="问医生的问题"><a href="#问医生的问题" class="headerlink" title="问医生的问题"></a>问医生的问题</h6><ol>
+<li>C_NMC只有核？跟医生确认下光用细胞核判断疾病是通过什么特征</li>
+<li>ALL_IDB2数据只有260张？数据少可尝试用数据增强，但是必须嘚做交叉验证，还是<strong>建议找医院要点数据</strong></li>
+<li>有重叠问题？找医生确认是否有重叠问题。两个细胞之间重叠还是有脏东西？</li>
+<li>遮挡出现的概率</li>
+</ol>
+<p><img src="C:\Users\lxy\AppData\Roaming\Typora\typora-user-images\image-20220531095215569.png" alt="image-20220531095215569"><br>正常成熟淋巴细胞：胞体小，细胞核圆形，规则，核染色质厚，很均匀，胞浆量少<br>原始淋巴细胞：胞体比正常的淋巴大，核型不规则，染色质比正常的偏细，有核仁</p>
+<h3 id="对抗训练原理"><a href="#对抗训练原理" class="headerlink" title="对抗训练原理"></a>对抗训练原理</h3><p><a href="https://kexue.fm/archives/7234/comment-page-3">https://kexue.fm/archives/7234/comment-page-3</a></p>
+<h3 id="CNN不具备旋转不变性"><a href="#CNN不具备旋转不变性" class="headerlink" title="CNN不具备旋转不变性"></a>CNN不具备旋转不变性</h3><p><a href="https://www.zhihu.com/question/30817011">https://www.zhihu.com/question/30817011</a></p>
+<h3 id="常见报错"><a href="#常见报错" class="headerlink" title="常见报错"></a>常见报错</h3><ol>
+<li>发生异常: RuntimeError<br>Invalid DISPLAY variable</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">plt.switch_backend(&#x27;agg&#x27;)</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="白血病简介"><a href="#白血病简介" class="headerlink" title="白血病简介"></a>白血病简介</h3><p><a href="https://www.cclg.org.uk/Leukaemia-">https://www.cclg.org.uk/Leukaemia-</a><br>ALL：<a href="https://www.cclg.org.uk/Acute-lymphoblastic-leukaemia-ALL">https://www.cclg.org.uk/Acute-lymphoblastic-leukaemia-ALL</a><br>AML：<a href="https://www.cclg.org.uk/Acute-myeloid-leukaemia-AML">https://www.cclg.org.uk/Acute-myeloid-leukaemia-AML</a></p>
+<p>论文：</p>
+<ul>
+<li><a href="https://www.nature.com/articles/ng.3909">https://www.nature.com/articles/ng.3909</a></li>
+<li><a href="https://scholar.google.com/scholar?cites=11618853838070340770&amp;as_sdt=2005&amp;sciodt=0,5&amp;hl=zh-CN">https://scholar.google.com/scholar?cites=11618853838070340770&amp;as_sdt=2005&amp;sciodt=0,5&amp;hl=zh-CN</a></li>
+</ul>
+<p>世界卫生组织报告：<a href="https://ourworldindata.org/cancer#cancer-survival-rates">https://ourworldindata.org/cancer#cancer-survival-rates</a></p>
+<h6 id="病理切片噪声"><a href="#病理切片噪声" class="headerlink" title="病理切片噪声"></a>病理切片噪声</h6><p><a href="https://www.sigs.tsinghua.edu.cn/2021/1013/c1209a30051/page.htm">https://www.sigs.tsinghua.edu.cn/2021/1013/c1209a30051/page.htm</a></p>
+<ul>
+<li>Learning to Generate Realistic Noisy Images via Pixel-level Noise-aware Adversarial Training<br>&#x3D; 解决相机、手机白噪声问题</li>
+<li>TransMIL: Transformer based Correlated Multiple Instance Learning for Whole Slide Image Classification</li>
+</ul>
 ]]></content>
       <tags>
         <tag>keyan</tag>
@@ -862,6 +913,70 @@
 </ol>
 <p><a href="https://blog.csdn.net/yellowmushroom/article/details/89388377">https://blog.csdn.net/yellowmushroom/article/details/89388377</a></p>
 <p>标签的width和height是设置画布宽度和高度，不会被拉伸</p>
+<ol start="27">
+<li>为什么推荐使用 TypeScript ？</li>
+</ol>
+<p>TypeScript是JS的超集，是静态语言，能对代码进行静态检查，适合大型应用，代码更易于阅读</p>
+<p>它有强大的类型系统，比如泛型</p>
+<ol start="28">
+<li>TypeScript中的类型有哪些？</li>
+</ol>
+<p><a href="https://www.tslang.cn/docs/handbook/basic-types.html">https://www.tslang.cn/docs/handbook/basic-types.html</a></p>
+<p>number string boolean void never null undefined </p>
+<p>用户定义的：数组（x:number[]）、元组(x:[string, number])、枚举(enum Color{Red, Blue})</p>
+<ol start="29">
+<li>Typescript中泛型是什么？</li>
+</ol>
+<p><a href="https://www.tslang.cn/docs/handbook/generics.html">https://www.tslang.cn/docs/handbook/generics.html</a></p>
+<p>demo: <a href="https://www.typescriptlang.org/zh/play#code/PTAEiJrQ5+MU3NAYlUAqBPADgUwMoGMBOBLFAF1EBR7QYb9AudUBh-gKBFEE34wejNAAOUCo5QTb9ADeUAXjQbPlAaP6BMxSqAwJUDVcoBiVQGbagAzlEqTLgLFAIW6BFf0CbXoCAGGnTCAKg0D3yoFO5E4CDNQNBygSDlAs56BO00Dw+oH95QBSugYO1AWP-79oUAFpQdkBYOUAseUAWD0B5dUBvuUBVeUAcOUB-SNU5BXRsfCJQVUAGdXtdegCgtkBleUAYrLSlTOJAW+jAVZtANz1AODlAaojALrkJXPzfIvZXQDi5QGlbQFXo4MAYFUqMlVABQEXowHxzQHylQF+A1UBMm0BG710aLAB7ADsAZ2IAQ32AUQAPE4BbFAAbNAA1E-wTgCNH0ABeUAAiAASaHu912oAA6rscPcACZ-HYHQ67R4AOlBAHMABRnK63B7PV54D6PACUenopkAnQ6Ab8VAFBy9lUoEAOASALk9ANHygFwCUCANCNmYAG00A36kcqgmQBhcoBjyMAL2aALE1AM6K-RqgAAo1SAQ-lAPYG2nh9G5gFAAwAESoATNIYgGy5QAXNoApxIagBQ5QAA+oBpzTcVEALqZscgUVSANDlADKugF+EwB6Ov0uLo-HoAGYAV32WEIeAOoAACmhdviADwIAB82Jw6IAXAgSXmAN40Px+HBoQjhnD7UCvdE0AC+NEexBQAEZvonk48U8d8Pt0ZmAOT3S5IIdklugFAAJk7SdT+3DN3eaBwmbbM4AzGS9kdkWg0bsse2ADTTmckoA">https://www.typescriptlang.org/zh/play?#code/PTAEiJrQ5+MU3NAYlUAqBPADgUwMoGMBOBLFAF1EBR7QYb9AudUBh-gKBFEE34wejNAAOUCo5QTb9ADeUAXjQbPlAaP6BMxSqAwJUDVcoBiVQGbagAzlEqTLgLFAIW6BFf0CbXoCAGGnTCAKg0D3yoFO5E4CDNQNBygSDlAs56BO00Dw+oH95QBSugYO1AWP-79oUAFpQdkBYOUAseUAWD0B5dUBvuUBVeUAcOUB-SNU5BXRsfCJQVUAGdXtdegCgtkBleUAYrLSlTOJAW+jAVZtANz1AODlAaojALrkJXPzfIvZXQDi5QGlbQFXo4MAYFUqMlVABQEXowHxzQHylQF+A1UBMm0BG710aLAB7ADsAZ2IAQ32AUQAPE4BbFAAbNAA1E-wTgCNH0ABeUAAiAASaHu912oAA6rscPcACZ-HYHQ67R4AOlBAHMABRnK63B7PV54D6PACUenopkAnQ6Ab8VAFBy9lUoEAOASALk9ANHygFwCUCANCNmYAG00A36kcqgmQBhcoBjyMAL2aALE1AM6K-RqgAAo1SAQ-lAPYG2nh9G5gFAAwAESoATNIYgGy5QAXNoApxIagBQ5QAA+oBpzTcVEALqZscgUVSANDlADKugF+EwB6Ov0uLo-HoAGYAV32WEIeAOoAACmhdviADwIAB82Jw6IAXAgSXmAN40Px+HBoQjhnD7UCvdE0AC+NEexBQAEZvonk48U8d8Pt0ZmAOT3S5IIdklugFAAJk7SdT+3DN3eaBwmbbM4AzGS9kdkWg0bsse2ADTTmckoA</a></p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title class_">People</span>&lt;T&gt;(<span class="attr">arg</span>:T):T&#123;</span><br><span class="line">    <span class="keyword">return</span> arg</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> p1=<span class="title class_">People</span>&lt;<span class="built_in">string</span>&gt;(<span class="string">&#x27;lxy&#x27;</span>)</span><br><span class="line"><span class="keyword">let</span> p2=<span class="title class_">People</span>&lt;<span class="built_in">number</span>&gt;(<span class="number">123</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1, p2)</span><br></pre></td></tr></table></figure>
+
+<p>能够创建可以使用多种数据类型而不是单一数据类型的组件</p>
+<p>提供了类型安全性</p>
+<p>泛型允许我们创建泛型类，泛型函数，泛型方法和泛型接口</p>
+<ol start="30">
+<li>什么是 let 的临时性死区？</li>
+</ol>
+<p><a href="https://segmentfault.com/a/1190000015603779">https://segmentfault.com/a/1190000015603779</a></p>
+<p>在代码块内，使用 <code>let</code> 命令声明变量之前，该变量都是不可用的,若在声明之前使用变量，就会报错<br>这在语法上，称为 <strong>“暂时性死区”</strong>（ temporal dead zone，简称 TDZ</p>
+<ol start="31">
+<li>第3题：var、let、const之间有什么区别？</li>
+</ol>
+<p><a href="https://fe.ecool.fun/topic/c843a307-4934-4fa2-9c16-9f06484b0021?orderBy=updateTime&amp;order=desc&amp;titleKey=let">https://fe.ecool.fun/topic/c843a307-4934-4fa2-9c16-9f06484b0021?orderBy=updateTime&amp;order=desc&amp;titleKey=let</a></p>
+<p>var 存在变量提升；能够对一个变量进行多次声明</p>
+<p>let 不存在变量提升（所声明的变量，只在<code>let</code>命令所在的代码块内有效）；不能对一个变量进行重复声明</p>
+<p>const 声明的常量不可改变（<code>const</code>实际上保证的并不是变量的值不得改动，而是变量指向的那个内存地址所保存的数据不得改动）；声明时必须立即初始化</p>
+<ol start="32">
+<li>第2题：怎么让CSS flex布局最后一行列表左对齐？</li>
+</ol>
+<p><a href="https://fe.ecool.fun/topic/389a7ca7-43d2-4fbe-99ef-50bea32bef5c?orderBy=updateTime&amp;order=desc&amp;titleKey=flex">https://fe.ecool.fun/topic/389a7ca7-43d2-4fbe-99ef-50bea32bef5c?orderBy=updateTime&amp;order=desc&amp;titleKey=flex</a></p>
+<p>grid布局</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.container</span>&#123;</span><br><span class="line">    <span class="attribute">display</span>: grid;</span><br><span class="line">    <span class="attribute">justify-content</span>:space-between;</span><br><span class="line">    <span class="attribute">grid-template</span>-colunm:<span class="built_in">repeat</span>(auto-fill, <span class="number">10px</span>);</span><br><span class="line">    <span class="attribute">grid-gap</span>:<span class="number">10px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ol start="33">
+<li>第3题：CSS中的 “flex:1;” 是什么意思？</li>
+</ol>
+<p><a href="https://fe.ecool.fun/topic/286f67d3-4e8d-48f5-962a-ed9cccc46335?orderBy=updateTime&amp;order=desc&amp;titleKey=flex">https://fe.ecool.fun/topic/286f67d3-4e8d-48f5-962a-ed9cccc46335?orderBy=updateTime&amp;order=desc&amp;titleKey=flex</a></p>
+<ol start="34">
+<li>第4题：flexbox（弹性盒布局模型）是什么，适用什么场景</li>
+</ol>
+<p><a href="https://fe.ecool.fun/topic/dd65350c-9907-4d3a-a01c-baeebb3e963d?orderBy=updateTime&amp;order=desc&amp;titleKey=flex">https://fe.ecool.fun/topic/dd65350c-9907-4d3a-a01c-baeebb3e963d?orderBy=updateTime&amp;order=desc&amp;titleKey=flex</a></p>
+<p>适用于自适应布局</p>
+<p>移动端、小程序这边的开发，都建议使用<code>flex</code>进行布局</p>
+<ol start="35">
+<li>第5题：TCP链接为什么会采用三次握手，而不是两次或者四次呢？</li>
+</ol>
+<p><a href="http://www.justdojava.com/2021/03/28/tcp/">http://www.justdojava.com/2021/03/28/tcp/</a></p>
+<p><strong>三次握手为什么是三次？</strong>保证客户端、服务端都有发送和接收能力，才能保证进行可靠的传输</p>
+<p>第一次握手：第一次握手是客户端发送同步报文到服务端，这个时候客户端是知道自己具备发送数据的能力的，但是不知道服务端是否有接收和发送数据的能力；</p>
+<p>第二次握手：当服务端接收到同步报文后，回复确认同步报文，此时服务端是知道客户端具有发送报文的能力，并且知道自己具有接收和发送数据的能力，但是并不知道客户端是否有接收数据的能力；</p>
+<p>第三次握手：当客户端收到服务端的确认报文后，知道服务端具备接收和发送数据的能力，但是此时服务端并不知道自己具有接收的能力，所以还需要发送一个确认报文，告知服务端自己是具有接收能力的。</p>
+<p>当整个三次握手结束过后，客户端和服务端都知道自己和对方具备发送和接收数据的能力，随后整个连接建立就完成了，可以进行后续数据的传输了。</p>
+<p><strong>四次挥手为什么是四次？</strong>挥手的时候有数据在传输，所以 ACK 和 FIN 报文不能同时发送，需要分两步，所以会比握手多一步。</p>
+<p>第一次挥手客户端发起关闭连接的请求给服务端；</p>
+<p>第二次挥手：服务端收到关闭请求的时候可能这个时候数据还没发送完，所以服务端会先回复一个确认报文，表示自己知道客户端想要关闭连接了，但是因为数据还没传输完，所以还需要等待；</p>
+<p>第三次挥手：当数据传输完了，服务端会主动发送一个 FIN 报文，告诉客户端，表示数据已经发送完了，服务端这边准备关闭连接了。</p>
+<p>第四次挥手：当客户端收到服务端的 FIN 报文过后，会回复一个 ACK 报文，告诉服务端自己知道了，再等待一会就关闭连接。</p>
 <h2 id="腾讯前端实习一-二面"><a href="#腾讯前端实习一-二面" class="headerlink" title="腾讯前端实习一,二面"></a>腾讯前端实习一,二面</h2><p>作者：dara羽星<br>链接：<a href="https://www.nowcoder.com/discuss/954603?type=post&amp;order=hot&amp;pos=&amp;page=1&amp;ncTraceId=&amp;channel=-1&amp;source_id=search_post_nctrack&amp;gio_id=6C9B02BCD77AC7951DD89A4914063199-1653400236717">https://www.nowcoder.com/discuss/954603?type=post&amp;order=hot&amp;pos=&amp;page=1&amp;ncTraceId=&amp;channel=-1&amp;source_id=search_post_nctrack&amp;gio_id=6C9B02BCD77AC7951DD89A4914063199-1653400236717</a><br>来源：牛客网</p>
 <p>因为没录音只能想一点写一点。可能有很多遗漏<br>5.17一面 时长1h5min<br>    1. 隐藏元素的方法以及分别有什么区别<br>        <a href="https://juejin.cn/post/6943856363248287752">https://juejin.cn/post/6943856363248287752</a><br>        <a href="https://jsbin.com/wesidaluyi/edit?html,output">https://jsbin.com/wesidaluyi/edit?html,output</a><br>        display: none<br>        visibility: hidden<br>        opacity: 0<br>        position: relative<br>        position: absolute</p>
 <pre><code>2. BFC介绍
@@ -1032,6 +1147,50 @@ https://juejin.cn/post/6844903593955328007
 </ol>
 <p>三者都可以改变this指向</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="title function_">apply</span>(obj, [<span class="number">1</span>,<span class="number">2</span>])<span class="comment">//传入参数是一个数组</span></span><br><span class="line"><span class="title function_">call</span>(obj, <span class="number">1</span>, <span class="number">2</span>)<span class="comment">//传入参数是参数列表</span></span><br><span class="line"><span class="keyword">let</span> bindFn=<span class="title function_">bind</span>(obj)<span class="comment">//返回一个函数，需要再次调用</span></span><br><span class="line"><span class="title function_">bindFn</span>(<span class="number">1</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+
+<h1 id="【面试复盘】华为-前端实习-业务面-主管面-（已入池）"><a href="#【面试复盘】华为-前端实习-业务面-主管面-（已入池）" class="headerlink" title="【面试复盘】华为 前端实习 业务面+主管面 （已入池）"></a>【面试复盘】华为 前端实习 业务面+主管面 （已入池）</h1><p><a href="https://www.nowcoder.com/discuss/944846?type=all&amp;order=recall&amp;pos=&amp;page=1&amp;ncTraceId=&amp;channel=-1&amp;source_id=search_all_nctrack&amp;gio_id=BBA6B2900600A1DB04A02D71B856A3C6-1655455004343">https://www.nowcoder.com/discuss/944846?type=all&amp;order=recall&amp;pos=&amp;page=1&amp;ncTraceId=&amp;channel=-1&amp;source_id=search_all_nctrack&amp;gio_id=BBA6B2900600A1DB04A02D71B856A3C6-1655455004343</a></p>
+<ol>
+<li>前端向后端交互的方法 GET、POST、DELETE的应用场景？</li>
+</ol>
+<p>Get:幂等；登录用户；浏览器会缓存；实体部分为空；不安全（请求的参数放在url中，url会保存在历史记录中）<br>Post:不幂等；注册用户；不会缓存；实体部分为发送给服务器的数据；安全</p>
+<ol start="2">
+<li><p>鉴权怎么做的？</p>
+</li>
+<li><p>H5和HTML有什么区别？H5的原理是啥？**</p>
+</li>
+<li><p>做项目碰到了什么困难？怎么解决的？**</p>
+</li>
+<li><p>两数之和，两种解法</p>
+</li>
+</ol>
+<p>主管面：</p>
+<p>你做过什么项目？简单介绍一下</p>
+<p>项目有哪些功能？</p>
+<p>项目遇到的困难，如何解决</p>
+<p>平常怎么学习？</p>
+<p>哪里人？</p>
+<p>怎么跑东北去读书了？准备在哪发展？</p>
+<p>职业规划？</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Acwing刷题笔记</title>
+    <url>/2022/06/20/Acwing%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<span id="more"></span>
+
+
+
+<h1 id="AcWing"><a href="#AcWing" class="headerlink" title="AcWing"></a>AcWing</h1><h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p><a href="https://leetcode.cn/problems/zui-xiao-de-kge-shu-lcof/">剑指 Offer 40. 最小的k个数</a>——快排（左右哨兵、递归左右子树组）<br><a href="https://leetcode.cn/problems/sort-colors/">75. 颜色分类</a>——双指针——快速排序</p>
+<p>快速排序：<a href="https://www.acwing.com/video/227/">https://www.acwing.com/video/227/</a></p>
+<p>快速排序过程：1. 确定分界点 2. 调整区间 3. 递归处理左右两端</p>
+<p>调整区间：<br>法1：双指针相向而行，交换<br>法2：用两个数组保存大于目标值和小于目标值的数</p>
+  <figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 快速排序</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">quick_sort</span>(<span class="params">arr: <span class="built_in">number</span>[], l:<span class="built_in">number</span>, r:<span class="built_in">number</span></span>):<span class="built_in">number</span>[]&#123;</span><br><span class="line">      <span class="keyword">let</span> <span class="attr">pivot</span>:<span class="built_in">number</span>=arr[l]<span class="comment">//基准值为第一个数</span></span><br><span class="line">      <span class="keyword">let</span> i=l</span><br><span class="line">      <span class="keyword">let</span> j=r</span><br><span class="line">      <span class="keyword">if</span>(r&lt;l) <span class="keyword">return</span></span><br><span class="line">      </span><br><span class="line">      <span class="keyword">while</span>(i&lt;j)&#123;</span><br><span class="line">          <span class="keyword">while</span>(i&lt;j &amp;&amp; arr[j]&gt;=pivot)   j-- <span class="comment">//注意这里j的循环要放i前面</span></span><br><span class="line">          <span class="keyword">while</span>(i&lt;j &amp;&amp; arr[i]&lt;=pivot)   i++</span><br><span class="line">          <span class="title function_">swap</span>(arr, i, j)<span class="comment">//交换</span></span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      </span><br><span class="line">      </span><br><span class="line">      <span class="title function_">swap</span>(arr, i, l)<span class="comment">// 基准值归位</span></span><br><span class="line">      <span class="title function_">quick_sort</span>(arr, l, i-<span class="number">1</span>)</span><br><span class="line">      <span class="title function_">quick_sort</span>(arr, i+<span class="number">1</span>, r)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">      <span class="keyword">return</span> arr<span class="comment">//返回基准值位置</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">function</span> <span class="title function_">swap</span>(<span class="params">arr, i, j</span>)&#123;</span><br><span class="line">      <span class="keyword">let</span> tmp=arr[i]</span><br><span class="line">      arr[i]=arr[j]</span><br><span class="line">      arr[j]=tmp</span><br><span class="line">  &#125;</span><br><span class="line">	</span><br><span class="line">  <span class="keyword">let</span> ans=<span class="title function_">quick_sort</span>(nums, <span class="number">0</span>, nums.<span class="property">length</span>-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="快速选择"><a href="#快速选择" class="headerlink" title="快速选择"></a>快速选择</h2><h2 id="归并"><a href="#归并" class="headerlink" title="归并"></a>归并</h2><p><a href="https://leetcode.cn/problems/shu-zu-zhong-de-ni-xu-dui-lcof/">剑指 Offer 51. 数组中的逆序对</a>——归并，合并阶段统计逆序数</p>
 ]]></content>
   </entry>
 </search>
