@@ -86,12 +86,10 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="面经汇总：https:&#x2F;&#x2F;www.nowcoder.com&#x2F;discuss&#x2F;experience?tagId&#x3D;644 每日刷的面经宝典要有针对性的刷题，根据项目来衍生出刷的题，最好用梅花生长的项目  100个请求哪一个最快发到客户端，考的是Promise 并发  简单介绍自己的项目（重新用Vue3重构了下）  vue3简单介绍一下（Vue3引入的核心功能，对比Vue2）  Vuex，比较下mut">
 <meta property="og:locale">
-<meta property="og:image" content="https://image-static.segmentfault.com/160/418/1604181361-5a1397cca5644">
 <meta property="article:published_time" content="2022-05-24T13:51:23.000Z">
-<meta property="article:modified_time" content="2022-06-27T13:56:57.143Z">
+<meta property="article:modified_time" content="2022-07-06T04:47:15.631Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://image-static.segmentfault.com/160/418/1604181361-5a1397cca5644">
 
 
 
@@ -370,7 +368,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  5.2k
+                  2.7k
                 </span>
               
 
@@ -386,7 +384,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  21
+                  10
                 </span>
               
             </div>
@@ -432,10 +430,6 @@
 <li><p>使用Promise实现：限制异步操作的并发个数，并尽可能快的完成全部</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">count=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">def <span class="title function_">recur</span>(u):</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="title function_">len</span>(u)==<span class="number">0</span>: <span class="keyword">return</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="title function_">range</span>(<span class="number">3</span>-count):</span><br><span class="line"></span><br><span class="line">​    cur=u.<span class="title function_">shift</span>()</span><br><span class="line"></span><br><span class="line">​    count++</span><br><span class="line"></span><br><span class="line">​	<span class="title function_">loadImg</span>(cur).<span class="title function_">finally</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">​    count--</span><br><span class="line"></span><br><span class="line">​    <span class="title function_">recur</span>(u)</span><br><span class="line"></span><br><span class="line">​    &#125;)</span><br><span class="line"></span><br><span class="line"><span class="title function_">recur</span>(urls)</span><br></pre></td></tr></table></figure>
 
-
-
-
-
 </li>
 <li><p>第1题：实现 Promise.race 函数</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="property">race</span>=<span class="keyword">function</span>(<span class="params">arr</span>)&#123;</span><br><span class="line"></span><br><span class="line">​	<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span>(<span class="params">resolve, rejuct</span>)&#123;</span><br><span class="line"></span><br><span class="line">​			<span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;arr.<span class="property">length</span>;i++)&#123;</span><br><span class="line"></span><br><span class="line">​				<span class="title class_">Promise</span>.<span class="title function_">resolve</span>(arr[i]).<span class="title function_">then</span>(resolve, reject)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -463,8 +457,6 @@
 </li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">nums</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">target</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> search = <span class="keyword">function</span>(<span class="params">nums, target</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> l=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">let</span> r=nums.<span class="property">length</span>-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">let</span> mid=<span class="title class_">Math</span>.<span class="title function_">floor</span>((l+r)/<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(nums.<span class="property">length</span>===<span class="number">0</span>)&#123; <span class="keyword">return</span> -<span class="number">1</span>&#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(l&lt;=r)&#123;</span><br><span class="line">            </span><br><span class="line">        mid = <span class="title class_">Math</span>.<span class="title function_">floor</span>((l+r)/<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(target===nums[mid])&#123;  <span class="keyword">return</span> mid&#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(target&lt;nums[mid])&#123;	r=mid-<span class="number">1</span>&#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (target&gt;nums[mid])&#123;	l=mid+<span class="number">1</span>&#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
 
 
 
@@ -527,9 +519,7 @@
 <p>demo: <a target="_blank" rel="noopener" href="https://www.typescriptlang.org/zh/play#code/PTAEiJrQ5+MU3NAYlUAqBPADgUwMoGMBOBLFAF1EBR7QYb9AudUBh-gKBFEE34wejNAAOUCo5QTb9ADeUAXjQbPlAaP6BMxSqAwJUDVcoBiVQGbagAzlEqTLgLFAIW6BFf0CbXoCAGGnTCAKg0D3yoFO5E4CDNQNBygSDlAs56BO00Dw+oH95QBSugYO1AWP-79oUAFpQdkBYOUAseUAWD0B5dUBvuUBVeUAcOUB-SNU5BXRsfCJQVUAGdXtdegCgtkBleUAYrLSlTOJAW+jAVZtANz1AODlAaojALrkJXPzfIvZXQDi5QGlbQFXo4MAYFUqMlVABQEXowHxzQHylQF+A1UBMm0BG710aLAB7ADsAZ2IAQ32AUQAPE4BbFAAbNAA1E-wTgCNH0ABeUAAiAASaHu912oAA6rscPcACZ-HYHQ67R4AOlBAHMABRnK63B7PV54D6PACUenopkAnQ6Ab8VAFBy9lUoEAOASALk9ANHygFwCUCANCNmYAG00A36kcqgmQBhcoBjyMAL2aALE1AM6K-RqgAAo1SAQ-lAPYG2nh9G5gFAAwAESoATNIYgGy5QAXNoApxIagBQ5QAA+oBpzTcVEALqZscgUVSANDlADKugF+EwB6Ov0uLo-HoAGYAV32WEIeAOoAACmhdviADwIAB82Jw6IAXAgSXmAN40Px+HBoQjhnD7UCvdE0AC+NEexBQAEZvonk48U8d8Pt0ZmAOT3S5IIdklugFAAJk7SdT+3DN3eaBwmbbM4AzGS9kdkWg0bsse2ADTTmckoA">https://www.typescriptlang.org/zh/play?#code/PTAEiJrQ5+MU3NAYlUAqBPADgUwMoGMBOBLFAF1EBR7QYb9AudUBh-gKBFEE34wejNAAOUCo5QTb9ADeUAXjQbPlAaP6BMxSqAwJUDVcoBiVQGbagAzlEqTLgLFAIW6BFf0CbXoCAGGnTCAKg0D3yoFO5E4CDNQNBygSDlAs56BO00Dw+oH95QBSugYO1AWP-79oUAFpQdkBYOUAseUAWD0B5dUBvuUBVeUAcOUB-SNU5BXRsfCJQVUAGdXtdegCgtkBleUAYrLSlTOJAW+jAVZtANz1AODlAaojALrkJXPzfIvZXQDi5QGlbQFXo4MAYFUqMlVABQEXowHxzQHylQF+A1UBMm0BG710aLAB7ADsAZ2IAQ32AUQAPE4BbFAAbNAA1E-wTgCNH0ABeUAAiAASaHu912oAA6rscPcACZ-HYHQ67R4AOlBAHMABRnK63B7PV54D6PACUenopkAnQ6Ab8VAFBy9lUoEAOASALk9ANHygFwCUCANCNmYAG00A36kcqgmQBhcoBjyMAL2aALE1AM6K-RqgAAo1SAQ-lAPYG2nh9G5gFAAwAESoATNIYgGy5QAXNoApxIagBQ5QAA+oBpzTcVEALqZscgUVSANDlADKugF+EwB6Ov0uLo-HoAGYAV32WEIeAOoAACmhdviADwIAB82Jw6IAXAgSXmAN40Px+HBoQjhnD7UCvdE0AC+NEexBQAEZvonk48U8d8Pt0ZmAOT3S5IIdklugFAAJk7SdT+3DN3eaBwmbbM4AzGS9kdkWg0bsse2ADTTmckoA</a></p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title class_">People</span>&lt;T&gt;(<span class="attr">arg</span>:T):T&#123;</span><br><span class="line">    <span class="keyword">return</span> arg</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> p1=<span class="title class_">People</span>&lt;<span class="built_in">string</span>&gt;(<span class="string">&#x27;lxy&#x27;</span>)</span><br><span class="line"><span class="keyword">let</span> p2=<span class="title class_">People</span>&lt;<span class="built_in">number</span>&gt;(<span class="number">123</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1, p2)</span><br></pre></td></tr></table></figure>
 
-<p>能够创建可以使用多种数据类型而不是单一数据类型的组件</p>
-<p>提供了类型安全性</p>
-<p>泛型允许我们创建泛型类，泛型函数，泛型方法和泛型接口</p>
+<p>能够创建可以使用多种数据类型而不是单一数据类型的组件<br>提供了类型安全性<br>泛型允许我们创建泛型类，泛型函数，泛型方法和泛型接口</p>
 <ol start="30">
 <li>什么是 let 的临时性死区？</li>
 </ol>
@@ -564,230 +554,60 @@
 </ol>
 <p><a target="_blank" rel="noopener" href="http://www.justdojava.com/2021/03/28/tcp/">http://www.justdojava.com/2021/03/28/tcp/</a></p>
 <p><strong>三次握手为什么是三次？</strong>保证客户端、服务端都有发送和接收能力，才能保证进行可靠的传输</p>
-<p>第一次握手：第一次握手是客户端发送同步报文到服务端，这个时候客户端是知道自己具备发送数据的能力的，但是不知道服务端是否有接收和发送数据的能力；</p>
-<p>第二次握手：当服务端接收到同步报文后，回复确认同步报文，此时服务端是知道客户端具有发送报文的能力，并且知道自己具有接收和发送数据的能力，但是并不知道客户端是否有接收数据的能力；</p>
-<p>第三次握手：当客户端收到服务端的确认报文后，知道服务端具备接收和发送数据的能力，但是此时服务端并不知道自己具有接收的能力，所以还需要发送一个确认报文，告知服务端自己是具有接收能力的。</p>
-<p>当整个三次握手结束过后，客户端和服务端都知道自己和对方具备发送和接收数据的能力，随后整个连接建立就完成了，可以进行后续数据的传输了。</p>
+<p>第一次握手：第一次握手是客户端发送同步报文到服务端，这个时候客户端是知道自己具备发送数据的能力的，但是不知道服务端是否有接收和发送数据的能力；<br>第二次握手：当服务端接收到同步报文后，回复确认同步报文，此时服务端是知道客户端具有发送报文的能力，并且知道自己具有接收和发送数据的能力，但是并不知道客户端是否有接收数据的能力；<br>第三次握手：当客户端收到服务端的确认报文后，知道服务端具备接收和发送数据的能力，但是此时服务端并不知道自己具有接收的能力，所以还需要发送一个确认报文，告知服务端自己是具有接收能力的。<br>当整个三次握手结束过后，客户端和服务端都知道自己和对方具备发送和接收数据的能力，随后整个连接建立就完成了，可以进行后续数据的传输了。</p>
 <p><strong>四次挥手为什么是四次？</strong>挥手的时候有数据在传输，所以 ACK 和 FIN 报文不能同时发送，需要分两步，所以会比握手多一步。</p>
-<p>第一次挥手客户端发起关闭连接的请求给服务端；</p>
-<p>第二次挥手：服务端收到关闭请求的时候可能这个时候数据还没发送完，所以服务端会先回复一个确认报文，表示自己知道客户端想要关闭连接了，但是因为数据还没传输完，所以还需要等待；</p>
-<p>第三次挥手：当数据传输完了，服务端会主动发送一个 FIN 报文，告诉客户端，表示数据已经发送完了，服务端这边准备关闭连接了。</p>
-<p>第四次挥手：当客户端收到服务端的 FIN 报文过后，会回复一个 ACK 报文，告诉服务端自己知道了，再等待一会就关闭连接。</p>
-<h2 id="腾讯前端实习一-二面"><a href="#腾讯前端实习一-二面" class="headerlink" title="腾讯前端实习一,二面"></a>腾讯前端实习一,二面</h2><p>作者：dara羽星<br>链接：<a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/954603?type=post&amp;order=hot&amp;pos=&amp;page=1&amp;ncTraceId=&amp;channel=-1&amp;source_id=search_post_nctrack&amp;gio_id=6C9B02BCD77AC7951DD89A4914063199-1653400236717">https://www.nowcoder.com/discuss/954603?type=post&amp;order=hot&amp;pos=&amp;page=1&amp;ncTraceId=&amp;channel=-1&amp;source_id=search_post_nctrack&amp;gio_id=6C9B02BCD77AC7951DD89A4914063199-1653400236717</a><br>来源：牛客网</p>
-<p>因为没录音只能想一点写一点。可能有很多遗漏<br>5.17一面 时长1h5min<br>    1. 隐藏元素的方法以及分别有什么区别<br>        <a target="_blank" rel="noopener" href="https://juejin.cn/post/6943856363248287752">https://juejin.cn/post/6943856363248287752</a><br>        <a target="_blank" rel="noopener" href="https://jsbin.com/wesidaluyi/edit?html,output">https://jsbin.com/wesidaluyi/edit?html,output</a><br>        display: none<br>        visibility: hidden<br>        opacity: 0<br>        position: relative<br>        position: absolute</p>
-<pre><code>2. BFC介绍
-
-
-3. 元素居中对齐
-    https://juejin.cn/post/7001133554943918117
-    https://jsbin.com/jadehizete/edit?html,css,output
-    text-align: center
-    margin: 0 auto
-    dispaly:flex
-    dispaly:grid
-    transform
-    负边距
-
-4. 怎么让图片和文字居中对齐
-    https://blog.csdn.net/ktutu/article/details/74552268
-    https://jsbin.com/recasac/1/edit?html,output
-    vertical-align middle
-5. 行内元素和块级元素
-https://juejin.cn/post/6844903593955328007
-行内元素img span、块级元素div p、行内块级元素的转换display:inline-block float position:absolute position:fixec、置换元素img input
-
-6. 事件委托
-    https://zhuanlan.zhihu.com/p/26536815
-    document.addEventListener、捕获、冒泡、$.on、$.delegeta、focus和blur事件没有事件冒泡机制，所以无法委托
-
-7. 改变函数this指向的方法
-    https://juejin.cn/post/6844904120466309127
-    https://codepen.io/monaaaaaa2544/pen/eYVeJvw?editors=1111
-    this在全局环境始终指向window
-    func.call(obj, arg1, arg2)
-    func.apply(obj, [arg1, arg2])
-    f1=func.bind(obj) f1(arg1, arg2)
-
-7. promise
-
-
-8. async await
-
-
-9. vue和react的区别
-    https://juejin.cn/post/7028107265341128740
-    从虚拟DOM的区别来说,React会重新渲染整个组件树，Vue局部渲染组件树，因为Vue对每一个组件绑定了依赖Watcher，哪一个组件改变了，就重新渲染组件内的元素
-
-
-10. 前端状态管理 vuex(从源码方向上分析)
-    https://segmentfault.com/a/1190000022205291
-
-11. webpack的打包原理
-12. vite的运行原理(不会)
-13.vite是怎么把一个vue文件（结构样式逻辑部分转化为浏览器可以识别的部分的）
-14.前端性能优化举例
-    https://segmentfault.com/a/1190000022205291
-    减少http请求（因为建立连接耗时）、用HTTP2替代HTTP1.1（HTTP2多路复用，多个请求只共用一个TCP连接）、用服务端渲染、静态资源使用CDN（从更近的地方获取资源，速度快）等
-15.小程序了解吗
-16.react–native/flutter了解吗
-17.微前端了解吗
-18.跨端框架了解吗(还问了很多xx了解吗 由于本人连名字都没听过 回忆不起来。)
-19.平时关注什么前端博主
-20. git命令
-    https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html
-
-21.一道算法
-    数组去重并找出每个元素的重复次数(秒了)
-22. 反问 
-   公司技术栈(vue react 跨端啥的都有)
-   学习建议(多看源码 多看原理)
-</code></pre>
-<h2 id="腾讯云智一面2022-5-11"><a href="#腾讯云智一面2022-5-11" class="headerlink" title="腾讯云智一面2022.5.11"></a>腾讯云智一面2022.5.11</h2><p>链接：<a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/958655?source_id=discuss_experience_nctrack&amp;channel=-1">https://www.nowcoder.com/discuss/958655?source_id=discuss_experience_nctrack&amp;channel=-1</a></p>
-<ol>
-<li><p>Vue特点<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7069202241478983711">https://juejin.cn/post/7069202241478983711</a><br>数据双向绑定、组件化开发、响应式、单页Web应用、虚拟DOM</p>
+<p>第一次挥手客户端发起关闭连接的请求给服务端；<br>第二次挥手：服务端收到关闭请求的时候可能这个时候数据还没发送完，所以服务端会先回复一个确认报文，表示自己知道客户端想要关闭连接了，但是因为数据还没传输完，所以还需要等待；<br>第三次挥手：当数据传输完了，服务端会主动发送一个 FIN 报文，告诉客户端，表示数据已经发送完了，服务端这边准备关闭连接了。<br>第四次挥手：当客户端收到服务端的 FIN 报文过后，会回复一个 ACK 报文，告诉服务端自己知道了，再等待一会就关闭连接。</p>
+<ol start="36">
+<li><p>第2题：前端性能优化指标有哪些？怎么进行性能检测？</p>
 </li>
-<li><p>http攻击<br>跨站脚本攻击(XSS) 跨站请求伪造攻击(CSRF) Cookie攻击 重定向攻击</p>
-</li>
-<li><p>http是tcp还是udp  是哪一层协议<br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/20085992">https://www.zhihu.com/question/20085992</a><br>HTTP&#x2F;1.1 和 HTTP&#x2F;2 都是基于 TCP 传输协议的，而 HTTP&#x2F;3 是基于 UDP 传输协议的<br>HTTP是应用层</p>
-</li>
-<li><p>TCP和UDP区别<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/fundebug/p/differences-of-tcp-and-udp.html">https://www.cnblogs.com/fundebug/p/differences-of-tcp-and-udp.html</a><br>TCP：可靠传输、有连接、只支持单播传输（点对点传输）<br>UDP：不可靠传输、无连接（不需要三次握手就可以发送数据）、多播广播单播传输方式、头部开销小</p>
-</li>
-<li><p>get post区别 ，get在不同浏览器中的最大长度<br><a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000023940344">https://segmentfault.com/a/1190000023940344</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_32320807/article/details/83022211">https://blog.csdn.net/qq_32320807/article/details/83022211</a></p>
-</li>
-<li><p>闭包理解 闭包的好处坏处</p>
-</li>
-<li><p>项目中遇到的难点</p>
-</li>
-<li><p>怎么设置cookie的有效时间(Max-Age)和过期时间(Expires) ，代码是啥<br>setMaxAge(0)</p>
-</li>
-<li><p>cookie localstorage seesionstorage区别<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/jiang7701037/article/details/89118086">https://blog.csdn.net/jiang7701037/article/details/89118086</a><br><a target="_blank" rel="noopener" href="https://jerryzou.com/posts/cookie-and-web-storage/">https://jerryzou.com/posts/cookie-and-web-storage/</a><br>三者都是再浏览器本地存储数据，三者都会有XSS注入风险<br>cookie: 4kb；服务端写入时就设置了过期时间；登录信息或者token<br>localstorage: 5M；前端写入，永久保存，除非手动清除；存储不易变动的数据，减轻服务器的压力<br>seesionstorage: 5M；前端写入，刷新页面还存在，窗口关闭就没了；检测用户是否是刷新进入页面，如音乐播放器恢复播放进度条的功能</p>
+<li><p>第1题：怎么实现图片懒加载？</p>
 </li>
 </ol>
-<h2 id="北森云二面"><a href="#北森云二面" class="headerlink" title="北森云二面"></a>北森云二面</h2><p>链接：<a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/958653?source_id=discuss_experience_nctrack&amp;channel=-1">https://www.nowcoder.com/discuss/958653?source_id=discuss_experience_nctrack&amp;channel=-1</a></p>
-<p>一面忘记记录了<br>二面 2022.5.11</p>
-<ol>
-<li>轮播图实现  定时器或者动画做<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/WindrunnerMax/p/12638005.html">https://www.cnblogs.com/WindrunnerMax/p/12638005.html</a><br><a target="_blank" rel="noopener" href="https://codepen.io/monaaaaaa2544/pen/XWZEmLV">https://codepen.io/monaaaaaa2544/pen/XWZEmLV</a></li>
-</ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#carousel</span> &gt; <span class="selector-tag">ul</span>&#123;</span><br><span class="line">     <span class="attribute">animation</span>: switch <span class="number">10s</span> ease <span class="number">1s</span> infinite alternate; <span class="comment">/* 设定动画播放 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#carousel</span> &gt; <span class="selector-tag">ul</span><span class="selector-pseudo">:hover</span>&#123;</span><br><span class="line">     <span class="attribute">animation-play-state</span>: paused; <span class="comment">/* 暂停动画 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@keyframes</span> switch&#123; <span class="comment">/* 制定动画规则 */</span></span><br><span class="line">    <span class="number">0%</span>,<span class="number">13%</span>&#123;</span><br><span class="line">        <span class="attribute">left</span>: <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">27%</span>,<span class="number">41%</span>&#123;</span><br><span class="line">        <span class="attribute">left</span>: -<span class="number">600px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">55%</span>,<span class="number">69%</span>&#123;</span><br><span class="line">        <span class="attribute">left</span>: -<span class="number">1200px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="number">83%</span>,<span class="number">100%</span> &#123;</span><br><span class="line">        <span class="attribute">left</span>: -<span class="number">1800px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;   </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">lazyload</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> viewHeight=<span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">clientHeight</span></span><br><span class="line">    <span class="keyword">let</span> viewWeight=<span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">clientWeight</span></span><br><span class="line">    <span class="keyword">let</span> imgs=<span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;img&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    imgs.<span class="title function_">forEach</span>(<span class="function">(<span class="params">v, k</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> rect=v.<span class="title function_">getBoundingClientRect</span>()</span><br><span class="line">        <span class="keyword">if</span>(rect.<span class="property">top</span>&lt;viewHeight &amp;&amp; rect.<span class="property">left</span>&lt;viewWeight)&#123;</span><br><span class="line">            <span class="comment">//在可视区域</span></span><br><span class="line">            v.<span class="property">src</span>=v.<span class="property">dataset</span>.<span class="property">src</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;scroll&quot;</span>, lazyload)</span><br></pre></td></tr></table></figure>
 
-<ol start="2">
-<li><p>自制一个正方形的外盒子里面九宫格排列自适应的 可以用flex或者其他<br> <a target="_blank" rel="noopener" href="https://juejin.cn/post/7016495512002134024">https://juejin.cn/post/7016495512002134024</a><br> <a target="_blank" rel="noopener" href="https://codepen.io/monaaaaaa2544/pen/YzeawXb">https://codepen.io/monaaaaaa2544/pen/YzeawXb</a></p>
+<ol start="38">
+<li>第13题：如果使用CSS提高页面性能？</li>
+</ol>
+<p>webpack压缩CSS、不要嵌套使用过多选择器不要超过三层、内联首屏关键CSS、用link元素引入CSS，不要使用@import、cssSprite雪碧图从而减少HTTP请求次数</p>
+<ol start="39">
+<li><p>第6题：说说如何借助webpack来优化前端性能？</p>
 </li>
-<li><p>项目用什么打包webpak打包原理 配置写过吗里面包含什么东西   如果import a from b  import b from a怎么处理的</p>
-</li>
-<li><p>输入网址发生了啥 dns全称原理 arp哪层协议 原理作用<br> <a target="_blank" rel="noopener" href="https://segmentfault.com/a/1190000012092552">https://segmentfault.com/a/1190000012092552</a><br> 输入地址-浏览器通过DNS查询域名所对应的IP地址-建立TCP连接-发送HTTP请求-服务器处理请求并返回响应结果-渲染页面<br> dns全称：域名系统 Domain Name System。输入域名之后，首先在本地的Hosts查找是否有相应的域名：IP对应关系，如果没有就去找DNS服务器，DNS服务器最终会告知IP地址是多少</p>
- <img src='https://image-static.segmentfault.com/160/418/1604181361-5a1397cca5644' />
-
-<p> ARP协议：属于IP层协议，是根据IP地址获取物理地址（MAC）的协议，它可以解决同一个局域网内主机或路由器的IP地址和MAC地址的映射问题</p>
-</li>
-<li><p>前后端分离原理 为啥要分离<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/147659178">https://zhuanlan.zhihu.com/p/147659178</a><br>核心思想是前端HTML页面通过AJAX调用后端的RESTFUL API接口并使用JSON数据进行交互</p>
+<li><p>第12题：Vue3.0 性能提升主要是通过哪几方面体现的？</p>
 </li>
 </ol>
-<p>前端负责视图View和控制层Controller<br>后端负责Model层，进行业务、数据处理<br>前端的Controller层使用Node实现，Node在服务端和客户端的中间，进行数据的二次加工或者渲染好页面，把渲染好的HTML和处理好的数据直接发给客户端，这样便提升了客户端性能</p>
-<ol start="6">
-<li>vue的好处<br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/552eb8edfbbb">https://www.jianshu.com/p/552eb8edfbbb</a></li>
+<p>一、编译阶段<br>diff算法优化：给静态元素添加标记<br>静态提升：每次直接使用静态内容，不会用于diff<br>SSR优化</p>
+<p>二、源码体积相比Vue2更小<br>Tree shanking：没有用到的模块不打包</p>
+<p>三、响应式系统<br>用proxy代替defineProperty重写了响应式系统</p>
+<ol start="41">
+<li>第15题：SPA（单页应用）首屏加载速度慢怎么解决？</li>
 </ol>
-<p>7 跨域问题原理 cors nginx反向代理 及其原理<br>8. localstorage sessionstorage cookie区别<br>9 cookie和localstorage容量区别<br>10怎么设置localstorage 过期时间 自动删除它<br>11了解react吗<br>12 数据结构有哪些<br>13 flex布局父元素 子元素有哪些 什么含义 flex:1什么意思</p>
-<ol start="14">
-<li>为啥要用虚拟dom  diff算法对比的啥 diff原理<br>渲染真实的DOM很消耗性能。虚拟DOM好于真实DOM，因为真实dom在渲染过程中会造成dom的重排和重绘，虚拟DOM只会渲染局部，性能更好</li>
+<p>加载慢的原因：网络延迟、文件体积过大<br>SPA首页优化解决方案：减小文件体积（路由懒加载）、静态资源本地缓存、按需加载UI框架、webpack设置组件不重复打包、图片资源压缩、开启GZip压缩、SSR服务端渲染</p>
+<ol start="42">
+<li><p>第14题：script 标签中， async 和 defer 两个属性有什么用途和区别？</p>
+</li>
+<li><p>第10题：如何用webpack来优化前端性能</p>
+</li>
 </ol>
-<p>15了解grid布局吗</p>
-<h2 id="前端面经题库"><a href="#前端面经题库" class="headerlink" title="前端面经题库"></a>前端面经题库</h2><p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/exam/interview/detail?questionClassifyId=0&amp;questionId=2412338&amp;questionJobId=156&amp;type=1">https://www.nowcoder.com/exam/interview/detail?questionClassifyId=0&amp;questionId=2412338&amp;questionJobId=156&amp;type=1</a></p>
-<ol>
-<li>JS数据类型有哪些<br><a target="_blank" rel="noopener" href="https://www.nowcoder.com/exam/interview/detail?questionClassifyId=0&amp;questionId=2412338&amp;questionJobId=156&amp;type=1">https://www.nowcoder.com/exam/interview/detail?questionClassifyId=0&amp;questionId=2412338&amp;questionJobId=156&amp;type=1</a><br>8种<br>基本数据类型：Number String Boolean BigInt Symbol Null Undefined<br>引用数据类型：Object</li>
+<p>压缩代码（删除注释、多余代码、简化代码写法）、Tree Shaking、路由懒加载、公共模块抽取</p>
+<ol start="44">
+<li>第8题：css加载会造成阻塞吗？</li>
 </ol>
-<p>基本数据类型再栈中存储，引用数据类型在堆中存储（在栈中存的是地址，得到地址后从堆中获得实体）</p>
-<p>Symbol和BigInt是ES6新出的类型，BigInt涵盖的整数范围更大，Symbol创建的数据具有唯一性，可以用来做Object对象中的key</p>
-<h2 id="面试日海公司"><a href="#面试日海公司" class="headerlink" title="面试日海公司"></a>面试日海公司</h2><ol>
-<li>代码作用域<br>​<a target="_blank" rel="noopener" href="https://fe.ecool.fun/topic/fa224d36-147a-4251-8033-dc1462e9527e?orderBy=updateTime&amp;order=desc&amp;titleKey=%E4%BD%9C%E7%94%A8%E5%9F%9F">https://fe.ecool.fun/topic/fa224d36-147a-4251-8033-dc1462e9527e?orderBy=updateTime&amp;order=desc&amp;titleKey=%E4%BD%9C%E7%94%A8%E5%9F%9F</a></li>
+<p>会阻塞页面渲染(出现白屏)、不会阻塞页面解析、会阻塞js<br>解决方案：CDN、css压缩、HTTP缓存、合并多个css从而减少HTTP请求数<br>浏览器渲染流程：Dom树-》CSSOM树-》前两者结合生成渲染树-》绘制</p>
+<ol start="45">
+<li>第5题：如果一个列表有 100000 个数据，这个该怎么进行展示？</li>
+</ol>
+<p>懒加载</p>
+<ol start="46">
+<li>第4题：浏览器为什么要请求并发数限制？</li>
 </ol>
 <ul>
-<li>全局作用域</li>
-<li>函数作用域</li>
-<li>块级作用域<br>作用域链：当前作用域-》词法作用域-》全局作用域</li>
+<li>服务端设置并发数最大阈值，防止恶意攻击</li>
+<li>过多并发导致线程频繁切换，造成性能问题</li>
 </ul>
-<ol start="2">
-<li><p>TS 和JS区别<br><a target="_blank" rel="noopener" href="https://fe.ecool.fun/topic/041f15e1-e0a7-450b-846c-a3078bc791c1?orderBy=updateTime&amp;order=desc&amp;tagId=19">https://fe.ecool.fun/topic/041f15e1-e0a7-450b-846c-a3078bc791c1?orderBy=updateTime&amp;order=desc&amp;tagId=19</a><br>TS是JS的超集，可以被编译成JS；静态类型检查，在没运行的时候进行；代码可读性更好；</p>
+<ol start="47">
+<li><p>第1题：谈谈 Object.defineProperty 与 Proxy 的区别（未做）</p>
 </li>
-<li><p>css3的新特征<br><a target="_blank" rel="noopener" href="https://fe.ecool.fun/topic/9083d1ed-fedc-4aec-ba50-df836e983e55?orderBy=updateTime&amp;order=desc&amp;titleKey=css3">https://fe.ecool.fun/topic/9083d1ed-fedc-4aec-ba50-df836e983e55?orderBy=updateTime&amp;order=desc&amp;titleKey=css3</a></p>
-</li>
-</ol>
-<ul>
-<li>盒子模型<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">设置<span class="attribute">box-sizing</span>:border-box https://www.w3schools.com/css/tryit.asp?filename=trycss3_box-sizing_old</span><br></pre></td></tr></table></figure></li>
-<li>nth-child(2)</li>
-<li>box-shadow</li>
-<li>flex grid布局</li>
-<li>背景属性</li>
-<li>transition过渡 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">transition</span>: <span class="built_in">width</span>(属性) <span class="number">2s</span>(时间)</span><br><span class="line">https://www.w3schools.com/css/tryit.asp?filename=trycss3_transition1</span><br></pre></td></tr></table></figure></li>
-<li>transform转换<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">90deg</span>)</span><br><span class="line"> https://www.runoob.com/try/try.php?filename=trycss3_transform</span><br></pre></td></tr></table></figure></li>
-<li>animation动画<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">animation</span>: name <span class="number">5s</span> infinite; <span class="keyword">@keyframes</span> name&#123; <span class="selector-tag">from</span>&#123;<span class="attribute">left</span>: <span class="number">0px</span>&#125; <span class="selector-tag">to</span>&#123;<span class="attribute">left</span>: <span class="number">200px</span>&#125;&#125;</span><br><span class="line"> https://www.runoob.com/try/try.php?filename=trycss3_animation</span><br></pre></td></tr></table></figure></li>
-<li>媒体查询<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">@media</span> screen <span class="keyword">and</span>(<span class="attribute">max-width</span>: <span class="number">300px</span>)&#123; <span class="selector-tag">body</span>&#123; <span class="attribute">background</span>: green&#125;&#125; </span><br><span class="line">https://www.runoob.com/try/try.php?filename=trycss3_media_example1</span><br></pre></td></tr></table></figure></li>
-</ul>
-<ol start="4">
-<li><p>数据结构有哪些？<br><a target="_blank" rel="noopener" href="https://fe.ecool.fun/topic/e00b6fcb-fb55-435f-ac74-687734871111?orderBy=updateTime&amp;order=desc&amp;titleKey=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">https://fe.ecool.fun/topic/e00b6fcb-fb55-435f-ac74-687734871111?orderBy=updateTime&amp;order=desc&amp;titleKey=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84</a><br>栈、队列、链表、数组：连续的存储单元、树、图、堆、散列表<br>Set和Map数据结构：Set集合没有重复元素、Map字典类似于哈希表——<a target="_blank" rel="noopener" href="https://fe.ecool.fun/topic/4232c372-316f-4a53-99b9-6d9299b7e91f?orderBy=updateTime&amp;order=desc&amp;titleKey=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">https://fe.ecool.fun/topic/4232c372-316f-4a53-99b9-6d9299b7e91f?orderBy=updateTime&amp;order=desc&amp;titleKey=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84</a></p>
-</li>
-<li><p>OSI七层协议？传输层到网络层增加了什么？<br>应用层（HTTP）、表示层、会话层、传输层（TCP、UDP）、网络层（IP）、数据链路层、物理层　<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/32059190">https://zhuanlan.zhihu.com/p/32059190</a></p>
-</li>
-<li><p>二叉树跟数组和链表结构有什么不同？从删除和添加考虑　<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/MrListening/p/5782752.html">https://www.cnblogs.com/MrListening/p/5782752.html</a></p>
-</li>
-<li><p>怎么看待加班<br>首先如果加班是因为我个人效率低的话，我会提高工作效率，如果是因为公司项目紧急为了公司的效益我也会选择加班；赶进度时，可以为了工作加班；</p>
-</li>
-<li><p>平时会自己去学新技术吗<br>因为前端技术更新迭代比较快，我会经常关注一些大牛的动态了解新技术，比如Anthony fu，他是vite　unocss、 <a target="_blank" rel="noopener" href="https://vueuse.org/">Vueuse</a>　的核心团队成员，我关注了他的B站</p>
-</li>
-<li><p>为什么选择前端<br><a target="_blank" rel="noopener" href="https://bytetalk.fm/posts/episode-6/">https://bytetalk.fm/posts/episode-6/</a><br>成就感：前端的Feedback Loop 很短；网页天然跨端，可以很快分享给朋友；</p>
-</li>
-<li><p>this的指向<br><a target="_blank" rel="noopener" href="https://fe.ecool.fun/topic/33363940-179b-4ae3-9cd3-7bf0a5619df9?orderBy=updateTime&amp;order=desc&amp;titleKey=this">https://fe.ecool.fun/topic/33363940-179b-4ae3-9cd3-7bf0a5619df9?orderBy=updateTime&amp;order=desc&amp;titleKey=this</a></p>
-</li>
-<li><p>all&#x2F;apply&#x2F;bind<br><a target="_blank" rel="noopener" href="https://fe.ecool.fun/topic/8d391a9c-0573-4edd-bd5d-84b9af70bad5?orderBy=updateTime&amp;order=desc&amp;titleKey=bind">https://fe.ecool.fun/topic/8d391a9c-0573-4edd-bd5d-84b9af70bad5?orderBy=updateTime&amp;order=desc&amp;titleKey=bind</a></p>
-</li>
-</ol>
-<p>三者都可以改变this指向</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="title function_">apply</span>(obj, [<span class="number">1</span>,<span class="number">2</span>])<span class="comment">//传入参数是一个数组</span></span><br><span class="line"><span class="title function_">call</span>(obj, <span class="number">1</span>, <span class="number">2</span>)<span class="comment">//传入参数是参数列表</span></span><br><span class="line"><span class="keyword">let</span> bindFn=<span class="title function_">bind</span>(obj)<span class="comment">//返回一个函数，需要再次调用</span></span><br><span class="line"><span class="title function_">bindFn</span>(<span class="number">1</span>,<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-
-
-<h1 id="【面试复盘】华为-前端实习-业务面-主管面-（已入池）"><a href="#【面试复盘】华为-前端实习-业务面-主管面-（已入池）" class="headerlink" title="【面试复盘】华为 前端实习 业务面+主管面 （已入池）"></a>【面试复盘】华为 前端实习 业务面+主管面 （已入池）</h1><p><a target="_blank" rel="noopener" href="https://www.nowcoder.com/discuss/944846?type=all&amp;order=recall&amp;pos=&amp;page=1&amp;ncTraceId=&amp;channel=-1&amp;source_id=search_all_nctrack&amp;gio_id=BBA6B2900600A1DB04A02D71B856A3C6-1655455004343">https://www.nowcoder.com/discuss/944846?type=all&amp;order=recall&amp;pos=&amp;page=1&amp;ncTraceId=&amp;channel=-1&amp;source_id=search_all_nctrack&amp;gio_id=BBA6B2900600A1DB04A02D71B856A3C6-1655455004343</a></p>
-<ol>
-<li>前端向后端交互的方法 GET、POST、DELETE的应用场景？</li>
-</ol>
-<p>Get:幂等；登录用户；浏览器会缓存；实体部分为空；不安全（请求的参数放在url中，url会保存在历史记录中）<br>Post:不幂等；注册用户；不会缓存；实体部分为发送给服务器的数据；安全</p>
-<ol start="2">
-<li>鉴权怎么做的？ <a target="_blank" rel="noopener" href="https://fe.ecool.fun/topic/53a6d5df-e7b0-4f11-a1ee-c55fd1f1f8c2?orderBy=updateTime&order=desc&titleKey=%E9%89%B4%E6%9D%83">https://fe.ecool.fun/topic/53a6d5df-e7b0-4f11-a1ee-c55fd1f1f8c2?orderBy=updateTime&order=desc&titleKey=%E9%89%B4%E6%9D%83</a></li>
-</ol>
-<p>jwt。后端通过jsonwebtoken的sign方法根据头部信息、过期时间生成token,然后前端接收token之后，通过localstorage缓存，然后每次发送请求时就吧token加入到请求头Authorization中</p>
-<ol start="3">
-<li>H5和HTML有什么区别？H5的原理是啥？</li>
-</ol>
-<p>从以下几个方面回答：HTML语义化、HMTL新特性、区别</p>
-<p><strong>HTML语义化</strong>：<a target="_blank" rel="noopener" href="https://fe.ecool.fun/topic/a75b1e9d-9359-47b0-8614-1088eee4b085?orderBy=updateTime&amp;order=desc&amp;titleKey=Html">https://fe.ecool.fun/topic/a75b1e9d-9359-47b0-8614-1088eee4b085?orderBy=updateTime&amp;order=desc&amp;titleKey=Html</a></p>
-<p>可以直接通过代码了解到页面结构；利于搜索引擎优化SEO（机器可以准确的将网页内容分析存储下来）；易于维护，代码可读性好；</p>
-<p><strong>HTML5的新特性</strong>：<a target="_blank" rel="noopener" href="https://fe.ecool.fun/topic/362a44f0-8be1-4e5b-abfc-f3ddadc4aa2e?orderBy=updateTime&amp;order=desc&amp;titleKey=html5">https://fe.ecool.fun/topic/362a44f0-8be1-4e5b-abfc-f3ddadc4aa2e?orderBy=updateTime&amp;order=desc&amp;titleKey=html5</a></p>
-<p>新增语义化标签、音频视频标签、数据存储（local storage、session storage）、canvas、websocket等等</p>
-<p><strong>HTML5和HTML的区别</strong>：H5是HTML的新标准，H5有更多语义化的标签</p>
-<ol start="4">
-<li><p>做项目碰到了什么困难？怎么解决的？</p>
-<ul>
-<li>跨域问题</li>
-<li>请求的body过长返回413pyload too large——<a target="_blank" rel="noopener" href="https://s1.ax1x.com/2020/03/25/8j22Qg.png">https://s1.ax1x.com/2020/03/25/8j22Qg.png</a></li>
-</ul>
-</li>
-<li><p>两数之和，两种解法</p>
-</li>
-</ol>
-<p>主管面：</p>
-<ol>
-<li><p>你做过什么项目？简单介绍一下</p>
-</li>
-<li><p>项目有哪些功能？</p>
-</li>
-<li><p>项目遇到的困难，如何解决</p>
-</li>
-<li><p>平常怎么学习？</p>
-</li>
-<li><p>哪里人？<br>四川的</p>
-</li>
-<li><p>怎么跑深圳去读书了？准备在哪发展？</p>
-</li>
-<li><p>职业规划？</p>
+<li><p>第3题：Vue3.0里为什么要用 Proxy API 替代 defineProperty API ？（未做）</p>
 </li>
 </ol>
 
@@ -910,7 +730,7 @@ https://juejin.cn/post/6844903593955328007
               
                 <a href="/archives/%7C%7Carchive">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -956,7 +776,7 @@ https://juejin.cn/post/6844903593955328007
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%8F%E6%97%A5%E5%88%B7%E7%9A%84%E9%9D%A2%E7%BB%8F%E5%AE%9D%E5%85%B8"><span class="nav-number">1.</span> <span class="nav-text">每日刷的面经宝典</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%85%BE%E8%AE%AF%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0%E4%B8%80-%E4%BA%8C%E9%9D%A2"><span class="nav-number">2.</span> <span class="nav-text">腾讯前端实习一,二面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%85%BE%E8%AE%AF%E4%BA%91%E6%99%BA%E4%B8%80%E9%9D%A22022-5-11"><span class="nav-number">3.</span> <span class="nav-text">腾讯云智一面2022.5.11</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8C%97%E6%A3%AE%E4%BA%91%E4%BA%8C%E9%9D%A2"><span class="nav-number">4.</span> <span class="nav-text">北森云二面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E7%AB%AF%E9%9D%A2%E7%BB%8F%E9%A2%98%E5%BA%93"><span class="nav-number">5.</span> <span class="nav-text">前端面经题库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9D%A2%E8%AF%95%E6%97%A5%E6%B5%B7%E5%85%AC%E5%8F%B8"><span class="nav-number">6.</span> <span class="nav-text">面试日海公司</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E3%80%90%E9%9D%A2%E8%AF%95%E5%A4%8D%E7%9B%98%E3%80%91%E5%8D%8E%E4%B8%BA-%E5%89%8D%E7%AB%AF%E5%AE%9E%E4%B9%A0-%E4%B8%9A%E5%8A%A1%E9%9D%A2-%E4%B8%BB%E7%AE%A1%E9%9D%A2-%EF%BC%88%E5%B7%B2%E5%85%A5%E6%B1%A0%EF%BC%89"><span class="nav-number"></span> <span class="nav-text">【面试复盘】华为 前端实习 业务面+主管面 （已入池）</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%8F%E6%97%A5%E5%88%B7%E7%9A%84%E9%9D%A2%E7%BB%8F%E5%AE%9D%E5%85%B8"><span class="nav-number">1.</span> <span class="nav-text">每日刷的面经宝典</span></a></li></ol></div>
             
 
           </div>
@@ -993,7 +813,7 @@ https://juejin.cn/post/6844903593955328007
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">19.7k</span>
+    <span title="Site words total count">22.8k</span>
   
 </div>
 

@@ -709,10 +709,6 @@
 <li><p>使用Promise实现：限制异步操作的并发个数，并尽可能快的完成全部</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">count=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">def <span class="title function_">recur</span>(u):</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="title function_">len</span>(u)==<span class="number">0</span>: <span class="keyword">return</span> </span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="title function_">range</span>(<span class="number">3</span>-count):</span><br><span class="line"></span><br><span class="line">​    cur=u.<span class="title function_">shift</span>()</span><br><span class="line"></span><br><span class="line">​    count++</span><br><span class="line"></span><br><span class="line">​	<span class="title function_">loadImg</span>(cur).<span class="title function_">finally</span>(<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line"></span><br><span class="line">​    count--</span><br><span class="line"></span><br><span class="line">​    <span class="title function_">recur</span>(u)</span><br><span class="line"></span><br><span class="line">​    &#125;)</span><br><span class="line"></span><br><span class="line"><span class="title function_">recur</span>(urls)</span><br></pre></td></tr></table></figure>
 
-
-
-
-
 </li>
 <li><p>第1题：实现 Promise.race 函数</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="title class_">Promise</span>.<span class="property">race</span>=<span class="keyword">function</span>(<span class="params">arr</span>)&#123;</span><br><span class="line"></span><br><span class="line">​	<span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="keyword">function</span>(<span class="params">resolve, rejuct</span>)&#123;</span><br><span class="line"></span><br><span class="line">​			<span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;arr.<span class="property">length</span>;i++)&#123;</span><br><span class="line"></span><br><span class="line">​				<span class="title class_">Promise</span>.<span class="title function_">resolve</span>(arr[i]).<span class="title function_">then</span>(resolve, reject)</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -740,8 +736,6 @@
 </li>
 </ol>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">nums</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">target</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> search = <span class="keyword">function</span>(<span class="params">nums, target</span>) &#123;</span><br><span class="line">        <span class="keyword">let</span> l=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">let</span> r=nums.<span class="property">length</span>-<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">let</span> mid=<span class="title class_">Math</span>.<span class="title function_">floor</span>((l+r)/<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(nums.<span class="property">length</span>===<span class="number">0</span>)&#123; <span class="keyword">return</span> -<span class="number">1</span>&#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(l&lt;=r)&#123;</span><br><span class="line">            </span><br><span class="line">        mid = <span class="title class_">Math</span>.<span class="title function_">floor</span>((l+r)/<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(target===nums[mid])&#123;  <span class="keyword">return</span> mid&#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(target&lt;nums[mid])&#123;	r=mid-<span class="number">1</span>&#125;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (target&gt;nums[mid])&#123;	l=mid+<span class="number">1</span>&#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
 
 
 
@@ -804,9 +798,7 @@
 <p>demo: <a href="https://www.typescriptlang.org/zh/play#code/PTAEiJrQ5+MU3NAYlUAqBPADgUwMoGMBOBLFAF1EBR7QYb9AudUBh-gKBFEE34wejNAAOUCo5QTb9ADeUAXjQbPlAaP6BMxSqAwJUDVcoBiVQGbagAzlEqTLgLFAIW6BFf0CbXoCAGGnTCAKg0D3yoFO5E4CDNQNBygSDlAs56BO00Dw+oH95QBSugYO1AWP-79oUAFpQdkBYOUAseUAWD0B5dUBvuUBVeUAcOUB-SNU5BXRsfCJQVUAGdXtdegCgtkBleUAYrLSlTOJAW+jAVZtANz1AODlAaojALrkJXPzfIvZXQDi5QGlbQFXo4MAYFUqMlVABQEXowHxzQHylQF+A1UBMm0BG710aLAB7ADsAZ2IAQ32AUQAPE4BbFAAbNAA1E-wTgCNH0ABeUAAiAASaHu912oAA6rscPcACZ-HYHQ67R4AOlBAHMABRnK63B7PV54D6PACUenopkAnQ6Ab8VAFBy9lUoEAOASALk9ANHygFwCUCANCNmYAG00A36kcqgmQBhcoBjyMAL2aALE1AM6K-RqgAAo1SAQ-lAPYG2nh9G5gFAAwAESoATNIYgGy5QAXNoApxIagBQ5QAA+oBpzTcVEALqZscgUVSANDlADKugF+EwB6Ov0uLo-HoAGYAV32WEIeAOoAACmhdviADwIAB82Jw6IAXAgSXmAN40Px+HBoQjhnD7UCvdE0AC+NEexBQAEZvonk48U8d8Pt0ZmAOT3S5IIdklugFAAJk7SdT+3DN3eaBwmbbM4AzGS9kdkWg0bsse2ADTTmckoA">https://www.typescriptlang.org/zh/play?#code/PTAEiJrQ5+MU3NAYlUAqBPADgUwMoGMBOBLFAF1EBR7QYb9AudUBh-gKBFEE34wejNAAOUCo5QTb9ADeUAXjQbPlAaP6BMxSqAwJUDVcoBiVQGbagAzlEqTLgLFAIW6BFf0CbXoCAGGnTCAKg0D3yoFO5E4CDNQNBygSDlAs56BO00Dw+oH95QBSugYO1AWP-79oUAFpQdkBYOUAseUAWD0B5dUBvuUBVeUAcOUB-SNU5BXRsfCJQVUAGdXtdegCgtkBleUAYrLSlTOJAW+jAVZtANz1AODlAaojALrkJXPzfIvZXQDi5QGlbQFXo4MAYFUqMlVABQEXowHxzQHylQF+A1UBMm0BG710aLAB7ADsAZ2IAQ32AUQAPE4BbFAAbNAA1E-wTgCNH0ABeUAAiAASaHu912oAA6rscPcACZ-HYHQ67R4AOlBAHMABRnK63B7PV54D6PACUenopkAnQ6Ab8VAFBy9lUoEAOASALk9ANHygFwCUCANCNmYAG00A36kcqgmQBhcoBjyMAL2aALE1AM6K-RqgAAo1SAQ-lAPYG2nh9G5gFAAwAESoATNIYgGy5QAXNoApxIagBQ5QAA+oBpzTcVEALqZscgUVSANDlADKugF+EwB6Ov0uLo-HoAGYAV32WEIeAOoAACmhdviADwIAB82Jw6IAXAgSXmAN40Px+HBoQjhnD7UCvdE0AC+NEexBQAEZvonk48U8d8Pt0ZmAOT3S5IIdklugFAAJk7SdT+3DN3eaBwmbbM4AzGS9kdkWg0bsse2ADTTmckoA</a></p>
 <figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title class_">People</span>&lt;T&gt;(<span class="attr">arg</span>:T):T&#123;</span><br><span class="line">    <span class="keyword">return</span> arg</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> p1=<span class="title class_">People</span>&lt;<span class="built_in">string</span>&gt;(<span class="string">&#x27;lxy&#x27;</span>)</span><br><span class="line"><span class="keyword">let</span> p2=<span class="title class_">People</span>&lt;<span class="built_in">number</span>&gt;(<span class="number">123</span>)</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(p1, p2)</span><br></pre></td></tr></table></figure>
 
-<p>能够创建可以使用多种数据类型而不是单一数据类型的组件</p>
-<p>提供了类型安全性</p>
-<p>泛型允许我们创建泛型类，泛型函数，泛型方法和泛型接口</p>
+<p>能够创建可以使用多种数据类型而不是单一数据类型的组件<br>提供了类型安全性<br>泛型允许我们创建泛型类，泛型函数，泛型方法和泛型接口</p>
 <ol start="30">
 <li>什么是 let 的临时性死区？</li>
 </ol>
@@ -841,15 +833,313 @@
 </ol>
 <p><a href="http://www.justdojava.com/2021/03/28/tcp/">http://www.justdojava.com/2021/03/28/tcp/</a></p>
 <p><strong>三次握手为什么是三次？</strong>保证客户端、服务端都有发送和接收能力，才能保证进行可靠的传输</p>
-<p>第一次握手：第一次握手是客户端发送同步报文到服务端，这个时候客户端是知道自己具备发送数据的能力的，但是不知道服务端是否有接收和发送数据的能力；</p>
-<p>第二次握手：当服务端接收到同步报文后，回复确认同步报文，此时服务端是知道客户端具有发送报文的能力，并且知道自己具有接收和发送数据的能力，但是并不知道客户端是否有接收数据的能力；</p>
-<p>第三次握手：当客户端收到服务端的确认报文后，知道服务端具备接收和发送数据的能力，但是此时服务端并不知道自己具有接收的能力，所以还需要发送一个确认报文，告知服务端自己是具有接收能力的。</p>
-<p>当整个三次握手结束过后，客户端和服务端都知道自己和对方具备发送和接收数据的能力，随后整个连接建立就完成了，可以进行后续数据的传输了。</p>
+<p>第一次握手：第一次握手是客户端发送同步报文到服务端，这个时候客户端是知道自己具备发送数据的能力的，但是不知道服务端是否有接收和发送数据的能力；<br>第二次握手：当服务端接收到同步报文后，回复确认同步报文，此时服务端是知道客户端具有发送报文的能力，并且知道自己具有接收和发送数据的能力，但是并不知道客户端是否有接收数据的能力；<br>第三次握手：当客户端收到服务端的确认报文后，知道服务端具备接收和发送数据的能力，但是此时服务端并不知道自己具有接收的能力，所以还需要发送一个确认报文，告知服务端自己是具有接收能力的。<br>当整个三次握手结束过后，客户端和服务端都知道自己和对方具备发送和接收数据的能力，随后整个连接建立就完成了，可以进行后续数据的传输了。</p>
 <p><strong>四次挥手为什么是四次？</strong>挥手的时候有数据在传输，所以 ACK 和 FIN 报文不能同时发送，需要分两步，所以会比握手多一步。</p>
-<p>第一次挥手客户端发起关闭连接的请求给服务端；</p>
-<p>第二次挥手：服务端收到关闭请求的时候可能这个时候数据还没发送完，所以服务端会先回复一个确认报文，表示自己知道客户端想要关闭连接了，但是因为数据还没传输完，所以还需要等待；</p>
-<p>第三次挥手：当数据传输完了，服务端会主动发送一个 FIN 报文，告诉客户端，表示数据已经发送完了，服务端这边准备关闭连接了。</p>
-<p>第四次挥手：当客户端收到服务端的 FIN 报文过后，会回复一个 ACK 报文，告诉服务端自己知道了，再等待一会就关闭连接。</p>
+<p>第一次挥手客户端发起关闭连接的请求给服务端；<br>第二次挥手：服务端收到关闭请求的时候可能这个时候数据还没发送完，所以服务端会先回复一个确认报文，表示自己知道客户端想要关闭连接了，但是因为数据还没传输完，所以还需要等待；<br>第三次挥手：当数据传输完了，服务端会主动发送一个 FIN 报文，告诉客户端，表示数据已经发送完了，服务端这边准备关闭连接了。<br>第四次挥手：当客户端收到服务端的 FIN 报文过后，会回复一个 ACK 报文，告诉服务端自己知道了，再等待一会就关闭连接。</p>
+<ol start="36">
+<li><p>第2题：前端性能优化指标有哪些？怎么进行性能检测？</p>
+</li>
+<li><p>第1题：怎么实现图片懒加载？</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">lazyload</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> viewHeight=<span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">clientHeight</span></span><br><span class="line">    <span class="keyword">let</span> viewWeight=<span class="variable language_">document</span>.<span class="property">body</span>.<span class="property">clientWeight</span></span><br><span class="line">    <span class="keyword">let</span> imgs=<span class="variable language_">document</span>.<span class="title function_">querySelectorAll</span>(<span class="string">&#x27;img&#x27;</span>)</span><br><span class="line">    </span><br><span class="line">    imgs.<span class="title function_">forEach</span>(<span class="function">(<span class="params">v, k</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> rect=v.<span class="title function_">getBoundingClientRect</span>()</span><br><span class="line">        <span class="keyword">if</span>(rect.<span class="property">top</span>&lt;viewHeight &amp;&amp; rect.<span class="property">left</span>&lt;viewWeight)&#123;</span><br><span class="line">            <span class="comment">//在可视区域</span></span><br><span class="line">            v.<span class="property">src</span>=v.<span class="property">dataset</span>.<span class="property">src</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;scroll&quot;</span>, lazyload)</span><br></pre></td></tr></table></figure>
+
+<ol start="38">
+<li>第13题：如果使用CSS提高页面性能？</li>
+</ol>
+<p>webpack压缩CSS、不要嵌套使用过多选择器不要超过三层、内联首屏关键CSS、用link元素引入CSS，不要使用@import、cssSprite雪碧图从而减少HTTP请求次数</p>
+<ol start="39">
+<li><p>第6题：说说如何借助webpack来优化前端性能？</p>
+</li>
+<li><p>第12题：Vue3.0 性能提升主要是通过哪几方面体现的？</p>
+</li>
+</ol>
+<p>一、编译阶段<br>diff算法优化：给静态元素添加标记<br>静态提升：每次直接使用静态内容，不会用于diff<br>SSR优化</p>
+<p>二、源码体积相比Vue2更小<br>Tree shanking：没有用到的模块不打包</p>
+<p>三、响应式系统<br>用proxy代替defineProperty重写了响应式系统</p>
+<ol start="41">
+<li>第15题：SPA（单页应用）首屏加载速度慢怎么解决？</li>
+</ol>
+<p>加载慢的原因：网络延迟、文件体积过大<br>SPA首页优化解决方案：减小文件体积（路由懒加载）、静态资源本地缓存、按需加载UI框架、webpack设置组件不重复打包、图片资源压缩、开启GZip压缩、SSR服务端渲染</p>
+<ol start="42">
+<li><p>第14题：script 标签中， async 和 defer 两个属性有什么用途和区别？</p>
+</li>
+<li><p>第10题：如何用webpack来优化前端性能</p>
+</li>
+</ol>
+<p>压缩代码（删除注释、多余代码、简化代码写法）、Tree Shaking、路由懒加载、公共模块抽取</p>
+<ol start="44">
+<li>第8题：css加载会造成阻塞吗？</li>
+</ol>
+<p>会阻塞页面渲染(出现白屏)、不会阻塞页面解析、会阻塞js<br>解决方案：CDN、css压缩、HTTP缓存、合并多个css从而减少HTTP请求数<br>浏览器渲染流程：Dom树-》CSSOM树-》前两者结合生成渲染树-》绘制</p>
+<ol start="45">
+<li>第5题：如果一个列表有 100000 个数据，这个该怎么进行展示？</li>
+</ol>
+<p>懒加载</p>
+<ol start="46">
+<li>第4题：浏览器为什么要请求并发数限制？</li>
+</ol>
+<ul>
+<li>服务端设置并发数最大阈值，防止恶意攻击</li>
+<li>过多并发导致线程频繁切换，造成性能问题</li>
+</ul>
+<ol start="47">
+<li><p>第1题：谈谈 Object.defineProperty 与 Proxy 的区别（未做）</p>
+</li>
+<li><p>第3题：Vue3.0里为什么要用 Proxy API 替代 defineProperty API ？（未做）</p>
+</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>Acwing刷题笔记</title>
+    <url>/2022/06/20/Acwing%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<span id="more"></span>
+
+
+
+<h1 id="AcWing"><a href="#AcWing" class="headerlink" title="AcWing"></a>AcWing</h1><h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p><a href="https://leetcode.cn/problems/zui-xiao-de-kge-shu-lcof/">剑指 Offer 40. 最小的k个数</a>——快排（左右哨兵、递归左右子树组）<br><a href="https://leetcode.cn/problems/sort-colors/">75. 颜色分类</a>——双指针——快速排序</p>
+<p>快速排序：<a href="https://www.acwing.com/video/227/">https://www.acwing.com/video/227/</a></p>
+<p>快速排序过程：1. 确定分界点 2. 调整区间 3. 递归处理左右两端</p>
+<p>调整区间：<br>法1：双指针相向而行，交换<br>法2：用两个数组保存大于目标值和小于目标值的数</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">nums</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number[]</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> sortArray = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">    <span class="comment">// acwing 快速排序模板</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">quick_sort</span>(<span class="params">q, l, r</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(l&gt;=r)&#123;</span><br><span class="line">            <span class="keyword">return</span> q</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> i=l-<span class="number">1</span></span><br><span class="line">        <span class="keyword">let</span> j=r+<span class="number">1</span></span><br><span class="line">        <span class="keyword">let</span> x=q[l+r&gt;&gt;<span class="number">1</span>] <span class="comment">//哨兵</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(i&lt;j)&#123;</span><br><span class="line">            <span class="keyword">do</span> &#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125; <span class="keyword">while</span> (q[i]&lt;x) <span class="comment">//注意用dowhile</span></span><br><span class="line">            <span class="keyword">do</span> &#123;</span><br><span class="line">                j--;</span><br><span class="line">            &#125; <span class="keyword">while</span> (q[j]&gt;x)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(i&lt;j) <span class="title function_">swap</span>(q, i, j)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="title function_">quick_sort</span>(q, l, j) <span class="comment">//注意取j</span></span><br><span class="line">        <span class="title function_">quick_sort</span>(q, j+<span class="number">1</span>, r) <span class="comment">//注意取j+1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> q</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">swap</span>(<span class="params">c, i, j</span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> tmp=c[i]</span><br><span class="line">        c[i]=c[j]</span><br><span class="line">        c[j]=tmp</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">quick_sort</span>(nums, <span class="number">0</span>, nums.<span class="property">length</span>-<span class="number">1</span>)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="快速选择"><a href="#快速选择" class="headerlink" title="快速选择"></a>快速选择</h2><p>时间复杂度n</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">nums</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">k</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> findKthLargest = <span class="keyword">function</span>(<span class="params">nums, k</span>) &#123;</span><br><span class="line">    <span class="comment">//快速选择算法（基于快速排序的二分查找）</span></span><br><span class="line">     <span class="keyword">function</span> <span class="title function_">quick_search</span>(<span class="params">q, l, r, k</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(l==r)    <span class="keyword">return</span> q[l]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> x=q[<span class="title class_">Math</span>.<span class="title function_">floor</span>((l+r-<span class="number">1</span>)/<span class="number">2</span>)]<span class="comment">//这里用这个作为基准点而不是q[l]，时间上会有优化</span></span><br><span class="line">        <span class="keyword">let</span> i=l-<span class="number">1</span></span><br><span class="line">        <span class="keyword">let</span> j=r+<span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(i&lt;j)&#123;</span><br><span class="line">            <span class="keyword">do</span>&#123;</span><br><span class="line">                i++</span><br><span class="line">            &#125;<span class="keyword">while</span>(q[i]&lt;x)</span><br><span class="line">            <span class="keyword">do</span>&#123;</span><br><span class="line">                j--</span><br><span class="line">            &#125;<span class="keyword">while</span>(q[j]&gt;x)</span><br><span class="line">            <span class="keyword">if</span>(i&lt;j) <span class="title function_">swap</span>(q, i, j)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> sl=j-l+<span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span>(k&lt;=sl)   <span class="keyword">return</span> <span class="title function_">quick_search</span>(q, l, j, k)</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(k&gt;sl)   <span class="keyword">return</span> <span class="title function_">quick_search</span>(q, j+<span class="number">1</span>, r, k-sl) <span class="comment">//注意是k-sl</span></span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">function</span> <span class="title function_">swap</span>(<span class="params">arr, i, j</span>)&#123;</span><br><span class="line">         <span class="keyword">let</span> tmp=arr[i]</span><br><span class="line">         arr[i]=arr[j]</span><br><span class="line">         arr[j]=tmp</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">quick_search</span>(nums, <span class="number">0</span>, nums.<span class="property">length</span>-<span class="number">1</span>, nums.<span class="property">length</span>-k+<span class="number">1</span>)<span class="comment">//注意是nums.length-k+1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">nums</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number[]</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> sortArray = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// acwing 归并排序模板</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">merge_sort</span>(<span class="params">q, l, r</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(l&gt;=r)&#123;</span><br><span class="line">            <span class="keyword">return</span> q</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> mid=<span class="title class_">Math</span>.<span class="title function_">floor</span>((l+r)/<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">        <span class="title function_">merge_sort</span>(q, l, mid)</span><br><span class="line">        <span class="title function_">merge_sort</span>(q, mid+<span class="number">1</span>, r)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> i=l</span><br><span class="line">        <span class="keyword">let</span> j=mid+<span class="number">1</span></span><br><span class="line">        <span class="keyword">let</span> k=<span class="number">0</span></span><br><span class="line">        <span class="keyword">let</span> tmp=[]</span><br><span class="line">        <span class="keyword">while</span>(i&lt;=mid || j&lt;=r)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i&gt;mid)&#123;</span><br><span class="line">                tmp[k++]=q[j++]            </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(j&gt;r)&#123;</span><br><span class="line">                tmp[k++]=q[i++]</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(q[i]&lt;=q[j])  tmp[k++]=q[i++]</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(q[i]&gt;q[j])  tmp[k++]=q[j++]</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> m=l, n=<span class="number">0</span>; m&lt;=r; m++, n++)&#123;</span><br><span class="line">            q[m]=tmp[n]</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> q</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">swap</span>(<span class="params">c, i, j</span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> tmp=c[i]</span><br><span class="line">        c[i]=c[j]</span><br><span class="line">        c[j]=tmp</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">merge_sort</span>(nums, <span class="number">0</span>, nums.<span class="property">length</span>-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> nums</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="归并统计逆序对"><a href="#归并统计逆序对" class="headerlink" title="归并统计逆序对"></a>归并统计逆序对</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">nums</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> reversePairs = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">    <span class="comment">// 归并</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">merge_sort</span>(<span class="params">q, l, r</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(l&gt;=r)    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> mid=l+r&gt;&gt;<span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> count=<span class="title function_">merge_sort</span>(q, l, mid) + <span class="title function_">merge_sort</span>(q, mid+<span class="number">1</span>, r)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> i=l, j=mid+<span class="number">1</span></span><br><span class="line">        <span class="keyword">let</span> tmp=[], k=<span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span>(i&lt;=mid || j&lt;=r)&#123;</span><br><span class="line">            <span class="comment">// let count=merge_sort(q, l, mid)+merge_sort(q, mid+1, r)</span></span><br><span class="line">            <span class="keyword">if</span>(i&gt;mid)&#123;</span><br><span class="line">                tmp[k++]=q[j++]</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(j&gt;r)&#123;</span><br><span class="line">                tmp[k++]=q[i++]</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(q[i]&gt;q[j])&#123;</span><br><span class="line">                <span class="comment">// 计算逆序对</span></span><br><span class="line">                tmp[k++]=q[j++]</span><br><span class="line">                count+=mid-i+<span class="number">1</span></span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                tmp[k++]=q[i++]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> m=l, n=<span class="number">0</span>; m&lt;=r; m++, n++)&#123;</span><br><span class="line">            q[m]=tmp[n]</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> count</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">merge_sort</span>(nums, <span class="number">0</span>, nums.<span class="property">length</span>-<span class="number">1</span>)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><p><strong>几种位操作：</strong></p>
+<ul>
+<li>求n的第k位数字: n &gt;&gt; k &amp; 1</li>
+<li>返回n的最后一位1：lowbit(n) &#x3D; n &amp; -n</li>
+<li>将整数i的二进制形式最右边的1变为0：i &amp; (i-1)</li>
+<li>a ^ a &#x3D; 0</li>
+<li>a ^ 0 &#x3D; a</li>
+</ul>
+<p>labuladong的算法技巧：<a href="https://labuladong.github.io/algo/4/30/112/">https://labuladong.github.io/algo/4/30/112/</a></p>
+<h4 id="前-n-个数字二进制中-1-的个数"><a href="#前-n-个数字二进制中-1-的个数" class="headerlink" title=" 前 n 个数字二进制中 1 的个数"></a><a href="https://leetcode.cn/problems/w3tCBm/"> 前 n 个数字二进制中 1 的个数</a></h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">第一种解法：一位一位的向右移动</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">n</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number[]</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> countBits = <span class="keyword">function</span>(<span class="params">n</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> res=[]</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;n+<span class="number">1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> x=i</span><br><span class="line">        <span class="keyword">let</span> count=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(x)&#123;</span><br><span class="line">            count+=x&amp;<span class="number">1</span></span><br><span class="line">            x&gt;&gt;&gt;=<span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        res.<span class="title function_">push</span>(count)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">第二种解法：巧用x&amp;(x-<span class="number">1</span>)</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">n</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number[]</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> countBits = <span class="keyword">function</span>(<span class="params">n</span>) &#123;</span><br><span class="line">    <span class="comment">// 巧用x&amp;(x-1)</span></span><br><span class="line">    <span class="keyword">let</span> res=[]</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;n+<span class="number">1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> x=i</span><br><span class="line">        <span class="keyword">let</span> count=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(x)&#123;</span><br><span class="line">            x=x&amp;(x-<span class="number">1</span>) <span class="comment">//将整数x的二进制形式最右边的1变为0</span></span><br><span class="line">            count++</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        res.<span class="title function_">push</span>(count)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">第三种解法：巧用x&amp;(-x)</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">n</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number[]</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> countBits = <span class="keyword">function</span>(<span class="params">n</span>) &#123;</span><br><span class="line">    <span class="comment">// 巧用x&amp;(x-1)</span></span><br><span class="line">    <span class="keyword">let</span> res=[]</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;n+<span class="number">1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> x=i</span><br><span class="line">        <span class="keyword">let</span> count=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(x)&#123;</span><br><span class="line">            <span class="keyword">let</span> lowbit=x&amp;(-x) <span class="comment">//将整数x的二进制形式最右边的1变为0</span></span><br><span class="line">            x=x-lowbit</span><br><span class="line">            count++</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        res.<span class="title function_">push</span>(count)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>位运算相关题目：<br><a href="https://leetcode.cn/problems/counting-bits/">#338 比特位计数</a><br><a href="https://leetcode.cn/problems/add-binary/">67. 二进制求和</a><br><a href="https://leetcode.cn/problems/is-unique-lcci/">面试题 01.01. 判定字符是否唯一</a><br><a href="https://leetcode.cn/problems/power-of-two/">231. 2 的幂</a><br><a href="https://leetcode.cn/problems/single-number/">136. 只出现一次的数字</a><a href="https://leetcode.cn/problems/number-of-steps-to-reduce-a-number-to-zero/">1342. 将数字变成 0 的操作次数</a><br><a href="https://leetcode.cn/problems/sum-of-two-integers/">371. 两整数之和</a></p>
+<h2 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h2><p>前缀和定义：S[i]&#x3D;a[1]+a[2]+…a[i]或者S[i]&#x3D;S[i]-S[0]<br>求一维区间和公式：<code>this.S[i]=this.S[i-1]+nums[i-1]</code><br>求二维矩阵区间和公式：<code>this.sum[i][j]=this.sum[i-1][j]+this.sum[i][j-1]+matrix[i-1][j-1]-this.sum[i-1][j-1]</code><br>前缀和作用：快速求解区间和<br>前缀和利用空间换时间</p>
+<p>一维前缀和:<a href="https://leetcode.cn/problems/range-sum-query-immutable/">303. 区域和检索 - 数组不可变</a></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title class_">NumArray</span> = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">S</span>=<span class="keyword">new</span> <span class="title class_">Array</span>(nums.<span class="property">length</span>+<span class="number">1</span>).<span class="title function_">fill</span>(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;nums.<span class="property">length</span>+<span class="number">1</span>;i++)&#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">S</span>[i]=<span class="variable language_">this</span>.<span class="property">S</span>[i-<span class="number">1</span>]+nums[i-<span class="number">1</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>二维前缀和:<a href="https://leetcode.cn/problems/range-sum-query-2d-immutable/">304. 二维区域和检索 - 矩阵不可变</a></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title class_">NumMatrix</span> = <span class="keyword">function</span>(<span class="params">matrix</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">matrix</span>=matrix</span><br><span class="line">    <span class="keyword">let</span> m=<span class="variable language_">this</span>.<span class="property">matrix</span>.<span class="property">length</span></span><br><span class="line">    <span class="keyword">let</span> n=<span class="variable language_">this</span>.<span class="property">matrix</span>[<span class="number">0</span>].<span class="property">length</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">sum</span>=<span class="keyword">new</span> <span class="title class_">Array</span>(m + <span class="number">1</span>).<span class="title function_">fill</span>(<span class="number">0</span>).<span class="title function_">map</span>(<span class="function">() =&gt;</span> <span class="keyword">new</span> <span class="title class_">Array</span>(n + <span class="number">1</span>).<span class="title function_">fill</span>(<span class="number">0</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 构造前缀和</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">sum</span>[i][j]=<span class="variable language_">this</span>.<span class="property">sum</span>[i-<span class="number">1</span>][j]+<span class="variable language_">this</span>.<span class="property">sum</span>[i][j-<span class="number">1</span>]+matrix[i-<span class="number">1</span>][j-<span class="number">1</span>]-<span class="variable language_">this</span>.<span class="property">sum</span>[i-<span class="number">1</span>][j-<span class="number">1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>前缀和相关题目：</p>
+<p><a href="https://leetcode.cn/problems/range-sum-query-immutable/">303. 区域和检索 - 数组不可变</a><br><a href="https://leetcode.cn/problems/range-sum-query-2d-immutable/">304. 二维区域和检索 - 矩阵不可变</a></p>
+<h2 id="差分"><a href="#差分" class="headerlink" title="差分"></a>差分</h2><p>模板：<a href="https://www.acwing.com/blog/content/277/">https://www.acwing.com/blog/content/277/</a><br><a href="https://www.acwing.com/activity/content/problem/content/831/">https://www.acwing.com/activity/content/problem/content/831/</a><br><a href="https://www.acwing.com/activity/content/problem/content/832/">https://www.acwing.com/activity/content/problem/content/832/</a><br><a href="https://labuladong.github.io/algo/2/18/23/">https://labuladong.github.io/algo/2/18/23/</a></p>
+<h2 id="双指针"><a href="#双指针" class="headerlink" title="双指针"></a>双指针</h2><p>有单调性就要考虑双指针</p>
+<p>算法技巧：</p>
+<ul>
+<li><p><a href="https://labuladong.github.io/algo/2/18/21/">https://labuladong.github.io/algo/2/18/21/</a></p>
+</li>
+<li><p><a href="https://labuladong.github.io/algo/2/17/16/">https://labuladong.github.io/algo/2/17/16/</a></p>
+</li>
+</ul>
+<p>几种双指针：</p>
+<ul>
+<li>快慢指针（去重）</li>
+<li>相向而行指针（目标和）</li>
+<li>两边扩散指针（判断回文）</li>
+<li>哈希表+滑动窗口（最长子序列）</li>
+<li>找到环形链表的入口节点（slow走n步，fast走2n步找到相遇点，然后两指针同步走，fast为空时，slow即是环入口节点）</li>
+<li>归并（相当于合并两个有序链表）</li>
+</ul>
+<p>相交链表问题<a href="https://leetcode.cn/problems/intersection-of-two-linked-lists/">160. 相交链表</a>：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> getIntersectionNode = <span class="keyword">function</span>(<span class="params">headA, headB</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> p=headA, q=headB</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(p!=q)&#123;</span><br><span class="line">        <span class="keyword">if</span>(p===<span class="literal">null</span>)&#123;</span><br><span class="line">            p=headB</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(q===<span class="literal">null</span>)&#123;</span><br><span class="line">            q=headA</span><br><span class="line">        &#125;</span><br><span class="line">        p=p.<span class="property">next</span></span><br><span class="line">        q=q.<span class="property">next</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> p</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+<p>双指针相关题目：</p>
+<p>一、数组</p>
+<p><a href="https://leetcode.cn/problems/find-the-duplicate-number/">287. 寻找重复数</a><br><a href="https://leetcode.cn/problems/wtcaE1/">剑指 Offer II 016. 不含重复字符的最长子字符串</a><br><a href="https://leetcode.cn/problems/is-subsequence/">392. 判断子序列</a></p>
+<p>AcWing 800. 数组元素的目标和</p>
+<p><a href="https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/">167. 两数之和 II - 输入有序数组</a><br><a href="https://leetcode.cn/problems/remove-duplicates-from-sorted-array/">26. 删除有序数组中的重复项</a><br><a href="https://leetcode.cn/problems/remove-element/">27. 移除元素</a><br><a href="https://leetcode.cn/problems/move-zeroes/">283. 移动零</a><br><a href="https://leetcode.cn/problems/reverse-string/">344. 反转字符串</a><br><a href="https://leetcode.cn/problems/longest-palindromic-substring/">5. 最长回文子串</a><br><a href="https://leetcode.cn/problems/he-wei-sde-liang-ge-shu-zi-lcof/">剑指 Offer 57. 和为s的两个数字</a><br><a href="https://leetcode.cn/problems/kLl5u1/">剑指 Offer II 006. 排序数组中两个数字之和</a></p>
+<p>二、链表</p>
+<p><a href="https://leetcode.cn/problems/remove-duplicates-from-sorted-list/">83. 删除排序链表中的重复元素</a><br><a href="https://leetcode.cn/problems/linked-list-cycle/">141. 环形链表</a><br><a href="https://leetcode.cn/problems/linked-list-cycle-ii/">142. 环形链表 II</a><br><a href="https://leetcode.cn/problems/intersection-of-two-linked-lists/">160. 相交链表</a><br><a href="https://leetcode.cn/problems/remove-nth-node-from-end-of-list/">19. 删除链表的倒数第 N 个结点</a><br><a href="https://leetcode.cn/problems/merge-two-sorted-lists/">21. 合并两个有序链表</a><br><a href="https://leetcode.cn/problems/middle-of-the-linked-list/">876. 链表的中间结点</a><br><a href="https://leetcode.cn/problems/partition-list/">86. 分隔链表</a></p>
+<h2 id="区间合并"><a href="#区间合并" class="headerlink" title="区间合并"></a>区间合并</h2><p><a href="https://labuladong.github.io/algo/4/31/122/">https://labuladong.github.io/algo/4/31/122/</a></p>
+<p>区间合并：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[][]</span>&#125; <span class="variable">intervals</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number[][]</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> merge = <span class="keyword">function</span>(<span class="params">intervals</span>) &#123;</span><br><span class="line">    <span class="comment">// 按区间的 start 升序排列</span></span><br><span class="line">    intervals.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> a[<span class="number">0</span>]-b[<span class="number">0</span>]</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> res=[intervals[<span class="number">0</span>]]</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;intervals.<span class="property">length</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> curr=intervals[i]</span><br><span class="line">        <span class="comment">// console.log(res[res.length-1])</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(curr[<span class="number">0</span>]&lt;=res[res.<span class="property">length</span>-<span class="number">1</span>][<span class="number">1</span>])&#123;</span><br><span class="line">            <span class="comment">// 合并区间</span></span><br><span class="line">            res[res.<span class="property">length</span>-<span class="number">1</span>][<span class="number">1</span>]=<span class="title class_">Math</span>.<span class="title function_">max</span>(curr[<span class="number">1</span>], res[res.<span class="property">length</span>-<span class="number">1</span>][<span class="number">1</span>])</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">// // 处理下一个待合并区间</span></span><br><span class="line">            res.<span class="title function_">push</span>(curr)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>合并区间数量计算：</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[][]</span>&#125; <span class="variable">intervals</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> removeCoveredIntervals = <span class="keyword">function</span>(<span class="params">intervals</span>) &#123;</span><br><span class="line">    <span class="comment">// 按照起点升序排列，起点相同时降序排列</span></span><br><span class="line">    intervals.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(a[<span class="number">0</span>]==b[<span class="number">0</span>])&#123;</span><br><span class="line">            <span class="keyword">return</span> b[<span class="number">1</span>]-a[<span class="number">1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> a[<span class="number">0</span>]-b[<span class="number">0</span>]</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 记录合并区间的起点和终点</span></span><br><span class="line">    <span class="keyword">let</span> left=intervals[<span class="number">0</span>][<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">let</span> right=intervals[<span class="number">0</span>][<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> res=<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;intervals.<span class="property">length</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> intv=intervals[i]</span><br><span class="line">        <span class="comment">//   // 情况一，找到覆盖区间</span></span><br><span class="line">        <span class="keyword">if</span>(left&lt;=intv[<span class="number">0</span>] &amp;&amp; right&gt;=intv[<span class="number">1</span>])&#123;</span><br><span class="line">            res++</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>区间合并相关题目：</p>
+<p><a href="https://leetcode.cn/problems/remove-covered-intervals/">1288. 删除被覆盖区间</a><br><a href="https://leetcode.cn/problems/merge-intervals/">56. 合并区间</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>JS刷题语法</title>
+    <url>/2022/06/27/JS%E5%88%B7%E9%A2%98%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<span id="more"></span>
+
+
+
+<h2 id="JS-语法"><a href="#JS-语法" class="headerlink" title="JS 语法"></a>JS 语法</h2><h4 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h4><p>let map&#x3D;new Map()<br>map.set(key, value)<br>map.get(key)<br>map.has(key)</p>
+<h4 id="JavaScript字符与acsii值互转"><a href="#JavaScript字符与acsii值互转" class="headerlink" title="JavaScript字符与acsii值互转"></a>JavaScript字符与acsii值互转</h4><p>“a”.charCodeAt()</p>
+<h4 id="位操作"><a href="#位操作" class="headerlink" title="位操作"></a>位操作</h4><p>count+&#x3D;n&amp;1<br>n&#x3D;n&gt;&gt;&gt;1</p>
+<p>res.push(2)</p>
+<h4 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h4><pre><code>  <figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> map=<span class="keyword">new</span> <span class="title class_">Map</span>()</span><br><span class="line"></span><br><span class="line">map.<span class="title function_">set</span>(<span class="string">&#x27;a&#x27;</span>, <span class="number">2</span>) </span><br><span class="line">map.<span class="title function_">get</span>(<span class="string">&#x27;a&#x27;</span>) <span class="comment">//2</span></span><br><span class="line">map.<span class="title function_">has</span>(<span class="string">&#x27;b&#x27;</span>) <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">of</span> <span class="attr">map</span>:</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(item)</span><br><span class="line"></span><br><span class="line">map.<span class="title function_">forEach</span>(<span class="function">(<span class="params">v, k</span>)=&gt;</span>&#123;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(v, k)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</code></pre>
+<h4 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h4><p>s&#x3D;new Set() # 集合里没有重复元素<br>s.add(3)<br>s.has(3)</p>
+<h4 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h4><p>dp&#x3D;new Array(n).fill(0)</p>
+<h4 id="arr-length"><a href="#arr-length" class="headerlink" title="arr.length"></a>arr.length</h4><h4 id="arr-push-0-和arr-unshift-0"><a href="#arr-push-0-和arr-unshift-0" class="headerlink" title="arr.push(0)和arr.unshift(0)"></a>arr.push(0)和arr.unshift(0)</h4><h4 id="queue-shift-和queue-pop"><a href="#queue-shift-和queue-pop" class="headerlink" title="queue.shift()和queue.pop()"></a>queue.shift()和queue.pop()</h4><h4 id="let-dp-x3D-Array-from-new-Array-n-x3D-gt-new-Array-2"><a href="#let-dp-x3D-Array-from-new-Array-n-x3D-gt-new-Array-2" class="headerlink" title="let dp&#x3D;Array.from(new Array(n), ()&#x3D;&gt;new Array(2))"></a>let dp&#x3D;Array.from(new Array(n), ()&#x3D;&gt;new Array(2))</h4><h4 id="res-x3D-Infinity"><a href="#res-x3D-Infinity" class="headerlink" title="res&#x3D;-Infinity"></a>res&#x3D;-Infinity</h4><h4 id="stack-stack-length-1-栈顶元素"><a href="#stack-stack-length-1-栈顶元素" class="headerlink" title="stack[stack.length-1] #栈顶元素"></a>stack[stack.length-1] #栈顶元素</h4><h4 id="String-3-字符串转换"><a href="#String-3-字符串转换" class="headerlink" title="String(3) #字符串转换"></a>String(3) #字符串转换</h4><h4 id="arr-indexOf-3-x3D-x3D-x3D-1-不存在"><a href="#arr-indexOf-3-x3D-x3D-x3D-1-不存在" class="headerlink" title="arr.indexOf(3)&#x3D;&#x3D;&#x3D;-1    不存在"></a>arr.indexOf(3)&#x3D;&#x3D;&#x3D;-1    不存在</h4><h4 id="str-indexOf-“fasd”"><a href="#str-indexOf-“fasd”" class="headerlink" title="str.indexOf(“fasd”)"></a>str.indexOf(“fasd”)</h4><h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">从小到大排序</span><br><span class="line">arr.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a-b</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="获取数组最后一个元素"><a href="#获取数组最后一个元素" class="headerlink" title="获取数组最后一个元素"></a>获取数组最后一个元素</h4><ol>
+<li>arr.slice(-1)</li>
+<li>arr[arr.length-1]</li>
+</ol>
+<h4 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h4><p>switch(s){</p>
+<p>​    case “A”:</p>
+<p>​        break;</p>
+<p>​    case “B”:</p>
+<p>​        break;</p>
+<p>}</p>
+<h4 id="正则"><a href="#正则" class="headerlink" title="正则"></a>正则</h4><p> reg&#x3D;&#x2F;^([ADWS])([\d]+$)&#x2F;</p>
+<h4 id="字符串查找子串"><a href="#字符串查找子串" class="headerlink" title="字符串查找子串"></a>字符串查找子串</h4><p>s.includes(str)</p>
+<h4 id="创建二维数组"><a href="#创建二维数组" class="headerlink" title="创建二维数组"></a>创建二维数组</h4><p>let dp&#x3D;Array.from(new Array(n), ()&#x3D;&gt;new Array(2).fill(0))</p>
+<h4 id="数组对象"><a href="#数组对象" class="headerlink" title="数组对象"></a>数组对象</h4><p>arr&#x3D;[]</p>
+<p>arr.push({<br>       name:parseInt(line[0]),<br>        score:parseInt(line[1]),<br>        index:i<br>    })</p>
+<h4 id="截取字符串"><a href="#截取字符串" class="headerlink" title="截取字符串"></a>截取字符串</h4><p>s.substring(4,6)</p>
+<p>slice()函数</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> animals = [<span class="string">&#x27;ant&#x27;</span>, <span class="string">&#x27;bison&#x27;</span>, <span class="string">&#x27;camel&#x27;</span>, <span class="string">&#x27;duck&#x27;</span>, <span class="string">&#x27;elephant&#x27;</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(animals.<span class="title function_">slice</span>(<span class="number">2</span>));</span><br><span class="line"><span class="comment">// expected output: Array [&quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]</span></span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>Python刷题语法</title>
+    <url>/2022/06/27/Python%E5%88%B7%E9%A2%98%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<span id="more"></span>
+
+<h2 id="Python-语法"><a href="#Python-语法" class="headerlink" title="Python 语法"></a>Python 语法</h2><h4 id="python常用模块"><a href="#python常用模块" class="headerlink" title="python常用模块"></a>python常用模块</h4><p><a href='https://blog.csdn.net/Shenpibaipao/article/details/105873407'>[Python][刷题常用模块]用Python刷题，这一篇就够了</a><br><a href="https://blog.nowcoder.net/n/b4d00041304748b1a522275243fd87e6">https://blog.nowcoder.net/n/b4d00041304748b1a522275243fd87e6</a><br><a href="https://xdren69.github.io/2021/03/31/leetcode-python/">https://xdren69.github.io/2021/03/31/leetcode-python/</a><br><a href="http://www-quic.zhihu.com/question/392867890">http://www-quic.zhihu.com/question/392867890</a><br><a href='https://codingdict.com/article/4843'>CodingDict</a></p>
+<h4 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h4><p>int(a, 2) a数值转换成2进制</p>
+<p>bin(a)[2:] a数值转换成2进制</p>
+<h4 id="字符串转Ascii"><a href="#字符串转Ascii" class="headerlink" title="字符串转Ascii"></a>字符串转Ascii</h4><p>ord(‘a’)    字符串转asc</p>
+<p>chr(98)    asc转字符串</p>
+<ol>
+<li><p>max(a, b)</p>
+</li>
+<li><p>队列</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; import queue </span><br><span class="line">&gt;</span><br><span class="line">&gt; </span><br><span class="line">&gt;</span><br><span class="line">&gt; q=queue.Queue(5)</span><br><span class="line">&gt;</span><br><span class="line">&gt; q.put(123)</span><br><span class="line">&gt;</span><br><span class="line">&gt; q.get()</span><br></pre></td></tr></table></figure></li>
+<li><p>优先级队列</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt;import queue</span><br><span class="line">&gt;</span><br><span class="line">&gt;q=queue.PriorityQueue()</span><br><span class="line">&gt;</span><br><span class="line">&gt;同上put get</span><br><span class="line">&gt;</span><br><span class="line">&gt;结构相当于一个堆</span><br></pre></td></tr></table></figure></li>
+<li><p>栈</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">&gt;from collections import deque</span><br><span class="line">&gt;</span><br><span class="line">&gt;s=deque()</span><br><span class="line">&gt;</span><br><span class="line">&gt;s.append(1)</span><br><span class="line">&gt;</span><br><span class="line">&gt;s.pop()</span><br><span class="line">&gt;</span><br><span class="line">&gt;或者用LifoQueue</span><br><span class="line">&gt;</span><br><span class="line">&gt;from queue</span><br><span class="line">&gt;</span><br><span class="line">&gt;s=queue.LifoQueue()</span><br><span class="line">&gt;</span><br><span class="line">&gt;s.put(1)</span><br><span class="line">&gt;</span><br><span class="line">&gt;s.get()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>有时候用python报错如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">UnboundLocalError: local variable &#x27;sum&#x27; referenced before assignment</span><br><span class="line">    sum+=root.val</span><br><span class="line">Line 20 in traverse (Solution.py)</span><br><span class="line">    traverse(root.right)</span><br><span class="line">Line 18 in traverse (Solution.py)</span><br><span class="line">    traverse(root.right)</span><br><span class="line">Line 18 in traverse (Solution.py)</span><br><span class="line">    traverse(root.right)</span><br><span class="line">Line 18 in traverse (Solution.py)</span><br><span class="line">    traverse(root)</span><br><span class="line">Line 27 in convertBST (Solution.py)</span><br><span class="line">    ret = Solution().convertBST(param_1)</span><br><span class="line">Line 49 in _driver (Solution.py)</span><br><span class="line">    _driver()</span><br><span class="line">Line 60 in &lt;module&gt; (Solution.py)</span><br><span class="line"></span><br><span class="line">解决方法：nonlocal 定义非定义域所在变量</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>python 创建二维数组</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">arr=[[<span class="number">0</span>]*<span class="number">3</span>]*<span class="number">3</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>python 小顶堆</p>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">官网：https://docs.python.org/zh-cn/3/library/heapq.html</span><br><span class="line">from heapq import *</span><br><span class="line"></span><br><span class="line">heap=[]</span><br><span class="line">heappush(heap, 1)</span><br><span class="line">heappop(heap) # 0</span><br><span class="line">print(len(heap)) # 堆大小 </span><br><span class="line">print(heap[0]) # 栈顶最小元素</span><br><span class="line">//将列表转换为堆</span><br><span class="line">heap2 = [5, 8, 0, 4, 6, 7]</span><br><span class="line">heapify(heap2)</span><br><span class="line">print(heap2)   #[0, 4, 5, 8, 6, 7]</span><br><span class="line"></span><br><span class="line">//前n个最大的或前n个最小的元素</span><br><span class="line">lst = [5, 8, 0, 4, 6, 7]</span><br><span class="line">print(nsmallest(3, lst))</span><br><span class="line">print(nlargest(3, lst))</span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li><p>python 字典（哈希表）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dict=&#123;&#125;</span><br><span class="line"></span><br><span class="line">dict[&#x27;Age&#x27;]=18</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>python 数组</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">arr=[]</span><br><span class="line"></span><br><span class="line">arr.push(3)</span><br><span class="line">arr.pop()</span><br><span class="line">arr.pop(0) //删除第一个元素</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>python 字符串</p>
+</li>
+</ol>
+   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">s=&#x27;sadfasdf,asdfa&#x27;</span><br><span class="line"></span><br><span class="line">s.split(&#x27;,&#x27;)</span><br></pre></td></tr></table></figure>
+<ol start="11">
+<li><p>python 设定最大值最小值</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sys.maxsize python3中设置最大值</span><br><span class="line">-sys.maxsize-1 python3中设置最小值</span><br></pre></td></tr></table></figure></li>
+<li><p>输入字符转换为ASCII码</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ord</span>(ch)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>输入ASCII码转换为字符</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chr(ch)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>str.find(s, beg, end)<br><a href="https://www.runoob.com/python/att-string-find.html">https://www.runoob.com/python/att-string-find.html</a></p>
+</li>
+<li><p>定义二维数组</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dp = [[0] * (n + 1) for _ in range(m + 1)] #尽量用这个</span><br><span class="line">dp2=[[0]*(n+1)]*(m+1) #这个有时会导致出错</span><br><span class="line">print(dp==dp2) # True</span><br></pre></td></tr></table></figure></li>
+<li><p>遍历哈希表</p>
+</li>
+</ol>
+   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for k in h.keys():</span><br><span class="line">            print(k)</span><br></pre></td></tr></table></figure>
+
+<ol start="17">
+<li><p>遍历枚举类型数组</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for i,num in enumerate(nums):</span><br><span class="line">    print(i,num)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>abs()</p>
+</li>
+<li><p>split()</p>
+</li>
+</ol>
+   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">s=&#x27;sdf,asdfa&#x27;</span><br><span class="line"></span><br><span class="line">arr=s.split(&#x27;,&#x27;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<ol start="20">
+<li>strip()</li>
+</ol>
+   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">s.strip() # 去掉空格</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ol start="21">
+<li><p>range(start, stop, step)</p>
+</li>
+<li><p>数组添加可以不用append,直接+</p>
+</li>
+</ol>
+   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[2]+[3]=[2,3]</span><br></pre></td></tr></table></figure>
+
+<ol start="23">
+<li>左移乘2、右移除2</li>
+</ol>
+   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;&lt;1 </span><br><span class="line">&gt;&gt;1</span><br></pre></td></tr></table></figure>
+
+<ol start="24">
+<li>&amp; 和 and     |和or是不同的</li>
+</ol>
+   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&amp;   二进制与运算</span><br><span class="line">and 与运算</span><br><span class="line">|   二进制或运算</span><br><span class="line">or  或运算</span><br></pre></td></tr></table></figure>
+
+<ol start="25">
+<li>set()函数</li>
+</ol>
+   <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">visited=<span class="built_in">set</span>()</span><br><span class="line">visited.add(<span class="number">3</span>)</span><br><span class="line">visited.add(<span class="number">3</span>) <span class="comment">#重复元素会被删除</span></span><br></pre></td></tr></table></figure>
+<ol start="26">
+<li>双端队列 deque()   <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"></span><br><span class="line">q=collections.deque()</span><br><span class="line">q.push(<span class="number">3</span>)</span><br><span class="line">q.push(<span class="number">4</span>)</span><br><span class="line">q.popleft()</span><br><span class="line">q.pop()</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li>import queue</li>
+</ol>
+<p>deque&#x3D;queue.deque()<br>queue&#x3D;queue.Queue()</p>
+<ol start="28">
+<li>join拼接字符串</li>
+</ol>
+<p>res&#x3D;[‘sdf’, ‘sdf’, ‘d’]<br>str&#x3D;’  ‘.join(res) # ‘sdfsdfd’</p>
+<ol start="29">
+<li>arr.sort()</li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>面试实战</title>
+    <url>/2022/07/06/%E9%9D%A2%E8%AF%95%E5%AE%9E%E6%88%98/</url>
+    <content><![CDATA[<span id="more"></span>
+
+
+
 <h2 id="腾讯前端实习一-二面"><a href="#腾讯前端实习一-二面" class="headerlink" title="腾讯前端实习一,二面"></a>腾讯前端实习一,二面</h2><p>作者：dara羽星<br>链接：<a href="https://www.nowcoder.com/discuss/954603?type=post&amp;order=hot&amp;pos=&amp;page=1&amp;ncTraceId=&amp;channel=-1&amp;source_id=search_post_nctrack&amp;gio_id=6C9B02BCD77AC7951DD89A4914063199-1653400236717">https://www.nowcoder.com/discuss/954603?type=post&amp;order=hot&amp;pos=&amp;page=1&amp;ncTraceId=&amp;channel=-1&amp;source_id=search_post_nctrack&amp;gio_id=6C9B02BCD77AC7951DD89A4914063199-1653400236717</a><br>来源：牛客网</p>
 <p>因为没录音只能想一点写一点。可能有很多遗漏<br>5.17一面 时长1h5min<br>    1. 隐藏元素的方法以及分别有什么区别<br>        <a href="https://juejin.cn/post/6943856363248287752">https://juejin.cn/post/6943856363248287752</a><br>        <a href="https://jsbin.com/wesidaluyi/edit?html,output">https://jsbin.com/wesidaluyi/edit?html,output</a><br>        display: none<br>        visibility: hidden<br>        opacity: 0<br>        position: relative<br>        position: absolute</p>
 <pre><code>2. BFC介绍
@@ -1066,210 +1356,157 @@ https://juejin.cn/post/6844903593955328007
 </li>
 <li><p>职业规划？</p>
 </li>
+<li><p>前端向后端交互的方法 GET、POST、DELETE的应用场景？</p>
+</li>
 </ol>
-]]></content>
-  </entry>
-  <entry>
-    <title>Acwing刷题笔记</title>
-    <url>/2022/06/20/Acwing%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<span id="more"></span>
-
-
-
-<h1 id="AcWing"><a href="#AcWing" class="headerlink" title="AcWing"></a>AcWing</h1><h2 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h2><p><a href="https://leetcode.cn/problems/zui-xiao-de-kge-shu-lcof/">剑指 Offer 40. 最小的k个数</a>——快排（左右哨兵、递归左右子树组）<br><a href="https://leetcode.cn/problems/sort-colors/">75. 颜色分类</a>——双指针——快速排序</p>
-<p>快速排序：<a href="https://www.acwing.com/video/227/">https://www.acwing.com/video/227/</a></p>
-<p>快速排序过程：1. 确定分界点 2. 调整区间 3. 递归处理左右两端</p>
-<p>调整区间：<br>法1：双指针相向而行，交换<br>法2：用两个数组保存大于目标值和小于目标值的数</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">nums</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number[]</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> sortArray = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">    <span class="comment">// acwing 快速排序模板</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">quick_sort</span>(<span class="params">q, l, r</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(l&gt;=r)&#123;</span><br><span class="line">            <span class="keyword">return</span> q</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> i=l-<span class="number">1</span></span><br><span class="line">        <span class="keyword">let</span> j=r+<span class="number">1</span></span><br><span class="line">        <span class="keyword">let</span> x=q[l+r&gt;&gt;<span class="number">1</span>] <span class="comment">//哨兵</span></span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span>(i&lt;j)&#123;</span><br><span class="line">            <span class="keyword">do</span> &#123;</span><br><span class="line">                i++;</span><br><span class="line">            &#125; <span class="keyword">while</span> (q[i]&lt;x) <span class="comment">//注意用dowhile</span></span><br><span class="line">            <span class="keyword">do</span> &#123;</span><br><span class="line">                j--;</span><br><span class="line">            &#125; <span class="keyword">while</span> (q[j]&gt;x)</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(i&lt;j) <span class="title function_">swap</span>(q, i, j)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="title function_">quick_sort</span>(q, l, j) <span class="comment">//注意取j</span></span><br><span class="line">        <span class="title function_">quick_sort</span>(q, j+<span class="number">1</span>, r) <span class="comment">//注意取j+1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> q</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">swap</span>(<span class="params">c, i, j</span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> tmp=c[i]</span><br><span class="line">        c[i]=c[j]</span><br><span class="line">        c[j]=tmp</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">quick_sort</span>(nums, <span class="number">0</span>, nums.<span class="property">length</span>-<span class="number">1</span>)</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="快速选择"><a href="#快速选择" class="headerlink" title="快速选择"></a>快速选择</h2><p>时间复杂度n</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">nums</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">k</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> findKthLargest = <span class="keyword">function</span>(<span class="params">nums, k</span>) &#123;</span><br><span class="line">    <span class="comment">//快速选择算法（基于快速排序的二分查找）</span></span><br><span class="line">     <span class="keyword">function</span> <span class="title function_">quick_search</span>(<span class="params">q, l, r, k</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(l==r)    <span class="keyword">return</span> q[l]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> x=q[<span class="title class_">Math</span>.<span class="title function_">floor</span>((l+r-<span class="number">1</span>)/<span class="number">2</span>)]<span class="comment">//这里用这个作为基准点而不是q[l]，时间上会有优化</span></span><br><span class="line">        <span class="keyword">let</span> i=l-<span class="number">1</span></span><br><span class="line">        <span class="keyword">let</span> j=r+<span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(i&lt;j)&#123;</span><br><span class="line">            <span class="keyword">do</span>&#123;</span><br><span class="line">                i++</span><br><span class="line">            &#125;<span class="keyword">while</span>(q[i]&lt;x)</span><br><span class="line">            <span class="keyword">do</span>&#123;</span><br><span class="line">                j--</span><br><span class="line">            &#125;<span class="keyword">while</span>(q[j]&gt;x)</span><br><span class="line">            <span class="keyword">if</span>(i&lt;j) <span class="title function_">swap</span>(q, i, j)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> sl=j-l+<span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span>(k&lt;=sl)   <span class="keyword">return</span> <span class="title function_">quick_search</span>(q, l, j, k)</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(k&gt;sl)   <span class="keyword">return</span> <span class="title function_">quick_search</span>(q, j+<span class="number">1</span>, r, k-sl) <span class="comment">//注意是k-sl</span></span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">     <span class="keyword">function</span> <span class="title function_">swap</span>(<span class="params">arr, i, j</span>)&#123;</span><br><span class="line">         <span class="keyword">let</span> tmp=arr[i]</span><br><span class="line">         arr[i]=arr[j]</span><br><span class="line">         arr[j]=tmp</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">quick_search</span>(nums, <span class="number">0</span>, nums.<span class="property">length</span>-<span class="number">1</span>, nums.<span class="property">length</span>-k+<span class="number">1</span>)<span class="comment">//注意是nums.length-k+1</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-<h2 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">nums</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number[]</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> sortArray = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// acwing 归并排序模板</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">merge_sort</span>(<span class="params">q, l, r</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(l&gt;=r)&#123;</span><br><span class="line">            <span class="keyword">return</span> q</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> mid=<span class="title class_">Math</span>.<span class="title function_">floor</span>((l+r)/<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">        <span class="title function_">merge_sort</span>(q, l, mid)</span><br><span class="line">        <span class="title function_">merge_sort</span>(q, mid+<span class="number">1</span>, r)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> i=l</span><br><span class="line">        <span class="keyword">let</span> j=mid+<span class="number">1</span></span><br><span class="line">        <span class="keyword">let</span> k=<span class="number">0</span></span><br><span class="line">        <span class="keyword">let</span> tmp=[]</span><br><span class="line">        <span class="keyword">while</span>(i&lt;=mid || j&lt;=r)&#123;</span><br><span class="line">            <span class="keyword">if</span>(i&gt;mid)&#123;</span><br><span class="line">                tmp[k++]=q[j++]            </span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(j&gt;r)&#123;</span><br><span class="line">                tmp[k++]=q[i++]</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(q[i]&lt;=q[j])  tmp[k++]=q[i++]</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(q[i]&gt;q[j])  tmp[k++]=q[j++]</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> m=l, n=<span class="number">0</span>; m&lt;=r; m++, n++)&#123;</span><br><span class="line">            q[m]=tmp[n]</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> q</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">swap</span>(<span class="params">c, i, j</span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> tmp=c[i]</span><br><span class="line">        c[i]=c[j]</span><br><span class="line">        c[j]=tmp</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="title function_">merge_sort</span>(nums, <span class="number">0</span>, nums.<span class="property">length</span>-<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> nums</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<h2 id="归并统计逆序对"><a href="#归并统计逆序对" class="headerlink" title="归并统计逆序对"></a>归并统计逆序对</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">nums</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> reversePairs = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">    <span class="comment">// 归并</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">merge_sort</span>(<span class="params">q, l, r</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(l&gt;=r)    <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> mid=l+r&gt;&gt;<span class="number">1</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> count=<span class="title function_">merge_sort</span>(q, l, mid) + <span class="title function_">merge_sort</span>(q, mid+<span class="number">1</span>, r)</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> i=l, j=mid+<span class="number">1</span></span><br><span class="line">        <span class="keyword">let</span> tmp=[], k=<span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span>(i&lt;=mid || j&lt;=r)&#123;</span><br><span class="line">            <span class="comment">// let count=merge_sort(q, l, mid)+merge_sort(q, mid+1, r)</span></span><br><span class="line">            <span class="keyword">if</span>(i&gt;mid)&#123;</span><br><span class="line">                tmp[k++]=q[j++]</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(j&gt;r)&#123;</span><br><span class="line">                tmp[k++]=q[i++]</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(q[i]&gt;q[j])&#123;</span><br><span class="line">                <span class="comment">// 计算逆序对</span></span><br><span class="line">                tmp[k++]=q[j++]</span><br><span class="line">                count+=mid-i+<span class="number">1</span></span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                tmp[k++]=q[i++]</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> m=l, n=<span class="number">0</span>; m&lt;=r; m++, n++)&#123;</span><br><span class="line">            q[m]=tmp[n]</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> count</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">merge_sort</span>(nums, <span class="number">0</span>, nums.<span class="property">length</span>-<span class="number">1</span>)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="位运算"><a href="#位运算" class="headerlink" title="位运算"></a>位运算</h2><p><strong>几种位操作：</strong></p>
-<ul>
-<li>求n的第k位数字: n &gt;&gt; k &amp; 1</li>
-<li>返回n的最后一位1：lowbit(n) &#x3D; n &amp; -n</li>
-<li>将整数i的二进制形式最右边的1变为0：i &amp; (i-1)</li>
-<li>a ^ a &#x3D; 0</li>
-<li>a ^ 0 &#x3D; a</li>
-</ul>
-<p>labuladong的算法技巧：<a href="https://labuladong.github.io/algo/4/30/112/">https://labuladong.github.io/algo/4/30/112/</a></p>
-<h4 id="前-n-个数字二进制中-1-的个数"><a href="#前-n-个数字二进制中-1-的个数" class="headerlink" title=" 前 n 个数字二进制中 1 的个数"></a><a href="https://leetcode.cn/problems/w3tCBm/"> 前 n 个数字二进制中 1 的个数</a></h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">第一种解法：一位一位的向右移动</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">n</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number[]</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> countBits = <span class="keyword">function</span>(<span class="params">n</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> res=[]</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;n+<span class="number">1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> x=i</span><br><span class="line">        <span class="keyword">let</span> count=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(x)&#123;</span><br><span class="line">            count+=x&amp;<span class="number">1</span></span><br><span class="line">            x&gt;&gt;&gt;=<span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        res.<span class="title function_">push</span>(count)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">第二种解法：巧用x&amp;(x-<span class="number">1</span>)</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">n</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number[]</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> countBits = <span class="keyword">function</span>(<span class="params">n</span>) &#123;</span><br><span class="line">    <span class="comment">// 巧用x&amp;(x-1)</span></span><br><span class="line">    <span class="keyword">let</span> res=[]</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;n+<span class="number">1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> x=i</span><br><span class="line">        <span class="keyword">let</span> count=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(x)&#123;</span><br><span class="line">            x=x&amp;(x-<span class="number">1</span>) <span class="comment">//将整数x的二进制形式最右边的1变为0</span></span><br><span class="line">            count++</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        res.<span class="title function_">push</span>(count)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">第三种解法：巧用x&amp;(-x)</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number</span>&#125; <span class="variable">n</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number[]</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> countBits = <span class="keyword">function</span>(<span class="params">n</span>) &#123;</span><br><span class="line">    <span class="comment">// 巧用x&amp;(x-1)</span></span><br><span class="line">    <span class="keyword">let</span> res=[]</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;n+<span class="number">1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">let</span> x=i</span><br><span class="line">        <span class="keyword">let</span> count=<span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(x)&#123;</span><br><span class="line">            <span class="keyword">let</span> lowbit=x&amp;(-x) <span class="comment">//将整数x的二进制形式最右边的1变为0</span></span><br><span class="line">            x=x-lowbit</span><br><span class="line">            count++</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        res.<span class="title function_">push</span>(count)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>位运算相关题目：<br><a href="https://leetcode.cn/problems/counting-bits/">#338 比特位计数</a><br><a href="https://leetcode.cn/problems/add-binary/">67. 二进制求和</a><br><a href="https://leetcode.cn/problems/is-unique-lcci/">面试题 01.01. 判定字符是否唯一</a><br><a href="https://leetcode.cn/problems/power-of-two/">231. 2 的幂</a><br><a href="https://leetcode.cn/problems/single-number/">136. 只出现一次的数字</a><a href="https://leetcode.cn/problems/number-of-steps-to-reduce-a-number-to-zero/">1342. 将数字变成 0 的操作次数</a><br><a href="https://leetcode.cn/problems/sum-of-two-integers/">371. 两整数之和</a></p>
-<h2 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h2><p>前缀和定义：S[i]&#x3D;a[1]+a[2]+…a[i]或者S[i]&#x3D;S[i]-S[0]<br>求一维区间和公式：<code>this.S[i]=this.S[i-1]+nums[i-1]</code><br>求二维矩阵区间和公式：<code>this.sum[i][j]=this.sum[i-1][j]+this.sum[i][j-1]+matrix[i-1][j-1]-this.sum[i-1][j-1]</code><br>前缀和作用：快速求解区间和<br>前缀和利用空间换时间</p>
-<p>一维前缀和:<a href="https://leetcode.cn/problems/range-sum-query-immutable/">303. 区域和检索 - 数组不可变</a></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title class_">NumArray</span> = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">S</span>=<span class="keyword">new</span> <span class="title class_">Array</span>(nums.<span class="property">length</span>+<span class="number">1</span>).<span class="title function_">fill</span>(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;nums.<span class="property">length</span>+<span class="number">1</span>;i++)&#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">S</span>[i]=<span class="variable language_">this</span>.<span class="property">S</span>[i-<span class="number">1</span>]+nums[i-<span class="number">1</span>]</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<p>二维前缀和:<a href="https://leetcode.cn/problems/range-sum-query-2d-immutable/">304. 二维区域和检索 - 矩阵不可变</a></p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title class_">NumMatrix</span> = <span class="keyword">function</span>(<span class="params">matrix</span>) &#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">matrix</span>=matrix</span><br><span class="line">    <span class="keyword">let</span> m=<span class="variable language_">this</span>.<span class="property">matrix</span>.<span class="property">length</span></span><br><span class="line">    <span class="keyword">let</span> n=<span class="variable language_">this</span>.<span class="property">matrix</span>[<span class="number">0</span>].<span class="property">length</span></span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">sum</span>=<span class="keyword">new</span> <span class="title class_">Array</span>(m + <span class="number">1</span>).<span class="title function_">fill</span>(<span class="number">0</span>).<span class="title function_">map</span>(<span class="function">() =&gt;</span> <span class="keyword">new</span> <span class="title class_">Array</span>(n + <span class="number">1</span>).<span class="title function_">fill</span>(<span class="number">0</span>));</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 构造前缀和</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            <span class="variable language_">this</span>.<span class="property">sum</span>[i][j]=<span class="variable language_">this</span>.<span class="property">sum</span>[i-<span class="number">1</span>][j]+<span class="variable language_">this</span>.<span class="property">sum</span>[i][j-<span class="number">1</span>]+matrix[i-<span class="number">1</span>][j-<span class="number">1</span>]-<span class="variable language_">this</span>.<span class="property">sum</span>[i-<span class="number">1</span>][j-<span class="number">1</span>]</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>前缀和相关题目：</p>
-<p><a href="https://leetcode.cn/problems/range-sum-query-immutable/">303. 区域和检索 - 数组不可变</a><br><a href="https://leetcode.cn/problems/range-sum-query-2d-immutable/">304. 二维区域和检索 - 矩阵不可变</a></p>
-<h2 id="差分"><a href="#差分" class="headerlink" title="差分"></a>差分</h2><p>模板：<a href="https://www.acwing.com/blog/content/277/">https://www.acwing.com/blog/content/277/</a><br><a href="https://www.acwing.com/activity/content/problem/content/831/">https://www.acwing.com/activity/content/problem/content/831/</a><br><a href="https://www.acwing.com/activity/content/problem/content/832/">https://www.acwing.com/activity/content/problem/content/832/</a><br><a href="https://labuladong.github.io/algo/2/18/23/">https://labuladong.github.io/algo/2/18/23/</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>JS刷题语法</title>
-    <url>/2022/06/27/JS%E5%88%B7%E9%A2%98%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<span id="more"></span>
-
-
-
-<h2 id="JS-语法"><a href="#JS-语法" class="headerlink" title="JS 语法"></a>JS 语法</h2><h4 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h4><p>let map&#x3D;new Map()<br>map.set(key, value)<br>map.get(key)<br>map.has(key)</p>
-<h4 id="JavaScript字符与acsii值互转"><a href="#JavaScript字符与acsii值互转" class="headerlink" title="JavaScript字符与acsii值互转"></a>JavaScript字符与acsii值互转</h4><p>“a”.charCodeAt()</p>
-<h4 id="位操作"><a href="#位操作" class="headerlink" title="位操作"></a>位操作</h4><p>count+&#x3D;n&amp;1<br>n&#x3D;n&gt;&gt;&gt;1</p>
-<p>res.push(2)</p>
-<h4 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h4><pre><code>  <figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> map=<span class="keyword">new</span> <span class="title class_">Map</span>()</span><br><span class="line"></span><br><span class="line">map.<span class="title function_">set</span>(<span class="string">&#x27;a&#x27;</span>, <span class="number">2</span>) </span><br><span class="line">map.<span class="title function_">get</span>(<span class="string">&#x27;a&#x27;</span>) <span class="comment">//2</span></span><br><span class="line">map.<span class="title function_">has</span>(<span class="string">&#x27;b&#x27;</span>) <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">of</span> <span class="attr">map</span>:</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(item)</span><br><span class="line"></span><br><span class="line">map.<span class="title function_">forEach</span>(<span class="function">(<span class="params">v, k</span>)=&gt;</span>&#123;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(v, k)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</code></pre>
-<h4 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h4><p>s&#x3D;new Set() # 集合里没有重复元素<br>s.add(3)<br>s.has(3)</p>
-<h4 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h4><p>dp&#x3D;new Array(n).fill(0)</p>
-<h4 id="arr-length"><a href="#arr-length" class="headerlink" title="arr.length"></a>arr.length</h4><h4 id="arr-push-0-和arr-unshift-0"><a href="#arr-push-0-和arr-unshift-0" class="headerlink" title="arr.push(0)和arr.unshift(0)"></a>arr.push(0)和arr.unshift(0)</h4><h4 id="queue-shift-和queue-pop"><a href="#queue-shift-和queue-pop" class="headerlink" title="queue.shift()和queue.pop()"></a>queue.shift()和queue.pop()</h4><h4 id="let-dp-x3D-Array-from-new-Array-n-x3D-gt-new-Array-2"><a href="#let-dp-x3D-Array-from-new-Array-n-x3D-gt-new-Array-2" class="headerlink" title="let dp&#x3D;Array.from(new Array(n), ()&#x3D;&gt;new Array(2))"></a>let dp&#x3D;Array.from(new Array(n), ()&#x3D;&gt;new Array(2))</h4><h4 id="res-x3D-Infinity"><a href="#res-x3D-Infinity" class="headerlink" title="res&#x3D;-Infinity"></a>res&#x3D;-Infinity</h4><h4 id="stack-stack-length-1-栈顶元素"><a href="#stack-stack-length-1-栈顶元素" class="headerlink" title="stack[stack.length-1] #栈顶元素"></a>stack[stack.length-1] #栈顶元素</h4><h4 id="String-3-字符串转换"><a href="#String-3-字符串转换" class="headerlink" title="String(3) #字符串转换"></a>String(3) #字符串转换</h4><h4 id="arr-indexOf-3-x3D-x3D-x3D-1-不存在"><a href="#arr-indexOf-3-x3D-x3D-x3D-1-不存在" class="headerlink" title="arr.indexOf(3)&#x3D;&#x3D;&#x3D;-1    不存在"></a>arr.indexOf(3)&#x3D;&#x3D;&#x3D;-1    不存在</h4><h4 id="str-indexOf-“fasd”"><a href="#str-indexOf-“fasd”" class="headerlink" title="str.indexOf(“fasd”)"></a>str.indexOf(“fasd”)</h4><h4 id="slice-函数"><a href="#slice-函数" class="headerlink" title="slice()函数"></a>slice()函数</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> animals = [<span class="string">&#x27;ant&#x27;</span>, <span class="string">&#x27;bison&#x27;</span>, <span class="string">&#x27;camel&#x27;</span>, <span class="string">&#x27;duck&#x27;</span>, <span class="string">&#x27;elephant&#x27;</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(animals.<span class="title function_">slice</span>(<span class="number">2</span>));</span><br><span class="line"><span class="comment">// expected output: Array [&quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">从小到大排序</span><br><span class="line">arr.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a-b</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="获取数组最后一个元素"><a href="#获取数组最后一个元素" class="headerlink" title="获取数组最后一个元素"></a>获取数组最后一个元素</h4><ol>
-<li>arr.slice(-1)</li>
-<li>arr[arr.length-1]</li>
-</ol>
-<h4 id="switch"><a href="#switch" class="headerlink" title="switch"></a>switch</h4><p>switch(s){</p>
-<p>​    case “A”:</p>
-<p>​        break;</p>
-<p>​    case “B”:</p>
-<p>​        break;</p>
-<p>}</p>
-<h4 id="正则"><a href="#正则" class="headerlink" title="正则"></a>正则</h4><p> reg&#x3D;&#x2F;^([ADWS])([\d]+$)&#x2F;</p>
-<h4 id="字符串查找子串"><a href="#字符串查找子串" class="headerlink" title="字符串查找子串"></a>字符串查找子串</h4><p>s.includes(str)</p>
-<h4 id="创建二维数组"><a href="#创建二维数组" class="headerlink" title="创建二维数组"></a>创建二维数组</h4><p>let dp&#x3D;Array.from(new Array(n), ()&#x3D;&gt;new Array(2).fill(0))</p>
-<h4 id="数组对象"><a href="#数组对象" class="headerlink" title="数组对象"></a>数组对象</h4><p>arr&#x3D;[]</p>
-<p>arr.push({<br>       name:parseInt(line[0]),<br>        score:parseInt(line[1]),<br>        index:i<br>    })</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>Python刷题语法</title>
-    <url>/2022/06/27/Python%E5%88%B7%E9%A2%98%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<span id="more"></span>
-
-<h2 id="Python-语法"><a href="#Python-语法" class="headerlink" title="Python 语法"></a>Python 语法</h2><h4 id="python常用模块"><a href="#python常用模块" class="headerlink" title="python常用模块"></a>python常用模块</h4><p><a href='https://blog.csdn.net/Shenpibaipao/article/details/105873407'>[Python][刷题常用模块]用Python刷题，这一篇就够了</a><br><a href="https://blog.nowcoder.net/n/b4d00041304748b1a522275243fd87e6">https://blog.nowcoder.net/n/b4d00041304748b1a522275243fd87e6</a><br><a href="https://xdren69.github.io/2021/03/31/leetcode-python/">https://xdren69.github.io/2021/03/31/leetcode-python/</a><br><a href="http://www-quic.zhihu.com/question/392867890">http://www-quic.zhihu.com/question/392867890</a><br><a href='https://codingdict.com/article/4843'>CodingDict</a></p>
-<h4 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h4><p>int(a, 2) a数值转换成2进制</p>
-<p>bin(a)[2:] a数值转换成2进制</p>
-<h4 id="字符串转Ascii"><a href="#字符串转Ascii" class="headerlink" title="字符串转Ascii"></a>字符串转Ascii</h4><p>ord(‘a’)    字符串转asc</p>
-<p>chr(98)    asc转字符串</p>
+<p>Get:幂等；登录用户；浏览器会缓存；实体部分为空；不安全（请求的参数放在url中，url会保存在历史记录中）<br>Post:不幂等；注册用户；不会缓存；实体部分为发送给服务器的数据；安全</p>
 <ol>
-<li><p>max(a, b)</p>
+<li><p>鉴权怎么做的？<br><a href="https://fe.ecool.fun/topic/53a6d5df-e7b0-4f11-a1ee-c55fd1f1f8c2?orderBy=updateTime&amp;order=desc&amp;titleKey=%E9%89%B4%E6%9D%83">https://fe.ecool.fun/topic/53a6d5df-e7b0-4f11-a1ee-c55fd1f1f8c2?orderBy=updateTime&amp;order=desc&amp;titleKey=%E9%89%B4%E6%9D%83</a></p>
+<p>jwt。后端通过jsonwebtoken的sign方法根据头部信息、过期时间生成token,然后前端接收token之后，通过localstorage缓存，然后每次发送请求时就吧token加入到请求头Authorization中</p>
 </li>
-<li><p>队列</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; import queue </span><br><span class="line">&gt;</span><br><span class="line">&gt; </span><br><span class="line">&gt;</span><br><span class="line">&gt; q=queue.Queue(5)</span><br><span class="line">&gt;</span><br><span class="line">&gt; q.put(123)</span><br><span class="line">&gt;</span><br><span class="line">&gt; q.get()</span><br></pre></td></tr></table></figure></li>
-<li><p>优先级队列</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt;import queue</span><br><span class="line">&gt;</span><br><span class="line">&gt;q=queue.PriorityQueue()</span><br><span class="line">&gt;</span><br><span class="line">&gt;同上put get</span><br><span class="line">&gt;</span><br><span class="line">&gt;结构相当于一个堆</span><br></pre></td></tr></table></figure></li>
-<li><p>栈</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt;</span><br><span class="line">&gt;</span><br><span class="line">&gt;from collections import deque</span><br><span class="line">&gt;</span><br><span class="line">&gt;s=deque()</span><br><span class="line">&gt;</span><br><span class="line">&gt;s.append(1)</span><br><span class="line">&gt;</span><br><span class="line">&gt;s.pop()</span><br><span class="line">&gt;</span><br><span class="line">&gt;或者用LifoQueue</span><br><span class="line">&gt;</span><br><span class="line">&gt;from queue</span><br><span class="line">&gt;</span><br><span class="line">&gt;s=queue.LifoQueue()</span><br><span class="line">&gt;</span><br><span class="line">&gt;s.put(1)</span><br><span class="line">&gt;</span><br><span class="line">&gt;s.get()</span><br></pre></td></tr></table></figure>
+<li><p>H5和HTML有什么区别？H5的原理是啥？</p>
+<p>从以下几个方面回答：HTML语义化、HMTL新特性、区别</p>
+<p><strong>HTML语义化</strong>：<a href="https://fe.ecool.fun/topic/a75b1e9d-9359-47b0-8614-1088eee4b085?orderBy=updateTime&amp;order=desc&amp;titleKey=Html">https://fe.ecool.fun/topic/a75b1e9d-9359-47b0-8614-1088eee4b085?orderBy=updateTime&amp;order=desc&amp;titleKey=Html</a></p>
+<p>可以直接通过代码了解到页面结构；利于搜索引擎优化SEO（机器可以准确的将网页内容分析存储下来）；易于维护，代码可读性好；</p>
 </li>
-<li><p>有时候用python报错如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">UnboundLocalError: local variable &#x27;sum&#x27; referenced before assignment</span><br><span class="line">    sum+=root.val</span><br><span class="line">Line 20 in traverse (Solution.py)</span><br><span class="line">    traverse(root.right)</span><br><span class="line">Line 18 in traverse (Solution.py)</span><br><span class="line">    traverse(root.right)</span><br><span class="line">Line 18 in traverse (Solution.py)</span><br><span class="line">    traverse(root.right)</span><br><span class="line">Line 18 in traverse (Solution.py)</span><br><span class="line">    traverse(root)</span><br><span class="line">Line 27 in convertBST (Solution.py)</span><br><span class="line">    ret = Solution().convertBST(param_1)</span><br><span class="line">Line 49 in _driver (Solution.py)</span><br><span class="line">    _driver()</span><br><span class="line">Line 60 in &lt;module&gt; (Solution.py)</span><br><span class="line"></span><br><span class="line">解决方法：nonlocal 定义非定义域所在变量</span><br></pre></td></tr></table></figure>
+<li><p>做项目碰到了什么困难？怎么解决的？**</p>
 </li>
-<li><p>python 创建二维数组</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line">arr=[[<span class="number">0</span>]*<span class="number">3</span>]*<span class="number">3</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>python 小顶堆</p>
+<li><p>两数之和，两种解法</p>
 </li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">官网：https://docs.python.org/zh-cn/3/library/heapq.html</span><br><span class="line">from heapq import *</span><br><span class="line"></span><br><span class="line">heap=[]</span><br><span class="line">heappush(heap, 1)</span><br><span class="line">heappop(heap) # 0</span><br><span class="line">print(len(heap)) # 堆大小 </span><br><span class="line">print(heap[0]) # 栈顶最小元素</span><br><span class="line">//将列表转换为堆</span><br><span class="line">heap2 = [5, 8, 0, 4, 6, 7]</span><br><span class="line">heapify(heap2)</span><br><span class="line">print(heap2)   #[0, 4, 5, 8, 6, 7]</span><br><span class="line"></span><br><span class="line">//前n个最大的或前n个最小的元素</span><br><span class="line">lst = [5, 8, 0, 4, 6, 7]</span><br><span class="line">print(nsmallest(3, lst))</span><br><span class="line">print(nlargest(3, lst))</span><br></pre></td></tr></table></figure>
-
-<ol start="8">
-<li><p>python 字典（哈希表）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dict=&#123;&#125;</span><br><span class="line"></span><br><span class="line">dict[&#x27;Age&#x27;]=18</span><br></pre></td></tr></table></figure>
+<p>主管面：</p>
+<p>你做过什么项目？简单介绍一下</p>
+<p>项目有哪些功能？</p>
+<p>项目遇到的困难，如何解决</p>
+<p>平常怎么学习？</p>
+<p>哪里人？</p>
+<p>怎么跑东北去读书了？准备在哪发展？</p>
+<p>职业规划？</p>
+<h2 id="测试开发"><a href="#测试开发" class="headerlink" title="测试开发"></a>测试开发</h2><ol>
+<li>自我介绍</li>
+<li>鉴权怎么做？token安全问题</li>
+<li>Python常用的库、框架？</li>
+<li>实习做了些什么？项目是怎样的</li>
+<li>人脸识别项目做了哪些？</li>
+<li>密码锁场景测试用例？<ul>
+<li>密码长度</li>
+<li>密码强度（123456、88888888、最好不是跟用户生日等信息强相关）</li>
+<li>密码时效性（出去旅游住酒店密码有过期时间、只能使用一次密码，比如保洁阿姨只能进一次、密码用久了输入有指纹痕迹可以提示用户修改密码不做强制）</li>
+<li>虚位密码</li>
+<li>压力测试</li>
+</ul>
 </li>
-<li><p>python 数组</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">arr=[]</span><br><span class="line"></span><br><span class="line">arr.push(3)</span><br><span class="line">arr.pop()</span><br><span class="line">arr.pop(0) //删除第一个元素</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>python 字符串</p>
-</li>
+<li>你有什么问题要问？</li>
 </ol>
-   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">s=&#x27;sadfasdf,asdfa&#x27;</span><br><span class="line"></span><br><span class="line">s.split(&#x27;,&#x27;)</span><br></pre></td></tr></table></figure>
-<ol start="11">
-<li><p>python 设定最大值最小值</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sys.maxsize python3中设置最大值</span><br><span class="line">-sys.maxsize-1 python3中设置最小值</span><br></pre></td></tr></table></figure></li>
-<li><p>输入字符转换为ASCII码</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ord</span>(ch)</span><br></pre></td></tr></table></figure>
+<h2 id="前端开发"><a href="#前端开发" class="headerlink" title="前端开发"></a>前端开发</h2><ol>
+<li>一个完整HTTP请求过程：</li>
+</ol>
+<ul>
+<li>DNS查找</li>
+<li>TCP握手</li>
+<li>发出HTTP请求</li>
+<li>浏览器接收响应</li>
+</ul>
+<ol>
+<li>性能优化方案？</li>
+</ol>
+<ul>
+<li><a href="https://segmentfault.com/a/1190000022205291">https://segmentfault.com/a/1190000022205291</a></li>
+<li><a href="https://fe.ecool.fun/topic/549f8d07-a907-4c86-93c1-d3e8fef30613?orderBy=updateTime&amp;order=desc&amp;titleKey=%E6%80%A7%E8%83%BD">https://fe.ecool.fun/topic/549f8d07-a907-4c86-93c1-d3e8fef30613?orderBy=updateTime&amp;order=desc&amp;titleKey=%E6%80%A7%E8%83%BD</a></li>
+<li>懒加载。非必要组件延迟加载。——<a href="https://segmentfault.com/a/1190000038413073">https://segmentfault.com/a/1190000038413073</a></li>
+<li>减少HTTP请求。因为建立TCP连接、发请求等过程也在耗时，真正下载文件的时间很少，这就是为什么需要合并多个文件，减少请求次数的原因。</li>
+<li>用HTTP2。解析速度快，多路复用（多个请求用一个TCP连接）</li>
+<li>服务端渲染<br>服务端返回HTML，客户端只需要解析HTML<br>客户端渲染的网站会直接返回 HTML 文件，而服务端渲染的网站则会渲染完页面再返回这个 HTML 文件<br>优点：首屏渲染快<br>缺点：增加服务器计算压力</li>
+<li>CSS放在文件头部，JS放在尾部——CSS阻塞渲染、JS阻塞HTML解析，JS需要等页面渲染出来后在执行，就能很快看到页面效果，不影响体验</li>
+<li>压缩javascript和css</li>
+<li>CSS替代JS动画</li>
+</ul>
+<h1 id="【面试复盘】华为-前端实习-业务面-主管面-（已入池）-1"><a href="#【面试复盘】华为-前端实习-业务面-主管面-（已入池）-1" class="headerlink" title="【面试复盘】华为 前端实习 业务面+主管面 （已入池）"></a>【面试复盘】华为 前端实习 业务面+主管面 （已入池）</h1><ol start="5">
+<li>两数之和，两种解法 <a href="https://leetcode.cn/problems/two-sum/submissions/%E2%80%94%E2%80%94%E5%93%88%E5%B8%8CMap">https://leetcode.cn/problems/two-sum/submissions/——哈希Map</a></li>
+</ol>
+<p>主管面：</p>
+<p>你做过什么项目？简单介绍一下</p>
+<p>项目有哪些功能？</p>
+<p>平常怎么学习？</p>
+<p>哪里人？</p>
+<p>怎么跑深圳去读书了？准备在哪发展？</p>
+<p>职业规划？</p>
+<ul>
+<li><p>刚入职的这几年，能够在公司里面，向周围的优秀的同事学习，提高自己的技术水平，不断学习成长为一个可以独当一面的技术大牛</p>
 </li>
-<li><p>输入ASCII码转换为字符</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">chr(ch)</span><br></pre></td></tr></table></figure>
+<li><p>除此之外，还要提高自己的沟通交流水平，在技术方面学有余力的同时，锻炼一下自己的与人沟通交流的能力，适当培养自己的管理能力</p>
 </li>
-<li><p>str.find(s, beg, end)<br><a href="https://www.runoob.com/python/att-string-find.html">https://www.runoob.com/python/att-string-find.html</a></p>
+<li><p>自己的终极目标是成为有一定管理能力的技术大牛</p>
+<p>（我东哥强调说：首先要自足于自己的岗位，自己是技术岗，肯定首先是要去打磨自己的技术，提升自己的技术水平，其次是提高自己的管理能力，要表现出来自己的事业心）</p>
 </li>
-<li><p>定义二维数组</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">dp = [[0] * (n + 1) for _ in range(m + 1)] #尽量用这个</span><br><span class="line">dp2=[[0]*(n+1)]*(m+1) #这个有时会导致出错</span><br><span class="line">print(dp==dp2) # True</span><br></pre></td></tr></table></figure></li>
-<li><p>遍历哈希表</p>
+</ul>
+<h2 id="外企面试"><a href="#外企面试" class="headerlink" title="外企面试"></a>外企面试</h2><p>外企对年龄的限制不大<br>看重价值观和能力</p>
+<ol>
+<li>你的名字？怎么用英文称呼你 How do I call you?</li>
+<li>你怎么处理跟同事的矛盾（conflict）how do you handle conflict with your colleagues?</li>
+</ol>
+<h2 id="字节面dog5-5"><a href="#字节面dog5-5" class="headerlink" title="字节面dog5.5"></a>字节面dog5.5</h2><p>一面（偏原理）（50min）<br>路由原理，为什么要用路由，有hash了为什么还要history<br>hook为什么不可以出现在控制语句中<br>网络性能优化CI<br>做题：BFS原理和编程题 二选一</p>
+<p>二面（偏项目）<br>自述项目，围绕项目问<br>性能指标有哪些</p>
+<h2 id="赛文思前端面试"><a href="#赛文思前端面试" class="headerlink" title="赛文思前端面试"></a>赛文思前端面试</h2><ol>
+<li>用时最多的项目</li>
+<li>项目用到的技术</li>
+<li>前端性能优化、懒加载、Node中间件</li>
+</ol>
+<h2 id="面试"><a href="#面试" class="headerlink" title="面试"></a>面试</h2><ol>
+<li>代码作用域</li>
+</ol>
+<p>​    <a href="https://fe.ecool.fun/topic/fa224d36-147a-4251-8033-dc1462e9527e?orderBy=updateTime&amp;order=desc&amp;titleKey=%E4%BD%9C%E7%94%A8%E5%9F%9F">https://fe.ecool.fun/topic/fa224d36-147a-4251-8033-dc1462e9527e?orderBy=updateTime&amp;order=desc&amp;titleKey=%E4%BD%9C%E7%94%A8%E5%9F%9F</a></p>
+<ul>
+<li>全局作用域</li>
+<li>函数作用域</li>
+<li>块级作用域</li>
+</ul>
+<p>作用域链：当前作用域-》词法作用域-》全局作用域</p>
+<ol start="2">
+<li>TS 和JS区别</li>
+</ol>
+<p><a href="https://fe.ecool.fun/topic/041f15e1-e0a7-450b-846c-a3078bc791c1?orderBy=updateTime&amp;order=desc&amp;tagId=19">https://fe.ecool.fun/topic/041f15e1-e0a7-450b-846c-a3078bc791c1?orderBy=updateTime&amp;order=desc&amp;tagId=19</a></p>
+<p>TS是JS的超集，可以被编译成JS；静态类型检查，在没运行的时候进行；代码可读性更好；</p>
+<ol start="3">
+<li>css3的新特征</li>
+</ol>
+<p><a href="https://fe.ecool.fun/topic/9083d1ed-fedc-4aec-ba50-df836e983e55?orderBy=updateTime&amp;order=desc&amp;titleKey=css3">https://fe.ecool.fun/topic/9083d1ed-fedc-4aec-ba50-df836e983e55?orderBy=updateTime&amp;order=desc&amp;titleKey=css3</a></p>
+<ul>
+<li><p>盒子模型：设置box-sizing:border-box <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_box-sizing_old">https://www.w3schools.com/css/tryit.asp?filename=trycss3_box-sizing_old</a></p>
 </li>
-</ol>
-   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for k in h.keys():</span><br><span class="line">            print(k)</span><br></pre></td></tr></table></figure>
-
-<ol start="17">
-<li><p>遍历枚举类型数组</p>
-  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">for i,num in enumerate(nums):</span><br><span class="line">    print(i,num)</span><br></pre></td></tr></table></figure>
+<li><p>nth-child(2)</p>
 </li>
-<li><p>abs()</p>
+<li><p>box-shadow</p>
 </li>
-<li><p>split()</p>
+<li><p>flex grid布局</p>
 </li>
-</ol>
-   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">s=&#x27;sdf,asdfa&#x27;</span><br><span class="line"></span><br><span class="line">arr=s.split(&#x27;,&#x27;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<ol start="20">
-<li>strip()</li>
-</ol>
-   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">s.strip() # 去掉空格</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ol start="21">
-<li><p>range(start, stop, step)</p>
+<li><p>背景属性</p>
 </li>
-<li><p>数组添加可以不用append,直接+</p>
+<li><p>transition过渡 ——transition: width(属性) 2s(时间) <a href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_transition1">https://www.w3schools.com/css/tryit.asp?filename=trycss3_transition1</a></p>
 </li>
+<li><p>transform转换——transform: rotate(90deg) <a href="https://www.runoob.com/try/try.php?filename=trycss3_transform">https://www.runoob.com/try/try.php?filename=trycss3_transform</a></p>
+</li>
+<li><p>animation动画——animation: name 5s infinite; @keyframes name{ from{left: 0px} to{left: 200px}} <a href="https://www.runoob.com/try/try.php?filename=trycss3_animation">https://www.runoob.com/try/try.php?filename=trycss3_animation</a></p>
+</li>
+<li><p>媒体查询——@media screen and(max-width: 300px){ body{ background: green}} <a href="https://www.runoob.com/try/try.php?filename=trycss3_media_example1">https://www.runoob.com/try/try.php?filename=trycss3_media_example1</a></p>
+</li>
+</ul>
+<ol start="4">
+<li>数据结构有哪些？</li>
 </ol>
-   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[2]+[3]=[2,3]</span><br></pre></td></tr></table></figure>
-
-<ol start="23">
-<li>左移乘2、右移除2</li>
-</ol>
-   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;&lt;1 </span><br><span class="line">&gt;&gt;1</span><br></pre></td></tr></table></figure>
-
-<ol start="24">
-<li>&amp; 和 and     |和or是不同的</li>
-</ol>
-   <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&amp;   二进制与运算</span><br><span class="line">and 与运算</span><br><span class="line">|   二进制或运算</span><br><span class="line">or  或运算</span><br></pre></td></tr></table></figure>
-
-<ol start="25">
-<li>set()函数</li>
-</ol>
-   <figure class="highlight python"><table><tr><td class="code"><pre><span class="line">visited=<span class="built_in">set</span>()</span><br><span class="line">visited.add(<span class="number">3</span>)</span><br><span class="line">visited.add(<span class="number">3</span>) <span class="comment">#重复元素会被删除</span></span><br></pre></td></tr></table></figure>
-<ol start="26">
-<li>双端队列 deque()   <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"></span><br><span class="line">q=collections.deque()</span><br><span class="line">q.push(<span class="number">3</span>)</span><br><span class="line">q.push(<span class="number">4</span>)</span><br><span class="line">q.popleft()</span><br><span class="line">q.pop()</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li>import queue</li>
-</ol>
-<p>deque&#x3D;queue.deque()<br>queue&#x3D;queue.Queue()</p>
-<ol start="28">
-<li>join拼接字符串</li>
-</ol>
-<p>res&#x3D;[‘sdf’, ‘sdf’, ‘d’]<br>str&#x3D;’  ‘.join(res) # ‘sdfsdfd’</p>
-<ol start="29">
-<li>arr.sort()</li>
-</ol>
+<p><a href="https://fe.ecool.fun/topic/e00b6fcb-fb55-435f-ac74-687734871111?orderBy=updateTime&amp;order=desc&amp;titleKey=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">https://fe.ecool.fun/topic/e00b6fcb-fb55-435f-ac74-687734871111?orderBy=updateTime&amp;order=desc&amp;titleKey=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84</a></p>
+<p>栈、队列、链表、数组：连续的存储单元、树、图、堆、散列表</p>
+<p>Set和Map数据结构：Set集合没有重复元素、Map字典类似于哈希表——<a href="https://fe.ecool.fun/topic/4232c372-316f-4a53-99b9-6d9299b7e91f?orderBy=updateTime&amp;order=desc&amp;titleKey=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84">https://fe.ecool.fun/topic/4232c372-316f-4a53-99b9-6d9299b7e91f?orderBy=updateTime&amp;order=desc&amp;titleKey=%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84</a></p>
+<p>算法有哪些？</p>
+<p>项目用了那些技术？</p>
+<p>５.　OSI七层协议？传输层到网络层增加了什么？</p>
+<p>应用层（HTTP）、表示层、会话层、传输层（TCP、UDP）、网络层（IP）、数据链路层、物理层　<a href="https://zhuanlan.zhihu.com/p/32059190">https://zhuanlan.zhihu.com/p/32059190</a></p>
+<p>６.　二叉树跟数组和链表结构有什么不同？从删除和添加考虑　</p>
+<p><a href="https://www.cnblogs.com/MrListening/p/5782752.html">https://www.cnblogs.com/MrListening/p/5782752.html</a></p>
+<p>怎么看待加班</p>
+<p>平时会自己去学新技术吗</p>
+<p>this的指向</p>
+<p>all&#x2F;apply&#x2F;bind</p>
 ]]></content>
   </entry>
 </search>
