@@ -888,7 +888,125 @@
 </li>
 <li><p>第3题：Vue3.0里为什么要用 Proxy API 替代 defineProperty API ？（未做）</p>
 </li>
+<li><p>如何回答“有什么问题要问我吗？”</p>
+</li>
 </ol>
+<p><a href="https://fe.ecool.fun/article-detail/I3ZOF2">https://fe.ecool.fun/article-detail/I3ZOF2</a></p>
+<ol>
+<li><h3 id="这个岗位具体会做哪些事情，会与哪些人合作？"><a href="#这个岗位具体会做哪些事情，会与哪些人合作？" class="headerlink" title="这个岗位具体会做哪些事情，会与哪些人合作？"></a>这个岗位具体会做哪些事情，会与哪些人合作？</h3></li>
+<li><h3 id="咱们公司的企业文化是什么样的-（对方是HR、leader）"><a href="#咱们公司的企业文化是什么样的-（对方是HR、leader）" class="headerlink" title="咱们公司的企业文化是什么样的?（对方是HR、leader）"></a><strong>咱们公司的企业文化是什么样的?</strong><em><code>（对方是HR、leader）</code></em></h3></li>
+<li><h3 id="咱们团队目前面对的最大挑战-x2F-困难是什么"><a href="#咱们团队目前面对的最大挑战-x2F-困难是什么" class="headerlink" title="咱们团队目前面对的最大挑战&#x2F;困难是什么?"></a>咱们团队目前面对的最大挑战&#x2F;困难是什么?</h3></li>
+<li><h3 id="如果我能加入这个团队，你对我有什么期望"><a href="#如果我能加入这个团队，你对我有什么期望" class="headerlink" title="如果我能加入这个团队，你对我有什么期望?"></a>如果我能加入这个团队，你对我有什么期望?</h3></li>
+<li><h3 id="期望我的加入带来哪些改变-（对方是leader）"><a href="#期望我的加入带来哪些改变-（对方是leader）" class="headerlink" title="期望我的加入带来哪些改变?（对方是leader）"></a>期望我的加入带来哪些改变?<em><strong><code>（对方是leader）</code></strong></em></h3></li>
+</ol>
+<h4 id="北京矩视智能"><a href="#北京矩视智能" class="headerlink" title="北京矩视智能"></a>北京矩视智能</h4><ol>
+<li>自我介绍背一下</li>
+<li>为什么要选择前端？<br>很快的得到结果，比较有成就感——回答得不错</li>
+<li>有什么问题想问的？<ol>
+<li>我的技术有那些地方比较不足，需要从那些方面改进？——中等偏上</li>
+<li>前端现在有哪些新技术值得去学的——echart element-ui</li>
+<li>你们现在负责的主要项目是什么？前端再这个项目中主要负责什么业务？</li>
+</ol>
+</li>
+<li>vuetify和element-ui有什么不同——vuetify框架讲究多平台适配，具有模块化、响应式的优点，移动端适配较好</li>
+<li>vuex介绍一下</li>
+<li>position relative fixed有什么不同</li>
+<li>后端项目 vue.config.js的proxy table</li>
+<li>怎么实现居中——justify-content:space between</li>
+<li>隐藏元素的方法</li>
+<li>v-if v-show 不同？能不能一起使用？</li>
+<li>盒子模型</li>
+<li>解决跨域问题</li>
+</ol>
+<h4 id="hr面："><a href="#hr面：" class="headerlink" title="hr面："></a>hr面：</h4><ol>
+<li><p>你是哪儿的人？为什么要来北京发展？为什么不找深圳的工作——那边朋友、亲戚比较多，上海、杭州、北京都挺想去的，深圳这边主要是天气不太习惯、还有虫子什么的</p>
+</li>
+<li><p>你有什么突出的地方？——相比于男生我是有问题会及时沟通</p>
+</li>
+<li><p>你是一个偏向主动沟通的人还是被动的人？</p>
+</li>
+<li><p>有没有面其他公司，过了吗？——你别说没面其他公司，你就说面了，其他公司还在准备2面</p>
+</li>
+<li><p>薪资——180-300</p>
+</li>
+<li><p>第2题：Map 和 Set 的用法以及区别</p>
+</li>
+</ol>
+<p>map 和set的查询速度快于Array</p>
+<ol start="52">
+<li>第4题：[‘10’, ‘10’, ‘10’, ‘10’, ‘10’].map(parseInt)</li>
+</ol>
+<p>const intValue &#x3D; parseInt(string[, radix]);</p>
+<p>比如：parseInt(“A”, 16)    &#x2F;&#x2F;10</p>
+<ol start="53">
+<li>第6题：ES6中新增的Set、Map两种数据结构怎么理解?</li>
+</ol>
+<p>Set是集合、无重复的；Map是字典，以键值对存储</p>
+<ol start="54">
+<li>第1题：为什么有时候⽤translate来改变位置⽽不是使用position进行定位？</li>
+</ol>
+<p>position定位会触发重新布局、重绘，transform元素依然占据其原始空间，transform更高效</p>
+<ol start="55">
+<li>第2题：Vue中的 v-show 和 v-if 有什么区别</li>
+</ol>
+<p>v-if为false时元素不存在真实布局中，v-show通过使用display：none来控制元素是否显示；v-if切换开销大</p>
+<ol start="56">
+<li>第1题：为什么Vue中的v-if和v-for不建议一起用?</li>
+</ol>
+<p>因为v-for优先级比v-if高，当<code>v-if</code> 和 <code>v-for</code> 同时用在同一个元素上，带来性能方面的浪费（每次渲染都会先循环，基于一个数组来渲染一个列表，再进行条件判断）</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">&quot;item in items&quot;</span> <span class="attr">:key</span>=<span class="string">&quot;item.id&quot;</span>&gt;</span> 4 &#123;&#123; item.label &#125;&#125; 5<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ol start="57">
+<li>第1题：说说你对盒子模型的理解</li>
+</ol>
+<p>标准盒子模型：width&#x3D;content</p>
+<p>IE怪异盒子模型：width&#x3D;padding+border+content</p>
+<p>设置box-sizing:border-box——怪异盒子模型的设置</p>
+<h1 id="数据库设计的六个阶段详解"><a href="#数据库设计的六个阶段详解" class="headerlink" title="数据库设计的六个阶段详解"></a>数据库设计的六个阶段详解</h1><ol>
+<li>系统需求分析阶段 2. 概念结构设计阶段 3. 逻辑结构设计阶段 4. 物理结构设计阶段 5. 数据库实施阶段 6. 数据库运行和维护阶段</li>
+</ol>
+<p>将E-R图转换成关系数据模型的过程属于“逻辑设计阶段”</p>
+<h2 id="第3题：进程与线程有什么区别？"><a href="#第3题：进程与线程有什么区别？" class="headerlink" title="第3题：进程与线程有什么区别？"></a>第3题：进程与线程有什么区别？</h2><p>进程是系统进行<strong>资源分配</strong>的基本单位，是比进程更小的单位；</p>
+<p>线程是进程的子任务，一个进程由多个线程组成；</p>
+<p>线程<strong>拥有的资源很少</strong>，但是可以和一个进程的其他线程共享资源</p>
+<p>举例：<a href="https://www.zhihu.com/question/25532384">https://www.zhihu.com/question/25532384</a></p>
+<p>假设你经营着一家物业管理公司。最初，业务量很小，事事都需要你亲力亲为。给老张家修完暖气管道，立马再去老李家换电灯泡——这叫<strong>单线程，所有的工作都得顺序执行</strong>。</p>
+<p>后来业务拓展了，你雇佣了几个工人，这样，你的物业公司就可以同时为多户人家提供服务了——这叫<strong>多线程</strong>，你是<a href="https://www.zhihu.com/search?q=%E4%B8%BB%E7%BA%BF%E7%A8%8B&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:1598653960%7D">主线程</a>。</p>
+<p>工人们使用的工具，是物业管理公司提供的，这些工具由大家共享，并不专属于某一个人——这叫<strong>多线程资源共享</strong>。</p>
+<p>工人们在工作中都需要管钳，可是管钳只有一把——这叫<strong>冲突</strong>。解决冲突的办法有很多，比如排队等候、等同事用完后的微信通知等——这叫<strong>线程同步</strong>。</p>
+<p>你给工人布置任务——这叫<strong>创建线程</strong>。之后你还得要告诉他，可以开始了，不然他会一直停在那儿不动——这叫<strong>启动线程（start）</strong>。</p>
+<p>再后来，你的公司规模扩大了，同时为很多生活社区服务，你在每个生活社区设置了分公司，分公司由分公司经理管理，运营机制和你的总公司几乎一模一样——这叫**<a href="https://www.zhihu.com/search?q=%E5%A4%9A%E8%BF%9B%E7%A8%8B&search_source=Entity&hybrid_search_source=Entity&hybrid_search_extra=%7B%22sourceType%22:%22answer%22,%22sourceId%22:1598653960%7D">多进程</a>**，总公司叫主进程，分公司叫子进程。</p>
+<h2 id="第1题：谈谈你对浏览器中进程和线程的理解"><a href="#第1题：谈谈你对浏览器中进程和线程的理解" class="headerlink" title="第1题：谈谈你对浏览器中进程和线程的理解"></a>第1题：谈谈你对浏览器中进程和线程的理解</h2><p>每一个窗口都是一个进程，浏览器是多进程的</p>
+<p>浏览器的渲染进程是多线程的，页面的渲染，JavaScript 的执行，事件的循环，都在这个进程内进行</p>
+<p>JS是单线程的：JavaScript 引擎中负责解释和执行 JavaScript 代码的线程唯一</p>
+<h2 id="第2题：为什么JavaScript是单线程？"><a href="#第2题：为什么JavaScript是单线程？" class="headerlink" title="第2题：为什么JavaScript是单线程？"></a>第2题：为什么JavaScript是单线程？</h2><p>JavaScript的主要用途是与用户互动，以及操作DOM。比如，假定JavaScript同时有两个线程，一个线程在某个DOM节点上添加内容，另一个线程删除了这个节点，这时浏览器应该以哪个线程为准？所以，为了避免复杂性，从一诞生，JavaScript就是单线程，</p>
+<h2 id="第4题：Vuex-是什么？"><a href="#第4题：Vuex-是什么？" class="headerlink" title="第4题：Vuex 是什么？"></a>第4题：Vuex 是什么？</h2><p>我们常说的状态管理，往往是指外部管理，目的是对状态和组件进行分离，具体到 Vuex 里的表现就是：<strong>把应用的所有组件的状态抽取出来，以一个全局单例模式在应用外部采用集中式存储管理</strong>。</p>
+<h2 id="第6题：单例模式"><a href="#第6题：单例模式" class="headerlink" title="第6题：单例模式"></a>第6题：单例模式</h2><p>只有一个实例，并且能全局访问该实例；</p>
+<p>比如：网站的计数器、Vuex的状态管理就是用的单例模式、任务管理器</p>
+<h2 id="第1题：刷新浏览器后，Vuex的数据是否存在？如何解决？"><a href="#第1题：刷新浏览器后，Vuex的数据是否存在？如何解决？" class="headerlink" title="第1题：刷新浏览器后，Vuex的数据是否存在？如何解决？"></a>第1题：刷新浏览器后，Vuex的数据是否存在？如何解决？</h2><p>数据会丢失，因为<code>store</code> 里的数据是保存在运行内存中，采用localStorage解决</p>
+<h2 id="第1题：Vue项目中如何解决跨域问题？"><a href="#第1题：Vue项目中如何解决跨域问题？" class="headerlink" title="第1题：Vue项目中如何解决跨域问题？"></a>第1题：Vue项目中如何解决跨域问题？</h2><p>设置<code>Access-Control-Allow-Origin</code>响应头、Proxy：通过<code>webpack</code>为我们起一个本地服务器作为请求的代理对象</p>
+<h2 id="第1题：说说-git-发生冲突的场景？如何解决？"><a href="#第1题：说说-git-发生冲突的场景？如何解决？" class="headerlink" title="第1题：说说 git 发生冲突的场景？如何解决？"></a>第1题：说说 git 发生冲突的场景？如何解决？</h2><p>当两个人同时修改一个文件时会发生冲突，要合并的时候使用git merge，然后查看修改的地方，手动编辑为我们希望的内容，再提交</p>
+<h2 id="第9题：说说你对Git的理解？"><a href="#第9题：说说你对Git的理解？" class="headerlink" title="第9题：说说你对Git的理解？"></a>第9题：说说你对Git的理解？</h2><p>暂存区-》本地仓库-》远程仓库</p>
+<p>分别通过：git add &#x3D;&gt; git commit &#x3D;&gt; git push</p>
+<h2 id="第12题：git-pull-和-git-fetch-有什么区别？"><a href="#第12题：git-pull-和-git-fetch-有什么区别？" class="headerlink" title="第12题：git pull 和 git fetch 有什么区别？"></a>第12题：git pull 和 git fetch 有什么区别？</h2><p>git pull &#x3D; git fetch + git merge</p>
+<h2 id="第7题：什么是跨域？"><a href="#第7题：什么是跨域？" class="headerlink" title="第7题：什么是跨域？"></a>第7题：什么是跨域？</h2><p>同源策略：同源是指：协议、域名、端口都相同；同源策略是为了浏览器端安全制定的一种策略</p>
+<p>跨域是当发送HTTP请求时，违背同源策略，产生跨域问题</p>
+<h2 id="第1题：跨域时怎么处理-cookie？"><a href="#第1题：跨域时怎么处理-cookie？" class="headerlink" title="第1题：跨域时怎么处理 cookie？"></a>第1题：跨域时怎么处理 cookie？</h2><ul>
+<li><p>response header里面带上<code>Access-Control-Allow-Origin</code>这个header</p>
+</li>
+<li><p>如果发送的是JSON格式的请求体，需要把Access-Control-Allow-Origin设置为特定的请求域名</p>
+</li>
+<li><p>server会通过<code>set-cookie</code>，将cookie设置到浏览器中；设置withCredentials、sameSite可以让server在返回响应时将cookie带上</p>
+</li>
+</ul>
+<h1 id="CSRF（跨站请求伪造）-攻击"><a href="#CSRF（跨站请求伪造）-攻击" class="headerlink" title="CSRF（跨站请求伪造） 攻击"></a>CSRF（跨站请求伪造） 攻击</h1><ul>
+<li>用户登录了自己的银行页面 <a href="http://mybank.com,http//mybank.com">http://mybank.com，http://mybank.com</a> 向用户的 cookie 中添加用户标识。</li>
+<li>用户浏览了恶意页面 <a href="http://evil.com,执行了页面中的恶意/">http://evil.com，执行了页面中的恶意</a> AJAX 请求代码。</li>
+<li><a href="http://evil.com/">http://evil.com</a> 向 <a href="http://mybank.com/">http://mybank.com</a> 发起 AJAX HTTP 请求，请求会默认把 <a href="http://mybank.com/">http://mybank.com</a> 对应 cookie 也同时发送过去。</li>
+<li>银行页面从发送的 cookie 中提取用户标识，验证用户无误，response 中返回请求数据。此时数据就泄露了。</li>
+<li>而且由于 Ajax 在后台执行，用户无法感知这一过程</li>
+</ul>
+<h2 id="塑库网"><a href="#塑库网" class="headerlink" title="塑库网"></a>塑库网</h2><p>自我介绍要起引导作用<br>git怎么用？<br>跨域问题怎么解决？为什么会出现跨域问题？为什么需要限制跨域？——<a href="https://www.jianshu.com/p/827b041be446%E2%80%94%E2%80%94https://www.zhihu.com/question/26379635">https://www.jianshu.com/p/827b041be446——https://www.zhihu.com/question/26379635</a><br>人脸识别登录的API具体原理？<br>对JS的理解？——JS是单线程的，为什么是单线程的——javascript运行在浏览器中是单线程的<br>项目难点？科研项目难点？<br>性能优化——动态路由加载、webpack配置、尽量减少http请求次数<br>HTTP了解吗？HTTP１.０　２.０区别？为什么要有２.０<br>Vue２和Vue３区别？为什么需要Vue３——原因：Vue３打包后的项目更小<br>期望薪资多少？<br>webpack配置？<br>Promise用过吗？<br>ES6有哪些新特性？<br><strong>！！重点来了：要关注为什么有哪些新特性的出现，出现是解决了什么问题，原有特性和新特性的区别</strong></p>
 ]]></content>
   </entry>
   <entry>
@@ -1036,7 +1154,7 @@
 
 
 
-<p>BFS相关题目：<br><a href="https://leetcode.cn/problems/binary-tree-level-order-traversal/">102. 二叉树的层序遍历</a><br><a href="https://leetcode.cn/problems/binary-tree-zigzag-level-order-traversal/">103. 二叉树的锯齿形层序遍历</a><br><a href="https://leetcode.cn/problems/binary-tree-right-side-view/"> #199 二叉树的右视图</a><br><a href="https://leetcode.cn/problems/n-ary-tree-level-order-traversal/">#429 N 叉树的层序遍历</a><br><a href="https://leetcode.cn/problems/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/">#剑指 Offer 32 - III 从上到下打印二叉树</a><br><a href="https://leetcode.cn/problems/the-maze-ii/">505. 迷宫 II</a><br><a href="https://leetcode.cn/problems/open-the-lock/">752. 打开转盘锁</a><br><a href="https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/">297. 二叉树的序列化与反序列化</a><br><a href="https://leetcode.cn/problems/course-schedule/">207. 课程表</a><br><a href="https://leetcode.cn/problems/course-schedule-ii/">210. 课程表 II</a></p>
+<p>BFS相关题目：<br><a href="https://leetcode.cn/problems/binary-tree-level-order-traversal/">102. 二叉树的层序遍历</a><br><a href="https://leetcode.cn/problems/binary-tree-zigzag-level-order-traversal/">103. 二叉树的锯齿形层序遍历</a><br><a href="https://leetcode.cn/problems/binary-tree-right-side-view/"> #199 二叉树的右视图</a><br><a href="https://leetcode.cn/problems/n-ary-tree-level-order-traversal/">#429 N 叉树的层序遍历</a><br><a href="https://leetcode.cn/problems/cong-shang-dao-xia-da-yin-er-cha-shu-iii-lcof/">#剑指 Offer 32 - III 从上到下打印二叉树</a><br><a href="https://leetcode.cn/problems/the-maze-ii/">505. 迷宫 II</a><br><a href="https://leetcode.cn/problems/open-the-lock/">752. 打开转盘锁</a><br><a href="https://leetcode.cn/problems/serialize-and-deserialize-binary-tree/">297. 二叉树的序列化与反序列化</a><br><a href="https://leetcode.cn/problems/course-schedule/">207. 课程表</a><br><a href="https://leetcode.cn/problems/course-schedule-ii/">210. 课程表 II</a><br><a href="https://leetcode.cn/problems/unique-binary-search-trees/">96. 不同的二叉搜索树</a>——递归<br><a href="https://leetcode.cn/problems/unique-binary-search-trees-ii/">95. 不同的二叉搜索树 II</a></p>
 <h2 id="回溯"><a href="#回溯" class="headerlink" title="回溯"></a>回溯</h2><p>N皇后</p>
 <p>全排列问题：</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">[<span class="number">46.</span> 全排列](<span class="attr">https</span>:<span class="comment">//leetcode.cn/problems/permutations/)</span></span><br><span class="line"><span class="keyword">var</span> permute = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">    <span class="comment">// 回溯</span></span><br><span class="line">    <span class="keyword">let</span> res=[]</span><br><span class="line">    <span class="keyword">let</span> track=[]</span><br><span class="line">    <span class="keyword">let</span> used=<span class="keyword">new</span> <span class="title class_">Array</span>(nums.<span class="property">length</span>).<span class="title function_">fill</span>(<span class="literal">false</span>)</span><br><span class="line">    <span class="title function_">dfs</span>(nums, track, used)</span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line"></span><br><span class="line">        </span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">dfs</span>(<span class="params">nums, track, used</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(track.<span class="property">length</span>==nums.<span class="property">length</span>)&#123;</span><br><span class="line">            res.<span class="title function_">push</span>([...track])</span><br><span class="line">            <span class="keyword">return</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;nums.<span class="property">length</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(used[i])&#123;</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 选择</span></span><br><span class="line">            track.<span class="title function_">push</span>(nums[i])</span><br><span class="line">            used[i]=<span class="literal">true</span></span><br><span class="line">            <span class="comment">// 进入下一层决策树</span></span><br><span class="line">            <span class="title function_">dfs</span>(nums, track, used)</span><br><span class="line">            <span class="comment">// 取消选择</span></span><br><span class="line">            track.<span class="title function_">pop</span>()</span><br><span class="line">            used[i]=<span class="literal">false</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -1056,6 +1174,17 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//打家劫舍</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param</span> &#123;<span class="type">number[]</span>&#125; <span class="variable">nums</span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return</span> &#123;<span class="type">number</span>&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> rob = <span class="keyword">function</span>(<span class="params">nums</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> dp=<span class="keyword">new</span> <span class="title class_">Array</span>(nums.<span class="property">length</span>).<span class="title function_">fill</span>(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(nums.<span class="property">length</span>===<span class="number">1</span>) <span class="keyword">return</span> nums[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">    dp[<span class="number">0</span>]=nums[<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">let</span> res=<span class="title class_">Math</span>.<span class="title function_">max</span>(dp[<span class="number">0</span>], dp[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;nums.<span class="property">length</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(i===<span class="number">1</span>)&#123;</span><br><span class="line">            dp[i]=<span class="title class_">Math</span>.<span class="title function_">max</span>(nums[i], dp[<span class="number">0</span>])</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            dp[i]=<span class="title class_">Math</span>.<span class="title function_">max</span>(nums[i]+dp[i-<span class="number">2</span>], dp[i-<span class="number">1</span>])</span><br><span class="line">        &#125;</span><br><span class="line">        res=<span class="title class_">Math</span>.<span class="title function_">max</span>(dp[i], res)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// console.log(dp)</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p><a href="https://leetcode.cn/problems/house-robber/">198. 打家劫舍</a><br><a href="https://leetcode.cn/problems/house-robber-ii/">213. 打家劫舍 II</a><br><a href="https://leetcode.cn/problems/house-robber-iii">337. 打家劫舍 III</a></p>
+<h2 id="贪心"><a href="#贪心" class="headerlink" title="贪心"></a>贪心</h2><p><a href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock-ii/">122. 买卖股票的最佳时机 I</a><br><a href="https://leetcode.cn/problems/is-subsequence/">392. 判断子序列</a><br><a href="https://leetcode.cn/problems/assign-cookies/">455. 分发饼干</a><br><a href="https://leetcode.cn/problems/lemonade-change/">860. 柠檬水找零</a><br><a href="https://leetcode.cn/problems/can-place-flowers/">605. 种花问题</a><br><a href="https://leetcode.cn/problems/water-bottles/">1518. 换酒问题</a><br>贪心法：最大不相交区间数<br>区间选点<br><a href="https://leetcode.cn/problems/partition-labels/">763. 划分字母区间</a><br><a href="https://leetcode.cn/problems/merge-intervals/">56. 合并区间</a></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//合并区间</span></span><br><span class="line"><span class="keyword">var</span> merge = <span class="keyword">function</span>(<span class="params">intervals</span>) &#123;</span><br><span class="line">    intervals.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>)=&gt;</span>a[<span class="number">0</span>]-b[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> res=[]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> left=-<span class="number">1</span></span><br><span class="line">    <span class="keyword">let</span> right=-<span class="number">1</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;intervals.<span class="property">length</span>-<span class="number">1</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(intervals[i][<span class="number">1</span>]&gt;=intervals[i+<span class="number">1</span>][<span class="number">0</span>] &amp;&amp; intervals[i][<span class="number">1</span>]&gt;=intervals[i+<span class="number">1</span>][<span class="number">1</span>])&#123;</span><br><span class="line">            <span class="comment">// 情况一</span></span><br><span class="line">            right=intervals[i][<span class="number">1</span>]</span><br><span class="line">            left=intervals[i][<span class="number">0</span>]</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(intervals[i][<span class="number">1</span>]&gt;=intervals[i+<span class="number">1</span>][<span class="number">0</span>] &amp;&amp; intervals[i][<span class="number">1</span>]&lt;intervals[i+<span class="number">1</span>][<span class="number">1</span>])&#123;</span><br><span class="line">            <span class="comment">// 情况二</span></span><br><span class="line">            right=intervals[i+<span class="number">1</span>][<span class="number">1</span>]</span><br><span class="line">            left=intervals[i][<span class="number">0</span>]</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            res.<span class="title function_">push</span>([intervals[i][<span class="number">0</span>], intervals[i][<span class="number">1</span>]])</span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// res.push([left, right])</span></span><br><span class="line">        intervals[i+<span class="number">1</span>][<span class="number">0</span>]=left</span><br><span class="line">        intervals[i+<span class="number">1</span>][<span class="number">1</span>]=right</span><br><span class="line">    &#125;</span><br><span class="line">    res.<span class="title function_">push</span>([intervals[i][<span class="number">0</span>], intervals[i][<span class="number">1</span>]])</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
 ]]></content>
   </entry>
   <entry>
@@ -1065,15 +1194,14 @@
 
 
 
-<h2 id="JS-语法"><a href="#JS-语法" class="headerlink" title="JS 语法"></a>JS 语法</h2><h4 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h4><p>let map&#x3D;new Map()<br>map.set(key, value)<br>map.get(key)<br>map.has(key)</p>
-<h4 id="JavaScript字符与acsii值互转"><a href="#JavaScript字符与acsii值互转" class="headerlink" title="JavaScript字符与acsii值互转"></a>JavaScript字符与acsii值互转</h4><p>“a”.charCodeAt()</p>
+<h2 id="JS-语法"><a href="#JS-语法" class="headerlink" title="JS 语法"></a>JS 语法</h2><h4 id="JavaScript字符与acsii值互转"><a href="#JavaScript字符与acsii值互转" class="headerlink" title="JavaScript字符与acsii值互转"></a>JavaScript字符与acsii值互转</h4><p>“a”.charCodeAt()</p>
 <h4 id="位操作"><a href="#位操作" class="headerlink" title="位操作"></a>位操作</h4><p>count+&#x3D;n&amp;1<br>n&#x3D;n&gt;&gt;&gt;1</p>
-<p>res.push(2)</p>
-<h4 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h4><pre><code>  <figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> map=<span class="keyword">new</span> <span class="title class_">Map</span>()</span><br><span class="line"></span><br><span class="line">map.<span class="title function_">set</span>(<span class="string">&#x27;a&#x27;</span>, <span class="number">2</span>) </span><br><span class="line">map.<span class="title function_">get</span>(<span class="string">&#x27;a&#x27;</span>) <span class="comment">//2</span></span><br><span class="line">map.<span class="title function_">has</span>(<span class="string">&#x27;b&#x27;</span>) <span class="comment">//false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> item <span class="keyword">of</span> <span class="attr">map</span>:</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(item)</span><br><span class="line"></span><br><span class="line">map.<span class="title function_">forEach</span>(<span class="function">(<span class="params">v, k</span>)=&gt;</span>&#123;</span><br><span class="line">   <span class="variable language_">console</span>.<span class="title function_">log</span>(v, k)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-</code></pre>
-<h4 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h4><p>s&#x3D;new Set() # 集合里没有重复元素<br>s.add(3)<br>s.has(3)</p>
-<h4 id="一维数组"><a href="#一维数组" class="headerlink" title="一维数组"></a>一维数组</h4><p>dp&#x3D;new Array(n).fill(0)</p>
-<h4 id="arr-length"><a href="#arr-length" class="headerlink" title="arr.length"></a>arr.length</h4><h4 id="arr-push-0-和arr-unshift-0"><a href="#arr-push-0-和arr-unshift-0" class="headerlink" title="arr.push(0)和arr.unshift(0)"></a>arr.push(0)和arr.unshift(0)</h4><h4 id="queue-shift-和queue-pop"><a href="#queue-shift-和queue-pop" class="headerlink" title="queue.shift()和queue.pop()"></a>queue.shift()和queue.pop()</h4><h4 id="queue-shift-弹出第一个元素"><a href="#queue-shift-弹出第一个元素" class="headerlink" title="queue.shift() 弹出第一个元素"></a>queue.shift() 弹出第一个元素</h4><h4 id="queue-unshift-添加元素到开头"><a href="#queue-unshift-添加元素到开头" class="headerlink" title="queue.unshift() 添加元素到开头"></a>queue.unshift() 添加元素到开头</h4><h4 id="let-dp-x3D-Array-from-new-Array-n-x3D-gt-new-Array-2"><a href="#let-dp-x3D-Array-from-new-Array-n-x3D-gt-new-Array-2" class="headerlink" title="let dp&#x3D;Array.from(new Array(n), ()&#x3D;&gt;new Array(2))"></a>let dp&#x3D;Array.from(new Array(n), ()&#x3D;&gt;new Array(2))</h4><h4 id="res-x3D-Infinity"><a href="#res-x3D-Infinity" class="headerlink" title="res&#x3D;-Infinity"></a>res&#x3D;-Infinity</h4><h4 id="stack-stack-length-1-栈顶元素"><a href="#stack-stack-length-1-栈顶元素" class="headerlink" title="stack[stack.length-1] #栈顶元素"></a>stack[stack.length-1] #栈顶元素</h4><h4 id="String-3-字符串转换"><a href="#String-3-字符串转换" class="headerlink" title="String(3) #字符串转换"></a>String(3) #字符串转换</h4><h4 id="arr-indexOf-3-x3D-x3D-x3D-1-不存在"><a href="#arr-indexOf-3-x3D-x3D-x3D-1-不存在" class="headerlink" title="arr.indexOf(3)&#x3D;&#x3D;&#x3D;-1    不存在"></a>arr.indexOf(3)&#x3D;&#x3D;&#x3D;-1    不存在</h4><h4 id="str-indexOf-“fasd”"><a href="#str-indexOf-“fasd”" class="headerlink" title="str.indexOf(“fasd”)"></a>str.indexOf(“fasd”)</h4><h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">从小到大排序</span><br><span class="line">arr.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a-b</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><p>let dp&#x3D;new Array(n).fill(0) 新建一维数组<br>let dp&#x3D;Array.from(new Array(n), ()&#x3D;&gt;new Array(2).fill(0))   新建二维数组</p>
+<p>arr.length  数组长度<br>arr.push(1)<br>arr.pop(1)<br>arr.shift(2)    弹出第一个元素<br>arr.unshift()   添加元素到开头<br>arr.indexOf(3)&#x3D;&#x3D;&#x3D;-1     不存在<br>stack[stack.length-1]   栈顶元素<br>arr.push({<br>    name:parseInt(line[0]),<br>    score:parseInt(line[1]),<br>    index:i<br>})                      数组对象<br>arr.reverse()<br>arr.splice(2, 6)    删除从2开始的6个元素</p>
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><p>String(3)           字符串转换<br>str.indexOf(“fasd”)<br>s.includes(str)     字符串查找子串<br>s.substring(4,6)    截取字符串<br>slice()函数     截取字符串</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> animals = [<span class="string">&#x27;ant&#x27;</span>, <span class="string">&#x27;bison&#x27;</span>, <span class="string">&#x27;camel&#x27;</span>, <span class="string">&#x27;duck&#x27;</span>, <span class="string">&#x27;elephant&#x27;</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(animals.<span class="title function_">slice</span>(<span class="number">2</span>));</span><br><span class="line"><span class="comment">// expected output: Array [&quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="res-x3D-Infinity"><a href="#res-x3D-Infinity" class="headerlink" title="res&#x3D;-Infinity"></a>res&#x3D;-Infinity</h4><h4 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">从小到大排序</span><br><span class="line">arr.<span class="title function_">sort</span>(<span class="function">(<span class="params">a, b</span>)=&gt;</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> a-b</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 
 
@@ -1088,21 +1216,21 @@
 <p>​        break;</p>
 <p>}</p>
 <h4 id="正则"><a href="#正则" class="headerlink" title="正则"></a>正则</h4><p> reg&#x3D;&#x2F;^([ADWS])([\d]+$)&#x2F;</p>
-<h4 id="字符串查找子串"><a href="#字符串查找子串" class="headerlink" title="字符串查找子串"></a>字符串查找子串</h4><p>s.includes(str)</p>
-<h4 id="创建二维数组"><a href="#创建二维数组" class="headerlink" title="创建二维数组"></a>创建二维数组</h4><p>let dp&#x3D;Array.from(new Array(n), ()&#x3D;&gt;new Array(2).fill(0))</p>
-<h4 id="数组对象"><a href="#数组对象" class="headerlink" title="数组对象"></a>数组对象</h4><p>arr&#x3D;[]</p>
-<p>arr.push({<br>       name:parseInt(line[0]),<br>        score:parseInt(line[1]),<br>        index:i<br>    })</p>
-<h4 id="截取字符串"><a href="#截取字符串" class="headerlink" title="截取字符串"></a>截取字符串</h4><p>s.substring(4,6)</p>
-<p>slice()函数</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> animals = [<span class="string">&#x27;ant&#x27;</span>, <span class="string">&#x27;bison&#x27;</span>, <span class="string">&#x27;camel&#x27;</span>, <span class="string">&#x27;duck&#x27;</span>, <span class="string">&#x27;elephant&#x27;</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(animals.<span class="title function_">slice</span>(<span class="number">2</span>));</span><br><span class="line"><span class="comment">// expected output: Array [&quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]</span></span><br></pre></td></tr></table></figure>
-
-
 <h4 id="最小值-Number-MAX-VALUE"><a href="#最小值-Number-MAX-VALUE" class="headerlink" title="最小值:Number.MAX_VALUE"></a>最小值:Number.MAX_VALUE</h4><h4 id="最大值-Number-MIN-VALUE"><a href="#最大值-Number-MIN-VALUE" class="headerlink" title="最大值:Number.MIN_VALUE"></a>最大值:Number.MIN_VALUE</h4><h4 id="定义类的两种方法"><a href="#定义类的两种方法" class="headerlink" title="定义类的两种方法:"></a>定义类的两种方法:</h4><p>构造函数</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="title class_">Cat</span>=<span class="keyword">function</span>(<span class="params">name, age</span>)&#123;</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">name</span>=name</span><br><span class="line">    <span class="variable language_">this</span>.<span class="property">age</span>=age</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Cat</span>.<span class="property"><span class="keyword">prototype</span></span>.<span class="property">sayHi</span>=<span class="keyword">function</span>(<span class="params"></span>)&#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;hi&#x27;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> cat1=<span class="keyword">new</span> <span class="title class_">Cat</span>(<span class="string">&quot;lxy&quot;</span>, <span class="number">23</span>)</span><br><span class="line">cat1.<span class="title function_">sayHi</span>()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 <p>class</p>
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Cat</span>&#123;</span><br><span class="line">    <span class="title function_">constructor</span>(<span class="params">name, age</span>)&#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">name</span>=name</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">age</span>=age</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="title function_">sayHello</span>(<span class="params"></span>)&#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;hello&#x27;</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> cat1=<span class="keyword">new</span> <span class="title class_">Cat</span>(<span class="string">&quot;lxy&quot;</span>, <span class="number">23</span>)</span><br><span class="line">cat1.<span class="title function_">sayHello</span>()</span><br></pre></td></tr></table></figure>
 
+<h4 id="扩展运算符"><a href="#扩展运算符" class="headerlink" title="扩展运算符"></a>扩展运算符</h4><p>arr1.push(…arr2)    连接两个数组<br>Math.max(…arr)        求数组中数值最大值<br>const a2 &#x3D; […a1]        复制数组<br>[…arr1, …arr2, …arr3]    合并数组<br>[…new Set(arr)]                数组去重</p>
+<h4 id="深浅拷贝"><a href="#深浅拷贝" class="headerlink" title="深浅拷贝"></a>深浅拷贝</h4><p>map()、reduce()                返回处理后的新数组<br>Object.assign()、slice()、concat()、扩展运算符                    浅拷贝<br>JSON.stringify()、JSON.parse()                深拷贝</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> arr2=<span class="title class_">JSON</span>.<span class="title function_">parse</span>(<span class="title class_">JSON</span>.<span class="title function_">stringify</span>(arr))</span><br></pre></td></tr></table></figure>
+<p>let union&#x3D;new Set([…a, …b])                    实现并集<br>let intersect&#x3D;[…a].filter(v&#x3D;&gt;b.has(a))        实现交集<br>let diff&#x3D;[…a].filter(v&#x3D;&gt;!b.has(a))                    实现差集<br>String()、arr.toString()            转换为字符串</p>
+<h4 id="Set"><a href="#Set" class="headerlink" title="Set:"></a>Set:</h4><p>let s&#x3D;new Set()     集合里没有重复元素<br>s.add(2)<br>s.delete(value)<br>s.has(value)<br>s.size<br>s.clear()<br>forEach</p>
+<h4 id="Map"><a href="#Map" class="headerlink" title="Map:"></a>Map:</h4><p>let map&#x3D;new Map()<br>map.get(key)<br>map.set(key, value)<br>map.has(key)<br>map.delete(key)<br>map.size<br>forEach</p>
+<figure class="highlight typescript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 哈希表</span></span><br><span class="line">      <span class="keyword">let</span> map=<span class="keyword">new</span> <span class="title class_">Map</span>()</span><br><span class="line">      </span><br><span class="line">      map.<span class="title function_">set</span>(<span class="string">&#x27;a&#x27;</span>, <span class="number">2</span>) </span><br><span class="line">      map.<span class="title function_">get</span>(<span class="string">&#x27;a&#x27;</span>) <span class="comment">//2</span></span><br><span class="line">      map.<span class="title function_">has</span>(<span class="string">&#x27;b&#x27;</span>) <span class="comment">//false</span></span><br><span class="line">      </span><br><span class="line">      <span class="keyword">for</span> item <span class="keyword">of</span> <span class="attr">map</span>:</span><br><span class="line">         <span class="variable language_">console</span>.<span class="title function_">log</span>(item)</span><br><span class="line">      </span><br><span class="line">      map.<span class="title function_">forEach</span>(<span class="function">(<span class="params">v, k</span>)=&gt;</span>&#123;</span><br><span class="line">         <span class="variable language_">console</span>.<span class="title function_">log</span>(v, k)</span><br><span class="line">      &#125;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="Object"><a href="#Object" class="headerlink" title="Object:"></a>Object:</h4><p>let obj&#x3D;new Object()<br>obj.a&#x3D;’adf’</p>
 ]]></content>
   </entry>
   <entry>
@@ -1590,6 +1718,42 @@ https://juejin.cn/post/6844903593955328007
 <p>平时会自己去学新技术吗</p>
 <p>this的指向</p>
 <p>all&#x2F;apply&#x2F;bind</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>发布订阅模式</title>
+    <url>/2022/07/23/%E5%8F%91%E5%B8%83%E8%AE%A2%E9%98%85%E6%A8%A1%E5%BC%8F/</url>
+    <content><![CDATA[<p>设计模式之发布订阅模式</p>
+<span id="more"></span>
+<p>参考链接：方方视频，或者<a href="http://static.kancloud.cn/wengwang/read_1/436079">http://static.kancloud.cn/wengwang/read_1/436079</a></p>
+<p>简而言之就是订阅（添加函数），发布（调用函数）的过程<br>所有的DOM元素绑定的事件函数，就是发布订阅模式，<code>addEventListener(&#39;click&#39;, function()&#123;&#125;)</code> 就是一种这种模式的实现</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> eventBus=&#123;</span><br><span class="line">    <span class="attr">arrays</span>:&#123;</span><br><span class="line">            <span class="attr">click</span>:[],</span><br><span class="line">            <span class="attr">touch</span>:[]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">on</span>(<span class="params">type, fn</span>)&#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">arrays</span>[type]=<span class="variable language_">this</span>.<span class="property">arrays</span>[type] || []</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">arrays</span>[type].<span class="title function_">push</span>(fn)</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">emit</span>(<span class="params">type, str</span>)&#123;</span><br><span class="line">        <span class="keyword">let</span> a=<span class="variable language_">this</span>.<span class="property">arrays</span>[type]</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;a.<span class="property">length</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">const</span> fn=a[i]</span><br><span class="line">            <span class="title function_">fn</span>(str) <span class="comment">//调用</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">eventBus.<span class="title function_">on</span>(<span class="string">&quot;click&quot;</span>, <span class="keyword">function</span>(<span class="params">data</span>)&#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;click:&quot;</span>, data)&#125;) <span class="comment">//订阅</span></span><br><span class="line">eventBus.<span class="title function_">on</span>(<span class="string">&quot;touch&quot;</span>, <span class="keyword">function</span>(<span class="params">data</span>)&#123;<span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&quot;touch:&quot;</span>, data)&#125;) <span class="comment">//订阅</span></span><br><span class="line"></span><br><span class="line">eventBus.<span class="title function_">emit</span>(<span class="string">&quot;click&quot;</span>, <span class="string">&quot;me&quot;</span>)<span class="comment">//发布</span></span><br><span class="line">eventBus.<span class="title function_">emit</span>(<span class="string">&quot;touch&quot;</span>, <span class="string">&quot;you&quot;</span>)<span class="comment">//发布</span></span><br><span class="line"></span><br><span class="line">eventBus.<span class="title function_">emit</span>(<span class="string">&quot;c&quot;</span>, <span class="string">&quot;you&quot;</span>)<span class="comment">//报错</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>测试面经</title>
+    <url>/2022/07/23/%E6%B5%8B%E8%AF%95%E9%9D%A2%E7%BB%8F/</url>
+    <content><![CDATA[<span id="more"></span>
+
+<ol>
+<li>测试流程</li>
+</ol>
+<ul>
+<li>根据需求说明书分析测试功能点</li>
+<li>测试用例设计</li>
+<li>测试用例执行与回归</li>
+<li>bug管理</li>
+<li>发布上线，记录上线流程到文档</li>
+<li>生产环境测试</li>
+<li>日志数据监控</li>
+<li>输出测试文档</li>
+</ul>
+<ol start="2">
+<li><p>测试流程中的风险<br><a href="https://cloud.tencent.com/developer/article/1502127">https://cloud.tencent.com/developer/article/1502127</a></p>
+</li>
+<li><p>黑盒测试方法<br>等价类划分法；边界值分析法；因果图法；场景法；正交实验设计法；判定表驱动分析法；错误推测法；功能图分析法</p>
+</li>
+</ol>
+<p>缺陷管理</p>
 ]]></content>
   </entry>
 </search>
