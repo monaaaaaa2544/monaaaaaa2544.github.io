@@ -87,7 +87,7 @@
 <meta property="og:description" content="异步">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-07-24T11:56:46.000Z">
-<meta property="article:modified_time" content="2022-07-25T03:59:35.846Z">
+<meta property="article:modified_time" content="2022-07-25T04:03:12.276Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
@@ -368,7 +368,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.7k
+                  1.8k
                 </span>
               
 
@@ -438,7 +438,18 @@
 
 
 <h2 id="Promise"><a href="#Promise" class="headerlink" title="Promise"></a>Promise</h2><p>Promise是一种异步编程解决方案，解决了回调地狱问题。</p>
-<p>回调地狱（多层异步操作），嵌套的写法代码结构不清晰:</p>
+<h4 id="同步、异步、回调"><a href="#同步、异步、回调" class="headerlink" title="同步、异步、回调"></a>同步、异步、回调</h4><p>同步：等，直接拿结果</p>
+<p>异步：先干其他事情，等结果返回了再去拿</p>
+<p>回调（callback）：浏览器回头调用某一个函数</p>
+<p>回调举例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//下面的f1是回调</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">f1</span>(<span class="params"></span>)&#123;&#125;</span><br><span class="line"><span class="keyword">function</span> <span class="title function_">f2</span>(<span class="params">fn</span>)&#123;</span><br><span class="line">    <span class="title function_">fn</span>()</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">f2</span>(f1)</span><br></pre></td></tr></table></figure>
+
+<p>异步任务需要用回调函数通知结果</p>
+<p>回调不一定只用于异步任务，还有同步任务：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//同步回调</span></span><br><span class="line">array.<span class="title function_">forEach</span>(<span class="function"><span class="params">n</span>=&gt;</span><span class="variable language_">console</span>.<span class="title function_">log</span>(n))</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="回调地狱"><a href="#回调地狱" class="headerlink" title="回调地狱"></a>回调地狱</h4><p>回调地狱（多层异步操作），嵌套的写法代码结构不清晰:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取data1</span></span><br><span class="line">$.<span class="title function_">get</span>(url1, <span class="function"><span class="params">data1</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(data1);</span><br><span class="line">        </span><br><span class="line">    <span class="comment">// data1获取后再获取data2</span></span><br><span class="line">    $.<span class="title function_">get</span>(url2, <span class="function"><span class="params">data2</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(data2);</span><br><span class="line">        </span><br><span class="line">        <span class="comment">// data2获取后再获取data3</span></span><br><span class="line">        $.<span class="title function_">get</span>(url3, <span class="function"><span class="params">data3</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="variable language_">console</span>.<span class="title function_">log</span>(data3);</span><br><span class="line">                        </span><br><span class="line">            <span class="comment">// ...可以无限重复</span></span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 <p>AJAx的回调(sucess、fail)写在里面，不清晰，不利于代码复用：</p>
@@ -467,9 +478,6 @@
 
 <p>应用场景：同时获取个人信息、好友列表，并行执行这两个任务</p>
 <h5 id="实现Promise-all"><a href="#实现Promise-all" class="headerlink" title="实现Promise.all"></a>实现Promise.all</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="title class_">Promise</span>.<span class="property">all</span>=<span class="keyword">function</span>(<span class="params">arr</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">let</span> num=<span class="number">0</span> <span class="comment">//成功个数</span></span><br><span class="line">        <span class="keyword">let</span> ans=[] <span class="comment">//记录每一个promise返回的结果</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;arr.<span class="property">length</span>;i++)&#123;</span><br><span class="line">            arr[i].<span class="title function_">then</span>(<span class="function"><span class="params">res</span>=&gt;</span>&#123;</span><br><span class="line">                <span class="comment">//成功时调用</span></span><br><span class="line">                ans[i]=res</span><br><span class="line">                num++</span><br><span class="line">                <span class="comment">//判断是否所有的primise都执行成功</span></span><br><span class="line">                <span class="keyword">if</span>(num===arr.<span class="property">length</span>)&#123;</span><br><span class="line">                    <span class="title function_">resolve</span>(ans)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;).<span class="title function_">catch</span>(<span class="function"><span class="params">err</span>=&gt;</span>&#123;</span><br><span class="line">                <span class="comment">//失败时调用</span></span><br><span class="line">                <span class="title function_">reject</span>(err)</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
 
 
 <h4 id="Promise-race"><a href="#Promise-race" class="headerlink" title="Promise.race()"></a>Promise.race()</h4><ol>
@@ -643,7 +651,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax"><span class="nav-number">1.</span> <span class="nav-text">Ajax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Axios"><span class="nav-number">2.</span> <span class="nav-text">Axios</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise"><span class="nav-number">3.</span> <span class="nav-text">Promise</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">3.0.1.</span> <span class="nav-text">Promise使用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise-all"><span class="nav-number">3.0.2.</span> <span class="nav-text">Promise.all()</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0Promise-all"><span class="nav-number">3.0.2.1.</span> <span class="nav-text">实现Promise.all</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise-race"><span class="nav-number">3.0.3.</span> <span class="nav-text">Promise.race()</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0Promise-race"><span class="nav-number">3.0.3.1.</span> <span class="nav-text">实现Promise.race()</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ajax"><span class="nav-number">1.</span> <span class="nav-text">Ajax</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Axios"><span class="nav-number">2.</span> <span class="nav-text">Axios</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Promise"><span class="nav-number">3.</span> <span class="nav-text">Promise</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%8C%E6%AD%A5%E3%80%81%E5%BC%82%E6%AD%A5%E3%80%81%E5%9B%9E%E8%B0%83"><span class="nav-number">3.0.1.</span> <span class="nav-text">同步、异步、回调</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%9E%E8%B0%83%E5%9C%B0%E7%8B%B1"><span class="nav-number">3.0.2.</span> <span class="nav-text">回调地狱</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="nav-number">3.0.3.</span> <span class="nav-text">Promise使用场景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise-all"><span class="nav-number">3.0.4.</span> <span class="nav-text">Promise.all()</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0Promise-all"><span class="nav-number">3.0.4.1.</span> <span class="nav-text">实现Promise.all</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Promise-race"><span class="nav-number">3.0.5.</span> <span class="nav-text">Promise.race()</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0Promise-race"><span class="nav-number">3.0.5.1.</span> <span class="nav-text">实现Promise.race()</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -680,7 +688,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">30.1k</span>
+    <span title="Site words total count">30.5k</span>
   
 </div>
 
