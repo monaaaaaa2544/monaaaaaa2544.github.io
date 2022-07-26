@@ -87,7 +87,7 @@
 <meta property="og:description" content="JS 语法JavaScript字符与acsii值互转“a”.charCodeAt() 位操作count+&#x3D;n&amp;1n&#x3D;n&gt;&gt;&gt;1 数组let dp&#x3D;new Array(n).fill(0) 新建一维数组let dp&#x3D;Array.from(new Array(n), ()&#x3D;&gt;new Array(2).fill(0">
 <meta property="og:locale">
 <meta property="article:published_time" content="2022-06-27T14:39:20.000Z">
-<meta property="article:modified_time" content="2022-07-25T04:01:50.563Z">
+<meta property="article:modified_time" content="2022-07-26T08:11:40.461Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 
@@ -368,7 +368,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  615
+                  703
                 </span>
               
 
@@ -412,7 +412,13 @@
 <h2 id="JS-语法"><a href="#JS-语法" class="headerlink" title="JS 语法"></a>JS 语法</h2><h4 id="JavaScript字符与acsii值互转"><a href="#JavaScript字符与acsii值互转" class="headerlink" title="JavaScript字符与acsii值互转"></a>JavaScript字符与acsii值互转</h4><p>“a”.charCodeAt()</p>
 <h4 id="位操作"><a href="#位操作" class="headerlink" title="位操作"></a>位操作</h4><p>count+&#x3D;n&amp;1<br>n&#x3D;n&gt;&gt;&gt;1</p>
 <h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><p>let dp&#x3D;new Array(n).fill(0) 新建一维数组<br>let dp&#x3D;Array.from(new Array(n), ()&#x3D;&gt;new Array(2).fill(0))   新建二维数组</p>
-<p>arr.length  数组长度<br>arr.push(1)<br>arr.pop(1)<br>arr.shift(2)    弹出第一个元素<br>arr.unshift()   添加元素到开头<br>arr.indexOf(3)&#x3D;&#x3D;&#x3D;-1     不存在<br>stack[stack.length-1]   栈顶元素<br>arr.push({<br>    name:parseInt(line[0]),<br>    score:parseInt(line[1]),<br>    index:i<br>})                      数组对象<br>arr.reverse()<br>arr.splice(2, 6)    删除从2开始的6个元素</p>
+<p>arr.length  数组长度<br>arr.push(1)<br>arr.pop(1)<br>arr.shift(2)    弹出第一个元素<br>arr.unshift()   添加元素到开头<br>arr.indexOf(3)&#x3D;&#x3D;&#x3D;-1     不存在<br>stack[stack.length-1]   栈顶元素<br>arr.push({<br>    name:parseInt(line[0]),<br>    score:parseInt(line[1]),<br>    index:i<br>})                      数组对象<br>arr.reverse()<br>arr.splice(2, 6)    删除从2开始的6个元素<br>arr.splice(位置，删除元素的数量，元素）        指定位置插入元素</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 原来的数组</span></span><br><span class="line"><span class="keyword">var</span> array = [<span class="string">&quot;one&quot;</span>, <span class="string">&quot;two&quot;</span>, <span class="string">&quot;four&quot;</span>];</span><br><span class="line"><span class="comment">// splice(position, numberOfItemsToRemove, item)</span></span><br><span class="line"><span class="comment">// 拼接函数(索引位置, 要删除元素的数量, 元素)</span></span><br><span class="line">array.<span class="title function_">splice</span>(<span class="number">2</span>, <span class="number">0</span>, <span class="string">&quot;three&quot;</span>);</span><br><span class="line"> </span><br><span class="line">array;  <span class="comment">// 现在数组是这个样子 [&quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;four&quot;]</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
 <h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><p>String(3)           字符串转换<br>str.indexOf(“fasd”)<br>s.includes(str)     字符串查找子串<br>s.substring(4,6)    截取字符串<br>slice()函数     截取字符串</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> animals = [<span class="string">&#x27;ant&#x27;</span>, <span class="string">&#x27;bison&#x27;</span>, <span class="string">&#x27;camel&#x27;</span>, <span class="string">&#x27;duck&#x27;</span>, <span class="string">&#x27;elephant&#x27;</span>];</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(animals.<span class="title function_">slice</span>(<span class="number">2</span>));</span><br><span class="line"><span class="comment">// expected output: Array [&quot;camel&quot;, &quot;duck&quot;, &quot;elephant&quot;]</span></span><br></pre></td></tr></table></figure>
 
@@ -650,7 +656,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">30.5k</span>
+    <span title="Site words total count">31k</span>
   
 </div>
 
