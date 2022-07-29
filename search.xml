@@ -715,4 +715,108 @@
 <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">configureWebpack</span>: <span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line"> <span class="comment">// gzip压缩</span></span><br><span class="line"> <span class="keyword">const</span> productionGzipExtensions = [<span class="string">&#x27;html&#x27;</span>, <span class="string">&#x27;js&#x27;</span>, <span class="string">&#x27;css&#x27;</span>]</span><br><span class="line"> config.<span class="property">plugins</span>.<span class="title function_">push</span>(</span><br><span class="line">   <span class="keyword">new</span> <span class="title class_">CompressionWebpackPlugin</span>(&#123;</span><br><span class="line">     <span class="attr">filename</span>: <span class="string">&#x27;[path].gz[query]&#x27;</span>,</span><br><span class="line">     <span class="attr">algorithm</span>: <span class="string">&#x27;gzip&#x27;</span>,</span><br><span class="line">     <span class="attr">test</span>: <span class="keyword">new</span> <span class="title class_">RegExp</span>(</span><br><span class="line">       <span class="string">&#x27;\\.(&#x27;</span> + productionGzipExtensions.<span class="title function_">join</span>(<span class="string">&#x27;|&#x27;</span>) + <span class="string">&#x27;)$&#x27;</span></span><br><span class="line">     ),</span><br><span class="line">     <span class="attr">threshold</span>: <span class="number">10240</span>, <span class="comment">// 只有大小大于该值的资源会被处理 10240</span></span><br><span class="line">     <span class="attr">minRatio</span>: <span class="number">0.8</span>, <span class="comment">// 只有压缩率小于这个值的资源才会被处理</span></span><br><span class="line">     <span class="attr">deleteOriginalAssets</span>: <span class="literal">false</span> <span class="comment">// 删除原文件</span></span><br><span class="line">   &#125;)</span><br><span class="line"> )</span><br><span class="line"> </span><br><span class="line"> &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 ]]></content>
   </entry>
+  <entry>
+    <title>ES6中的this</title>
+    <url>/2022/07/29/ES6%E4%B8%AD%E7%9A%84this/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>HTTP</title>
+    <url>/2022/07/29/HTTP/</url>
+    <content><![CDATA[<span id="more"></span>
+
+<h2 id="HTTP（超文本传输协议）"><a href="#HTTP（超文本传输协议）" class="headerlink" title="HTTP（超文本传输协议）"></a>HTTP（超文本传输协议）</h2><p>HTTP主要是为浏览器和服务器之间通信而设计的一种规则，提供一种发布和接受HTML页面的方法</p>
+<h4 id="HTTP的组成"><a href="#HTTP的组成" class="headerlink" title="HTTP的组成"></a>HTTP的组成</h4><p>请求报文的组成</p>
+<ol>
+<li>请求行：包括请求方法（get、post、options等）、URL、协议&#x2F;版本</li>
+<li>请求头(Request Header)：传输的类型Content-Type</li>
+<li>请求正文</li>
+</ol>
+<p><img src="https://pic4.zhimg.com/v2-770cc76b2cb7da75d04a886015a9565b_r.jpg" alt="image-20220729095322778"></p>
+<p>响应报文的组成</p>
+<ol>
+<li>状态行</li>
+<li>响应头</li>
+<li>响应正文</li>
+</ol>
+<p><img src="https://pic4.zhimg.com/80/v2-58506e2188987db01ffb1589e208d83b_720w.jpg" alt="image-20220729095531132"></p>
+<h4 id="Pose和Get的区别"><a href="#Pose和Get的区别" class="headerlink" title="Pose和Get的区别"></a>Pose和Get的区别</h4><ul>
+<li>post比get多了请求体body</li>
+<li>一般对get请求的数据进行缓存，因为缓存适用于不会更新服务端数据的请求</li>
+</ul>
+<h4 id="为什么说HTTP是无状态的协议？"><a href="#为什么说HTTP是无状态的协议？" class="headerlink" title="为什么说HTTP是无状态的协议？"></a>为什么说HTTP是无状态的协议？</h4><h4 id="什么时候会发送options请求"><a href="#什么时候会发送options请求" class="headerlink" title="什么时候会发送options请求"></a>什么时候会发送options请求</h4><p><strong>两个作用：</strong></p>
+<ol>
+<li>检测服务器所支持的请求方法</li>
+<li>CORS中的预检请求</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1. 检测服务器所支持的请求方法</span></span><br><span class="line"><span class="comment">//发起options请求：curl -X OPTIONS http://example.org -i</span></span><br><span class="line"><span class="comment">//返回响应报文如下：</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">HTTP/1.1 200 OK</span></span><br><span class="line"><span class="comment">Allow: OPTIONS, GET, HEAD, POST</span></span><br><span class="line"><span class="comment">。。。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">//其中的Allow首部字段，表明了服务器所支持的HTTP方法</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//2. CORS中的预检请求</span></span><br><span class="line"><span class="comment">// Access-Control-Request-Method 首部字段告知服务器实际请求所使用的 HTTP 方法</span></span><br><span class="line"><span class="comment">//Access-Control-Request-Headers 首部字段告知服务器实际请求所携带的自定义首部字段</span></span><br><span class="line"><span class="comment">//服务器基于从预检请求获得的信息来判断，是否接受接下来的实际请求。</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">OPTIONS /resources/post-here/ HTTP/1.1</span></span><br><span class="line"><span class="comment">Host: bar.other</span></span><br><span class="line"><span class="comment">。。。</span></span><br><span class="line"><span class="comment">Origin: http://foo.example</span></span><br><span class="line"><span class="comment">Access-Control-Request-Method: POST</span></span><br><span class="line"><span class="comment">Access-Control-Request-Headers: X-PINGOTHER, Content-Type</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//然后返回的响应报文：</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">HTTP/1.1 200 OK</span></span><br><span class="line"><span class="comment">。。。</span></span><br><span class="line"><span class="comment">Access-Control-Allow-Methods: POST, GET, OPTIONS</span></span><br><span class="line"><span class="comment">Access-Control-Allow-Headers: X-PINGOTHER, Content-Type</span></span><br><span class="line"><span class="comment">。。。</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="comment">//返回的 Access-Control-Allow-Methods 首部字段将所有允许的请求方法告知客户端</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>为什么要发送Options请求：</strong></p>
+<p>检验服务器是否接受该跨域请求。</p>
+<p>那些对服务器数据产生修改的HTTP方法 （除了GET以外的方法），浏览器必须先用Options发起预检请求，从而知道服务器是否允许该跨域请求。</p>
+<p>由于安全原因，浏览器会在正式请求之前自动先发起OPTIONS预检请求，服务器若接受该跨域请求，浏览器才继续发起正式请求。</p>
+<p><strong>优化Options请求：</strong></p>
+<p>由于跨域的话，每次都要先发起Options请求，增加了请求次数，影响性能，以下2种方法提升性能：</p>
+<ol>
+<li>用JSONP做跨域请求</li>
+<li><strong>缓存Option请求</strong></li>
+</ol>
+<p><strong>缓存Options预检请求：</strong></p>
+<p>当第一次请求该URL时会发出<code>OPTIONS</code>请求，浏览器会根据返回的<code>Access-Control-Max-Age</code>字段缓存该请求的<code>OPTIONS预检请求</code>的响应结果。在缓存有效期内，该资源的请求（URL和header字段都相同的情况下）不会再触发预检。(chrome 打开控制台可以看到，当服务器响应<code>Access-Control-Max-Age</code> 时只有第一次请求会有预检，后面不会了。注意要开启缓存，去掉<code>disable cache</code>勾选)</p>
+<p>Access-Control-Max-Age 该字段可选，用来指定本次预检请求的有效期，单位为秒。上面结果中，有效期是20天（1728000秒），即允许缓存该条回应1728000秒（即20天），在此期间，不用发出另一条预检请求。</p>
+<h4 id="HTTPS"><a href="#HTTPS" class="headerlink" title="HTTPS"></a>HTTPS</h4><p><strong>为什么要用https</strong></p>
+<ul>
+<li>http存在一些问题：请求信息明文传输，比如账号密码；没有验证对方身份</li>
+</ul>
+<p>所以出现HTTPS&#x3D;HTTP+SSL，采用SSL证书验证服务器的身份，具体过程是：</p>
+<ul>
+<li><p>客户端发起连接请求</p>
+</li>
+<li><p>服务端返回证书（公钥）</p>
+</li>
+<li><p>客户端用公钥加密</p>
+</li>
+<li><p>服务端用私钥解密</p>
+</li>
+</ul>
+<p><strong>总结HTTP和HTTPS的区别：</strong></p>
+<p>参考：<a href="https://fe.ecool.fun/topic/8740bcd2-4a52-4c22-aed1-d573eb42dfa9?orderBy=updateTime&amp;order=desc&amp;titleKey=https">https://fe.ecool.fun/topic/8740bcd2-4a52-4c22-aed1-d573eb42dfa9?orderBy=updateTime&amp;order=desc&amp;titleKey=https</a></p>
+<ul>
+<li>HTTP协议数据明文传输，不安全</li>
+<li>HTTPS协议利用SSL证书进行加密处理，安全</li>
+</ul>
+<p><strong>加密方法：</strong></p>
+<p>参考：<a href="https://fe.ecool.fun/topic/8740bcd2-4a52-4c22-aed1-d573eb42dfa9?orderBy=updateTime&amp;order=desc&amp;titleKey=https">https://fe.ecool.fun/topic/8740bcd2-4a52-4c22-aed1-d573eb42dfa9?orderBy=updateTime&amp;order=desc&amp;titleKey=https</a></p>
+<ul>
+<li>对称密钥（加密解密用的同一个密钥）（缺点是一开始发送密钥时，可能会被坏人拦截）</li>
+<li>非对称加密算法（类似于ssh密钥）（缺点是很慢）</li>
+<li>非对称密钥+对称密钥</li>
+</ul>
+<p><strong>数字签名：</strong></p>
+<p>参考:<a href="https://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html">https://www.ruanyifeng.com/blog/2011/08/what_is_a_digital_signature.html</a></p>
+<p>暂时没看懂。</p>
+<h4 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h4><p><strong>总体</strong></p>
+<ul>
+<li>2xx    请求成功</li>
+<li>3xx    浏览器需做重定向才能正常处理请求    </li>
+<li>4xx    客户端错误</li>
+<li>5xx    服务器错误</li>
+</ul>
+<p><strong>分别</strong></p>
+<ul>
+<li>204    请求成功但返回空的内容</li>
+<li>301    永久重定向。旧域名不再使用，重定向到新域名；比如未登录用户重定向到访问用户中心重定向到登录页面</li>
+<li>302    临时重定向。比如在做活动时，登录到首页自动重定向到活动页面，但是这只是临时的重定向，活动可能在未来某一时刻结束</li>
+<li>304    告诉浏览器直接使用缓存，返回的页面不包括内容部分，从而提高了网页性能</li>
+<li>400    请求报文格式错误</li>
+<li>401    未认证。比如用户未登录就发起请求</li>
+<li>403    服务端拒绝访问。比如IP被加入黑名单；访问次数过多被防火墙拒绝了</li>
+<li>404    服务器找不到该资源</li>
+<li>503    服务器暂时处于超负载或正在进行停机维护，无法处理请求</li>
+<li>504    代码执行超时，发生死循环了</li>
+</ul>
+<h4 id="HTTP2-0和HTTP1-0"><a href="#HTTP2-0和HTTP1-0" class="headerlink" title="HTTP2.0和HTTP1.0"></a>HTTP2.0和HTTP1.0</h4><h4 id="HTTP请求头（响应头）"><a href="#HTTP请求头（响应头）" class="headerlink" title="HTTP请求头（响应头）"></a>HTTP请求头（响应头）</h4><h4 id="HTTP缓存策略"><a href="#HTTP缓存策略" class="headerlink" title="HTTP缓存策略"></a>HTTP缓存策略</h4>]]></content>
+  </entry>
 </search>
